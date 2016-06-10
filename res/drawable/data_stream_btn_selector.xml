@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_pressed="true" android:drawable="@drawable/btn_third" />
+    <item android:state_focused="true" android:state_window_focused="true" android:drawable="@drawable/btn_third" />
+    <item android:state_focused="true" android:state_window_focused="false" android:drawable="@drawable/btn_secend" />
+    <item android:drawable="@drawable/btn_firest" />
+</selector>

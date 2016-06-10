@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/cardNo" android:layout_weight="3.0" />
+            <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/card_no" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+        </LinearLayout>
+        <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+    </LinearLayout>
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/updateDate" android:layout_weight="3.0" />
+            <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/updateDate" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+        </LinearLayout>
+        <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+    </LinearLayout>
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/update_year" android:layout_weight="3.0" />
+            <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/update_year" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+        </LinearLayout>
+        <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+    </LinearLayout>
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/time_before_charge" android:layout_weight="3.0" />
+            <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/time_before_charge" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+        </LinearLayout>
+        <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+    </LinearLayout>
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/time_after_charge" android:layout_weight="3.0" />
+            <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/time_after_charge" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+        </LinearLayout>
+        <ImageView android:background="@color/red" android:layout_width="-1" android:layout_height="1dp" />
+    </LinearLayout>
+</LinearLayout>

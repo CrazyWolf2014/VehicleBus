@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:padding="8dp" android:layout_width="-1" android:layout_height="-2" android:baselineAligned="false"
+    <LinearLayout android:gravity="10" android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0"
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/softwareSer" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/serialNo" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/date" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/date" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/car_name" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/carName" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/client_version" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/version" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/shopping_price" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/price" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="11" android:layout_width="-1" android:layout_height="-1" android:layout_weight="3.0">
+        <CheckBox android:id="@id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="-2" android:layout_height="-2" android:button="@drawable/space_checkbox_selector" />
+    </LinearLayout>
+</LinearLayout>

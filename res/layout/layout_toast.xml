@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:layout_gravity="1" android:id="@id/toast_message" android:padding="20dp" android:layout_width="-2" android:layout_height="0dp" android:layout_margin="10dp" android:shadowColor="#bb000000" android:shadowRadius="2.75" android:layout_weight="1.0" />
+</LinearLayout>

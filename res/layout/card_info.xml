@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:id="@id/top" style="@style/top_title">
+        <Button android:textColor="@color/white" android:id="@id/returnBtn" android:background="@drawable/btn_back_selector" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="25sp" android:textColor="@color/white" android:id="@id/tetle" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/check_card_info" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <ScrollView android:layout_width="-1" android:layout_height="-2">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+            <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                    <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/cardNo" android:layout_weight="3.0" />
+                    <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+                    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/card_no" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+                </LinearLayout>
+                <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                    <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/card_conf_name" android:layout_weight="3.0" />
+                    <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+                    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/cardConfName" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+                </LinearLayout>
+                <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                    <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/soft_Conf_name" android:layout_weight="3.0" />
+                    <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+                    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/softConfName" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+                </LinearLayout>
+                <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+            </LinearLayout>
+            <LinearLayout android:gravity="10" android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                    <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/card_recharge_year" android:layout_weight="3.0" />
+                    <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+                    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/cardRechargeYear" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+                </LinearLayout>
+                <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                    <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/card_state" android:layout_weight="3.0" />
+                    <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+                    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/card_state" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+                </LinearLayout>
+                <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/serialLay" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                    <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/serial_numbers" android:layout_weight="3.0" />
+                    <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+                    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/serailNo" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+                </LinearLayout>
+                <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:id="@id/charge_date_lay" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                    <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/updateDate" android:layout_weight="3.0" />
+                    <ImageView android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+                    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/cardConsumeDate" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_weight="4.0" />
+                </LinearLayout>
+                <ImageView android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

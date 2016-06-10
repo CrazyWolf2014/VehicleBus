@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TabHost android:id="0x1020012" android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+            <TabWidget android:gravity="11" android:id="0x1020013" android:background="#2c72d6" android:scrollbars="0" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="0.0" />
+            <FrameLayout android:id="0x1020011" android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="10dp" android:layout_weight="1.0" />
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>

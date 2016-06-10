@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_checked="true" android:state_pressed="true" android:drawable="@drawable/choiced" />
+    <item android:state_checked="false" android:state_pressed="true" android:drawable="@drawable/nochoic" />
+    <item android:state_checked="true" android:drawable="@drawable/choiced" />
+    <item android:state_checked="false" android:drawable="@drawable/nochoic" />
+</selector>

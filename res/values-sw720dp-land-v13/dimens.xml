@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">128.0dip</dimen>
+    <dimen name="itemSize">120.0dip</dimen>
+    <dimen name="top_title_heighttop_title_height">122.0dip</dimen>
+</resources>

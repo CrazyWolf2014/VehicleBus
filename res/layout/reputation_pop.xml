@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_popdialog" android:paddingLeft="30dp" android:paddingTop="150dp" android:paddingRight="30dp" android:paddingBottom="150dp" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:orientation="1" android:background="@drawable/bg_radius" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1" android:layout_centerHorizontal="true" android:layout_centerVertical="true"
+        <RelativeLayout android:gravity="11" android:orientation="0" android:id="@id/layout_top" android:layout_width="-1" android:layout_height="-2">
+            <ImageView android:layout_gravity="5" android:id="@id/repu_close" android:background="@drawable/main_close" android:visibility="2" android:nextFocusLeft="@id/repu_select" android:nextFocusRight="@id/repu_btn" android:clickable="true" android:layout_width="14dp" android:layout_height="12dp" android:layout_marginLeft="5dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="20sp" android:textColor="@color/red" android:layout_width="-2" android:layout_height="-2" android:text="@string/statement" android:layout_toLeftOf="@id/repu_close" android:layout_centerInParent="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="1" android:id="@id/line1" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_below="@id/layout_top" />
+        <RelativeLayout android:orientation="0" android:id="@id/bottom" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true">
+            <LinearLayout android:orientation="1" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" />
+            <CheckBox android:id="@id/repu_select" android:visibility="2" android:nextFocusRight="@id/repu_btn" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" />
+            <Button android:textColor="@color/white" android:id="@id/repu_btn" android:background="@drawable/login_btn_selector" android:padding="5dp" android:nextFocusLeft="@id/repu_select" android:clickable="true" android:layout_width="-2" android:layout_height="-2" android:text="@string/repu_btn" android:layout_centerInParent="true" android:layout_centerVertical="true" />
+            <TextView android:textColor="@color/lightgray" android:id="@id/repu_notic" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:text="@string/main_notic" android:layout_toLeftOf="@id/repu_btn" android:layout_toRightOf="@id/repu_select" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <ScrollView android:id="@id/layout_text" android:nextFocusLeft="@id/repu_select" android:nextFocusRight="@id/repu_btn" android:nextFocusUp="@id/repu_close" android:layout_width="-1" android:layout_height="-2" android:layout_above="@id/bottom" android:layout_below="@id/line1">
+            <TextView android:textColor="@color/lightgray" android:id="@id/repu_content" android:layout_width="-1" android:layout_height="-2" android:text="@string/reputation_text" />
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

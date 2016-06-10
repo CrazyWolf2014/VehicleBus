@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@color/white" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_head" />
+    <ScrollView android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:orientation="1" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1">
+            <TextView android:textColor="@color/black" android:id="@id/invoice_information" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/invoice_information" />
+            <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textColor="@color/black" android:id="@id/invoice" android:layout_width="-2" android:layout_height="-2" android:text="@string/Invoice_type" />
+                <RadioGroup android:gravity="10" android:orientation="0" android:id="@id/invoiceType" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="6dp" android:checkedButton="@id/sex1">
+                    <RadioButton android:textColor="@color/black" android:id="@id/common_invoice" android:layout_width="-2" android:layout_height="-2" android:checked="true" android:text="@string/Commercial_invoice" />
+                    <RadioButton android:textColor="@color/black" android:id="@id/addTax_invoice" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/VAT_invoice" />
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout android:gravity="10" android:id="@id/taitou" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textColor="@color/black" android:id="@id/looked" android:layout_width="-2" android:layout_height="-2" android:text="@string/invoice_looked_up" />
+                <RadioGroup android:gravity="10" android:orientation="0" android:id="@id/invoiceTaiTou" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="6dp">
+                    <RadioButton android:textColor="@color/black" android:id="@id/personal" android:layout_width="-2" android:layout_height="-2" android:checked="true" android:text="@string/personal" />
+                    <RadioButton android:textColor="@color/black" android:id="@id/unit" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/unit" />
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:id="@id/persionBill" android:layout_width="-1" android:layout_height="-2"
+                <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/personals" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/recipient_name" android:layout_weight="3.0" />
+                    <EditText android:id="@id/recipientsName" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/mail_address" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/mail_address" android:layout_weight="3.0" />
+                    <EditText android:id="@id/address" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/postcode" android:layout_weight="3.0" />
+                    <EditText android:id="@id/postCode" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:maxLength="6" android:layout_weight="1.0" android:inputType="2" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/telphone" android:layout_weight="3.0" />
+                    <EditText android:id="@id/phoneNo" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:inputType="2" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/bill_content" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/invoice_content" android:layout_weight="3.0" />
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="6dp" android:text="@string/diagnostic_software" android:layout_weight="1.0" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:id="@id/addTax" android:visibility="2" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:text="@string/Special_VAT_invoice" />
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/Name_entity" android:layout_weight="3.0" />
+                    <EditText android:id="@id/taxInvoiceTtile" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/Taxpayer_identification_number" android:layout_weight="3.0" />
+                    <EditText android:id="@id/taxCode" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/registered_address" android:layout_weight="3.0" />
+                    <EditText android:id="@id/regAddress" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/Register_the_phone" android:layout_weight="3.0" />
+                    <EditText android:id="@id/regTelephone" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:inputType="2" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/Account_opening_bank" android:layout_weight="3.0" />
+                    <EditText android:id="@id/bankName" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/bank_account" android:layout_weight="3.0" />
+                    <EditText android:id="@id/bankAccountNum" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:inputType="2" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/personals" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/recipient_name" android:layout_weight="3.0" />
+                    <EditText android:id="@id/taxRecipientsName" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/mail_address" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/mail_address" android:layout_weight="3.0" />
+                    <EditText android:id="@id/taxAddress" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/postcode" android:layout_weight="3.0" />
+                    <EditText android:id="@id/taxPostCode" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:maxLength="6" android:layout_weight="1.0" android:inputType="2" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/telphone" android:layout_weight="3.0" />
+                    <EditText android:id="@id/taxPhoneNo" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:inputType="2" />
+                </LinearLayout>
+                <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/bill_content" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/invoice_content" android:layout_weight="3.0" />
+                    <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:text="@string/diagnostic_software" android:layout_weight="1.0" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button android:id="@id/save_invoice_information" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/Save_invoice_information" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_head" />
+    <RelativeLayout android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head">
+        <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/tetle" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/soft_mess" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/roomTop" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/top">
+        <LinearLayout android:orientation="0" android:id="@id/soft_mess" android:layout_width="-1" android:layout_height="-2"
+            <LinearLayout android:orientation="1" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginRight="5dp">
+                <com.ifoer.image.AsyncImageView android:id="@id/softFalg" android:padding="10dp" android:layout_width="80dp" android:layout_height="80dp" />
+                <Button android:textColor="@color/white" android:id="@id/softShow" android:background="@drawable/red_btn_bg" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="-5dp" android:text="软件包" />
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/softName" android:layout_width="-2" android:layout_height="-2" android:text="EOBD2" />
+                <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2"
+                    <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/soft_checked_version1" />
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:id="@id/softVer" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="2dp" android:text="V22.14" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/soft_checked_size" />
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:id="@id/softSize" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="2dp" android:text="V22.14" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp"
+                    <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/soft_checked_uptdate" />
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:id="@id/softUpTime" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="2dp" android:text="2013-03-31" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="软件语言: " />
+                        <TextView android:textSize="@dimen/softInfoTextSize" android:textColor="@color/white" android:id="@id/softLag" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="2dp" android:text="@string/chinese" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="5" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="2dp">
+                    <TextView android:textColor="@color/white" android:id="@id/softPrice" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="2dp" />
+                    <Button android:textColor="@color/white" android:id="@id/download" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="5dp" android:text="@string/checked_download" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="10" android:layout_gravity="10" android:orientation="0" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:layout_below="@id/soft_mess">
+            <Button android:textColor="@color/lightgray" android:id="@id/softShuoming" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/soft_checked_infor" android:layout_weight="1.0" />
+            <ImageView android:background="@drawable/linea" android:layout_width="2dp" android:layout_height="-2" />
+            <Button android:textColor="@color/lightgray" android:id="@id/softJies" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/soft_checked_softJies" android:layout_weight="1.0" />
+            <ImageView android:background="@drawable/linea" android:layout_width="2dp" android:layout_height="-2" />
+            <Button android:textColor="@color/lightgray" android:id="@id/softZhuyi" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/soft_checked_softZhuyi" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ScrollView android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/roomTop">
+        <TextView android:textColor="@color/white" android:id="@id/sofeMoreInfo" android:layout_width="-2" android:layout_height="-2" />
+    </ScrollView>
+</RelativeLayout>

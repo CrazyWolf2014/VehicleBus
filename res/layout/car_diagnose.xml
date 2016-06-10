@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_header_diag" />
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/main_head">
+        <ListView android:id="@id/view" android:fadingEdge="0" android:nextFocusUp="@id/backSuperior" android:layout_width="-1" android:layout_height="-1" android:listSelector="@drawable/mgrid_selector" android:cacheColorHint="@keyrecord/OWNER_USER" />
+        <GridView android:id="@id/gridView" android:background="0x106000d" android:visibility="2" android:nextFocusUp="@id/menuBtn1" android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="7dp" android:layout_marginTop="10dp" android:layout_marginRight="7dp" android:layout_below="@id/diagnose_line2" />
+        <ImageView android:id="@id/backSuperior2" android:paddingRight="5dp" android:visibility="2" android:layout_width="-2" android:layout_height="50dp" android:src="@drawable/diag_back_btn_selector" android:scaleType="3" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    </RelativeLayout>
+</RelativeLayout>

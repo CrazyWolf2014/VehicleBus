@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@color/light_gray" android:layout_width="-1" android:layout_height="-1">
+    <include layout="@layout/im_title" />
+    <LinearLayout android:orientation="1" android:id="@id/firstArea" android:background="@drawable/im_area_bg" android:layout_width="-1" android:layout_height="-2" android:layout_margin="10dp">
+        <RelativeLayout android:layout_width="-1" android:layout_height="-2" android:layout_margin="20dp">
+            <ImageView android:id="@id/chatroomLogo" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/im_chatroom_default" />
+            <TextView android:textSize="16sp" android:textColor="@color/black" android:gravity="10" android:id="@id/chatroomName" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_toRightOf="@id/chatroomLogo" />
+        </RelativeLayout>
+        <TextView android:background="@drawable/im_area_line" android:layout_width="-1" android:layout_height="1dp" android:layout_marginTop="2dp" />
+    </LinearLayout>
+    <Button android:textSize="18sp" android:id="@id/deleteBtn" android:background="@drawable/chat_send_btn" android:padding="8dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_margin="10dp" android:text="@string/detailChatroom" />
+</LinearLayout>

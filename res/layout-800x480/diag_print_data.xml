@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/main_head">
+        <Button android:textColor="@color/white" android:id="@id/returnBtn" android:background="@drawable/del1" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/bluetooth_back" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/tetle" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="10dp" android:text="@string/title_diag_info" android:layout_toRightOf="@id/returnBtn" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/top"
+        <RelativeLayout android:id="@id/print_info" android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="30dp" android:layout_marginTop="10dp" android:layout_marginRight="30dp">
+            <EditText android:id="@id/com_address" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/data_com_address" android:singleLine="true" />
+            <EditText android:id="@id/com_telephone" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/data_com_telephone" android:singleLine="true" android:phoneNumber="true" android:layout_below="@id/com_address" />
+            <EditText android:id="@id/license_plate_number_diag" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/license_plate_number_diag" android:singleLine="true" android:layout_below="@id/com_telephone" />
+            <Button android:textColor="@color/white" android:id="@id/queding_btn" android:background="@drawable/read_btn" android:padding="5dp" android:layout_width="120dp" android:layout_height="50dp" android:layout_marginTop="15dp" android:text="@string/queding_btn_info" android:layout_below="@id/license_plate_number_diag" android:layout_alignParentLeft="true" />
+            <Button android:textColor="@color/white" android:id="@id/cancel_diag_btn" android:background="@drawable/read_btn" android:layout_width="120dp" android:layout_height="50dp" android:layout_marginTop="15dp" android:text="@string/Cancel" android:layout_below="@id/license_plate_number_diag" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

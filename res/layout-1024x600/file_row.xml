@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="0" android:background="#ffffff" android:layout_width="-1" android:layout_height="-1"
+    <LinearLayout android:orientation="0" android:padding="6px" android:layout_width="-1" android:layout_height="-1">
+        <ImageView android:id="@id/icon" android:layout_width="30dp" android:layout_height="30dp" />
+        <TextView android:layout_gravity="1" android:id="@id/text" android:layout_width="-1" android:layout_height="-2" />
+    </LinearLayout>
+</LinearLayout>

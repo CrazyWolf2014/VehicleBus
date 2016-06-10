@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:layout_width="-1" android:layout_height="45dp" layout="@layout/customer_managerment" />
+    <ScrollView android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:orientation="1" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/back" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/circle_return" />
+            <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/layoutItem_name2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:minHeight="35dp">
+                <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_CC_number" />
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:gravity="11" android:id="@id/configuration" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" />
+            </LinearLayout>
+            <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/layoutItem_name3" android:layout_width="-1" android:layout_height="-2" android:minHeight="35dp">
+                <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:gravity="10" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_client_name" />
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/customerName" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" />
+            </LinearLayout>
+            <RelativeLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+                <Button android:textColor="@color/black" android:id="@id/edit" android:background="@drawable/btn_confirm" android:layout_width="102dp" android:layout_height="38dp" android:minWidth="70dp" android:minHeight="35dp" android:text="@string/edit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:id="@id/mobileText" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_client_vehicle" android:layout_centerVertical="true" />
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/customerMobile" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_toLeftOf="@id/edit" android:layout_toRightOf="@id/mobileText" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/layoutItem_name5" android:layout_width="-1" android:layout_height="-2" android:minHeight="35dp">
+                <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_download_soft_name" />
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/downloadedSoftname" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:id="@id/layoutItem_name6" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:id="@id/client_downloaded_features_list" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_downloaded_features_list" />
+            </LinearLayout>
+            <LinearLayout android:layout_gravity="1" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:layout_gravity="11" android:padding="10dp" android:layout_width="-2" android:layout_height="-2" android:minWidth="150dp" android:text="@string/client_soft_name_oflist" />
+                <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:layout_gravity="11" android:padding="10dp" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_cotnet_oflist" />
+            </LinearLayout>
+            <ImageView android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:contentDescription="@string/app_name" />
+            <LinearLayout android:orientation="1" android:id="@id/downloadedList" android:layout_width="-2" android:layout_height="-2" />
+            <ScrollView android:layout_width="-1" android:layout_height="-1">
+                <LinearLayout android:gravity="10" android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+                    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/layoutItem_name7" android:layout_width="-1" android:layout_height="-2" android:minHeight="35dp">
+                        <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_current_user_mileage" />
+                        <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/currentMileage" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" />
+                        <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/client_unit" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/layoutItem_name8" android:layout_width="-1" android:layout_height="-2" android:minHeight="35dp">
+                        <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_last_update" />
+                        <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/lastUpdateTime" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" />
+                    </LinearLayout>
+                    <ImageView android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:contentDescription="@string/app_name" />
+                    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/layoutItem_name9" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                        <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:text="@string/customer_nmm" />
+                        <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/nextMileage" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" />
+                        <TextView android:textSize="16sp" android:textColor="@color/white" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:text="@string/client_unit" />
+                    </LinearLayout>
+                    <RelativeLayout android:layout_width="-1" android:layout_height="-2">
+                        <CheckBox android:textSize="14sp" android:textColor="@color/black" android:gravity="11" android:id="@id/modify" android:background="@drawable/btn_confirm" android:layout_width="102dp" android:layout_height="38dp" android:layout_marginLeft="5dp" android:button="@keyrecord/OWNER_USER" android:minWidth="70dp" android:minHeight="35dp" android:text="@string/client_modify" android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+                    <LinearLayout android:gravity="15" android:orientation="0" android:id="@id/modifyLinear" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                        <EditText android:textSize="14sp" android:textColor="@color/black" android:id="@id/number" android:background="@drawable/white_btn" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="70dp" android:layout_height="30dp" android:singleLine="true" android:maxLength="9" android:inputType="2" />
+                        <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/client_unit" />
+                        <TextView android:textSize="16sp" android:textColor="@color/color_22114812" android:gravity="11" android:id="@id/client_save" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:minWidth="60dp" android:minHeight="30dp" android:text="@string/client_save" />
+                        <ImageButton android:textSize="16sp" android:textColor="@color/black" android:id="@id/tvUpdateDate" android:background="@drawable/arrows" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/client_delete" />
+                    </LinearLayout>
+                    <ImageView android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

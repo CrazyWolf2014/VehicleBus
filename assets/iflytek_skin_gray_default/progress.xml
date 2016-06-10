@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <LinearLayout android:gravity="11" android:tag="progress" android:paddingLeft="20dp" android:paddingRight="20dp" android:visibility="2" android:layout_width="-1" android:layout_height="0dp" android:layout_weight="1.0">
+        <ProgressBar android:tag="progressbar" android:layout_width="0dp" android:layout_height="18dp" android:layout_marginRight="10dp" android:layout_weight="1.0" style="?unknown_attr_ref: 1010078" />
+        <ImageButton android:tag="play" android:layout_width="-2" android:layout_height="-2" />
+    </LinearLayout>
+</merge>

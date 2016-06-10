@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/black" android:layout_width="100dp" android:layout_height="100dp">
+    <TextView android:textSize="15sp" android:textStyle="1" android:gravity="11" android:layout_gravity="11" android:id="@id/car_name" android:layout_width="-2" android:layout_height="70dp" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" />
+    <ImageView android:id="@id/car_logo" android:layout_width="-2" android:layout_height="-2" android:layout_centerInParent="true" />
+    <TextView android:textSize="20sp" android:ellipsize="3" android:id="@id/car_name_zh" android:padding="5dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginBottom="10dp" android:singleLine="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

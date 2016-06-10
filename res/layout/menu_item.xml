@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+    <LinearLayout android:gravity="1" android:layout_gravity="1" android:orientation="0" style="@style/menu_layout1">
+        <RelativeLayout style="@style/menu_relayout">
+            <ImageView android:id="@id/menu_button" android:background="@drawable/grid_01_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+            <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:id="@id/menu_text" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_zhenduan" android:layout_below="@id/menu_button" android:layout_centerHorizontal="true" style="@style/menu_text" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

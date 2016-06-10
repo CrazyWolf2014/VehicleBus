@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="10dp" android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:orientation="0" android:id="@id/left_record" android:visibility="2" android:layout_width="-1" android:layout_height="-2">
+        <TextView android:id="@id/sendTime" android:layout_width="-2" android:layout_height="-2" android:text="时间" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/text_head" android:background="@drawable/text_head1" android:layout_width="40dp" android:layout_height="40dp" android:layout_below="@id/sendTime" />
+        <TextView android:id="@id/sendName" android:layout_width="60dp" android:layout_height="-2" android:text="dfdfdddddddddddd" android:singleLine="true" android:layout_below="@id/text_head" />
+        <TextView android:textColor="@color/black" android:id="@id/left_text" android:background="@drawable/record_bg" android:padding="15dp" android:layout_width="200dp" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="元征汽车服务好服务好元征汽车服务好元征汽车服务好元征汽车服务好
+元征汽车服务好元征汽车服务好元征汽车服务好" android:lines="4" android:layout_toRightOf="@id/sendName" android:layout_below="@id/sendTime" />
+        <ImageView android:id="@id/left_image" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_toRightOf="@id/sendName" android:layout_below="@id/sendTime" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="0" android:id="@id/right_record" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentRight="true">
+        <TextView android:id="@id/mysendTime" android:layout_width="-2" android:layout_height="-2" android:text="@string/buy1time" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/text_head1" android:background="@drawable/text_head" android:layout_width="40dp" android:layout_height="40dp" android:layout_below="@id/mysendTime" android:layout_alignParentRight="true" />
+        <TextView android:id="@id/myName" android:layout_width="60dp" android:layout_height="-2" android:text="dfdfdddddddddddd" android:singleLine="true" android:layout_below="@id/text_head1" android:layout_alignParentRight="true" />
+        <TextView android:textColor="@color/black" android:id="@id/right_text" android:background="@drawable/record_bg1" android:padding="15dp" android:layout_width="-2" android:layout_height="-2" android:text="嗯。hao" android:layout_toLeftOf="@id/myName" android:layout_below="@id/mysendTime" />
+        <ImageView android:id="@id/right_image" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_toLeftOf="@id/myName" android:layout_below="@id/mysendTime" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <com.ifoer.view.MenuHorizontalScrollView android:id="@id/scrollView" android:background="#00ffffff" android:scrollbars="0" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:orientation="0" android:id="@id/top" android:background="#00ffffff" android:layout_width="-1" android:layout_height="-1" />
+    </com.ifoer.view.MenuHorizontalScrollView>
+</RelativeLayout>

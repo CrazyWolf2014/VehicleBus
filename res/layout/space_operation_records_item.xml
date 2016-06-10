@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:paddingLeft="8dp" android:paddingRight="8dp" android:layout_width="-1" android:layout_height="-2" android:baselineAligned="false"
+    <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+        <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/softwareSer" android:layout_weight="2.0" />
+        <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/serialNo" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+        <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/buy1time" android:layout_weight="2.0" />
+        <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/time" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+        <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/address_text" android:layout_weight="2.0" />
+        <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/address" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+        <TextView android:textSize="16sp" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:text="@string/chexing" android:layout_weight="2.0" />
+        <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/chexing" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

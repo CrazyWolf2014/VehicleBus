@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:layout_width="-1" android:layout_height="45dp" layout="@layout/customer_managerment" />
+    <ScrollView android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="15dp">
+        <RelativeLayout android:paddingLeft="20dp" android:paddingRight="20dp" android:layout_width="-1" android:layout_height="-2"
+            <RelativeLayout android:id="@id/top" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textSize="20sp" android:textColor="@color/white" android:id="@id/register_CC" android:layout_width="-2" android:layout_height="-2" android:text="@string/register_CC" android:layout_centerVertical="true" />
+                <Button android:textColor="@color/white" android:id="@id/draft" android:background="@drawable/btn_confirm" android:layout_width="102dp" android:layout_height="38dp" android:text="@string/draft" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <EditText android:id="@id/first_name" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="5dp" android:hint="@string/client_name" android:singleLine="true" android:layout_below="@id/top" />
+            <EditText android:id="@id/last_name" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:visibility="2" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/last_name" android:singleLine="true" android:layout_below="@id/first_name" />
+            <EditText android:id="@id/phone_number" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/reg_name" android:singleLine="true" android:phoneNumber="true" android:layout_below="@id/first_name" android:inputType="3" />
+            <EditText android:id="@id/serial" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/serial_numbers" android:singleLine="true" android:maxLength="12" android:layout_below="@id/phone_number" android:inputType="2" />
+            <EditText android:id="@id/password" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/login_pwd" android:singleLine="true" android:layout_below="@id/serial" android:inputType="81" />
+            <EditText android:id="@id/maintenance_mileage" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/next_maintenance_mileage" android:singleLine="true" android:maxLength="9" android:layout_below="@id/password" android:inputType="2" />
+            <RelativeLayout android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/maintenance_mileage">
+                <Button android:textColor="@color/white" android:id="@id/Submit" android:background="@drawable/btn_confirm" android:layout_width="110dp" android:layout_height="38dp" android:layout_marginTop="10dp" android:text="@string/Submit" android:layout_alignParentRight="true" />
+                <Button android:textColor="@color/white" android:id="@id/add_draft" android:background="@drawable/btn_confirm" android:layout_width="110dp" android:layout_height="38dp" android:layout_marginTop="10dp" android:text="@string/add_draft" android:layout_alignParentLeft="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

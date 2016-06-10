@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_head" />
+    <include android:id="@id/pay_head" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/main_head" layout="@layout/pay_head" />
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/pay_head"
+        <LinearLayout android:gravity="10" android:orientation="0" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/white" android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:text="@string/shopping_name" android:layout_weight="1.0" />
+            <TextView android:textColor="@color/white" android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:text="@string/soVersions" android:layout_weight="1.0" />
+            <TextView android:textColor="@color/white" android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:text="@string/shopping_price" android:layout_weight="1.0" />
+            <TextView android:textColor="@color/white" android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:text="@string/softwareSer" android:layout_weight="1.0" />
+            <LinearLayout android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                <CheckBox android:layout_gravity="11" android:id="@id/checkbox" android:visibility="1" android:layout_width="-2" android:layout_height="-2" />
+            </LinearLayout>
+        </LinearLayout>
+        <ListView android:id="@id/listview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-2" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" />
+    </LinearLayout>
+</RelativeLayout>

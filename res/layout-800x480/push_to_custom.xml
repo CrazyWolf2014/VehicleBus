@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="18sp" android:gravity="11" android:id="@id/seri_num" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" android:layout_marginTop="12dp" android:text="963890003342" />
+    <CheckBox android:id="@id/checkBox" android:focusable="false" android:clickable="false" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentRight="true" />
+</RelativeLayout>

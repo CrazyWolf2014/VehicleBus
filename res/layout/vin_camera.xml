@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <SurfaceView android:id="@id/mezzofanti_preview_view" android:layout_width="-1" android:layout_height="-1" android:layout_centerInParent="true" />
+    <com.ifoer.expeditionphone.vin.CaptureLayout android:id="@id/mezzofanti_capturelayout_view" android:background="@color/transparent" android:layout_width="-1" android:layout_height="-1" android:layout_centerInParent="true" />
+    <TextView android:id="@id/field" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <LinearLayout android:id="@id/BottomLayout" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true">
+        <Button android:id="@id/cancel" android:background="@drawable/btn_style_alert_dialog_button" android:layout_width="-1" android:layout_height="-2" android:text="@string/exitBtn" android:layout_weight="1.0" />
+        <Button android:id="@id/capture" android:background="@drawable/btn_style_alert_dialog_button" android:layout_width="-1" android:layout_height="-2" android:text="@string/dataCollection" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ImageView android:id="@id/image" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:layout_below="@id/field" android:layout_alignParentLeft="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/vin_layout" android:background="@drawable/scan_letter_bg" android:layout_width="-1" android:layout_height="-2" android:layout_above="@id/BottomLayout" />
+</RelativeLayout>

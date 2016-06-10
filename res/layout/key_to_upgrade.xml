@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="-1" android:layout_height="-1">
+    <LinearLayout android:orientation="1" android:id="@id/software_top" android:background="@color/white" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentTop="true">
+        <RelativeLayout android:id="@id/pop_header" style="@style/top_title">
+            <Button android:textSize="18sp" android:textColor="@color/white" android:id="@id/back" android:background="@drawable/btn_back_selector" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <Button android:textSize="18sp" android:textColor="@color/white" android:id="@id/next" android:background="@drawable/download_selector" android:padding="5dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="25sp" android:textColor="@color/white" android:gravity="11" android:id="@id/upgrade_title" android:layout_width="-2" android:layout_height="-2" android:text="@string/a_key_to_upgrade" android:layout_toLeftOf="@id/next" android:layout_toRightOf="@id/back" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="10" android:background="@drawable/top_bg02" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="20sp" android:textColor="@color/keytoupgrade_text" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/download_software_name" android:layout_weight="1.0" />
+            <TextView android:textSize="20sp" android:textColor="@color/keytoupgrade_text" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/local_version" android:layout_weight="1.0" />
+            <TextView android:textSize="20sp" android:textColor="@color/keytoupgrade_text" android:gravity="1" android:id="@id/newVersion" android:layout_width="-1" android:layout_height="-2" android:text="@string/new_version" android:layout_weight="1.0" />
+            <CheckBox android:layout_gravity="11" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+            <CheckBox android:textSize="20sp" android:textColor="@color/white" android:id="@id/software_checkbox" android:nextFocusLeft="@id/back" android:nextFocusRight="@id/next" android:layout_width="-2" android:layout_height="-2" android:layout_margin="10dp" android:checked="false" android:button="@keyrecord/OWNER_USER" android:drawableRight="@drawable/upgrade_checkbox_selector" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="0" android:id="@id/apkupgrade" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/software_top">
+        <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="11" android:layout_gravity="10" android:layout_width="-1" android:layout_height="40dp" android:text="@string/APK" android:layout_weight="1.0" />
+        <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="11" android:id="@id/apkoldver" android:visibility="0" android:layout_width="-1" android:layout_height="40dp" android:text="@string/download_software_version" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/apknewVer" android:visibility="0" android:layout_width="-1" android:layout_height="40dp" android:layout_weight="1.0" />
+        <RelativeLayout android:gravity="11" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginLeft="30dp">
+            <Button android:textSize="18sp" android:textColor="@color/white" android:id="@id/apknext" android:background="@drawable/download02" android:padding="5dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="0" android:id="@id/downloadupgrade" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/apkupgrade">
+        <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="11" android:layout_gravity="10" android:layout_width="-1" android:layout_height="40dp" android:text="@string/downloadbin_upgrade" android:layout_weight="1.0" />
+        <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="11" android:id="@id/downloadoldVer" android:visibility="0" android:layout_width="-1" android:layout_height="40dp" android:text="@string/download_software_version" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/downloadnewver" android:visibility="0" android:layout_width="-1" android:layout_height="40dp" android:layout_weight="1.0" />
+        <RelativeLayout android:gravity="11" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginLeft="30dp">
+            <Button android:textSize="18sp" android:textColor="@color/white" android:id="@id/downloadnext" android:background="@drawable/download02" android:padding="5dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ListView android:id="@id/upgradeListview" android:background="@color/black" android:fadingEdge="0" android:nextFocusLeft="@id/back" android:nextFocusRight="@id/next" android:layout_width="-1" android:layout_height="-2" android:listSelector="@drawable/mgrid_selector" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/fengexian_hui" android:dividerHeight="0.5dp" android:layout_below="@id/downloadupgrade" />
+</RelativeLayout>

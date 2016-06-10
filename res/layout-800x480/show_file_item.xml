@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/top" android:paddingLeft="15dp" android:paddingTop="5dp" android:paddingRight="20dp" android:paddingBottom="5dp" android:layout_width="-1" android:layout_height="70dp">
+        <ImageView android:id="@id/item_line" android:background="@drawable/item_line" android:layout_width="-2" android:layout_height="50dp" />
+        <CheckBox android:id="@id/check" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="-2" android:layout_height="-2" android:button="@drawable/checkbox_bg" android:layout_alignParentRight="true" />
+        <RelativeLayout android:gravity="10" android:id="@id/top" android:layout_width="-1" android:layout_height="50dp" android:layout_toLeftOf="@id/check">
+            <TextView android:textSize="18sp" android:textColor="@color/hui" android:id="@id/liebiao" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/liebiao" />
+            <TextView android:textColor="@color/hui" android:id="@id/time" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="asdfg" android:layout_below="@id/liebiao" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageView android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/top" />
+</RelativeLayout>

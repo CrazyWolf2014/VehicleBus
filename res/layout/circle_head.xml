@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/cir_returnLay" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="50dp">
+        <ImageView android:id="@id/cir_return" android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/circle_return" android:scaleType="3" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <LinearLayout android:background="@drawable/left_line" android:layout_width="2dp" android:layout_height="60dp" android:layout_toRightOf="@id/cir_return" />
+        <TextView android:textSize="20sp" android:textColor="@color/white" android:id="@id/circle_title" android:layout_width="-2" android:layout_height="-2" android:text="@string/personal_circle" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="0" android:id="@id/circle_right_sub" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="4dp" android:layout_below="@id/cir_returnLay">
+        <ImageView android:id="@id/circle_right_dv" android:background="@drawable/linea" android:layout_width="2dp" android:layout_height="-2" android:layout_centerHorizontal="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <Button android:textSize="20sp" android:textColor="@color/lightgray" android:id="@id/quandata" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/quandata" android:layout_toRightOf="@id/circle_right_dv" />
+        <Button android:textSize="20sp" android:textColor="@color/lightgray" android:id="@id/liaotian" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/liaotian" android:layout_toLeftOf="@id/circle_right_dv" />
+    </RelativeLayout>
+    <ImageView android:id="@id/circle_line" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_below="@id/circle_right_sub" android:contentDescription="@keyrecord/OWNER_USER" />
+</RelativeLayout>

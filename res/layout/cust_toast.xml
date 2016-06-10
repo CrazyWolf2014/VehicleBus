@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="11" android:orientation="1" android:background="#7f000000" android:padding="15dp" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:layout_gravity="11" android:id="@id/sucess" android:layout_width="-2" android:layout_height="-2" android:text="@string/download_finish" android:drawableTop="@drawable/progress_success" android:drawablePadding="10dp" />
+</LinearLayout>

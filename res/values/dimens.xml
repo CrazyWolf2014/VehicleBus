@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="button_height">45.0dip</dimen>
+    <dimen name="bottom_tab_font_size">10.0dip</dimen>
+    <dimen name="bottom_tab_padding_up">2.0dip</dimen>
+    <dimen name="bottom_tab_padding_drawable">2.0dip</dimen>
+    <dimen name="switch_logo_bottom_padding">30.0sp</dimen>
+    <dimen name="slidingmenu_offset">250.0dip</dimen>
+    <dimen name="list_padding">10.0dip</dimen>
+    <dimen name="shadow_width">15.0dip</dimen>
+    <dimen name="softInfoTextSize">12.0dip</dimen>
+    <dimen name="itemSize">95.0dip</dimen>
+    <dimen name="area_margin">10.0dip</dimen>
+    <dimen name="area_margin_l">20.0dip</dimen>
+    <dimen name="area_padding">10.0dip</dimen>
+    <dimen name="title_text_size">19.0sp</dimen>
+    <dimen name="normal_text_size">16.0sp</dimen>
+    <dimen name="ic_tab_text_size">12.0sp</dimen>
+    <dimen name="item_padding">5.0dip</dimen>
+    <dimen name="item_padding2">4.0dip</dimen>
+    <dimen name="active_test_txtsize">11.0sp</dimen>
+    <dimen name="padding_space">5.0dip</dimen>
+    <dimen name="left_menu_size">10.0sp</dimen>
+    <dimen name="left_menu_hit_size">18.0sp</dimen>
+    <dimen name="left_menu_icon_width">27.0dip</dimen>
+    <dimen name="left_menu_land_open_width">350.0dip</dimen>
+    <dimen name="left_menu_port_open_width">135.0dip</dimen>
+    <dimen name="left_menu_icon_size">50.0dip</dimen>
+    <dimen name="left_menu_icon_height">53.0dip</dimen>
+    <dimen name="main_head_height">40.0dip</dimen>
+    <dimen name="height_base">30.0dip</dimen>
+    <dimen name="stream_switing_height_title">40.0dip</dimen>
+    <dimen name="top_title_height">60.0dip</dimen>
+</resources>

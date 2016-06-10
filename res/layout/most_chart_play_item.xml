@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="1" android:orientation="1" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="-1" android:layout_height="-1">
+    <com.ifoer.image.MostChartPlayGridView android:gravity="1" android:orientation="1" android:id="@id/most_chart_play_grid_view" android:layout_width="-1" android:layout_height="-1">
+        <RelativeLayout android:layout_width="-1" android:layout_height="-1"
+            <RelativeLayout android:id="@id/title_lay" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textSize="8sp" android:textColor="@color/white" android:ellipsize="4" android:gravity="11" android:id="@id/unit_txt" android:paddingLeft="10dp" android:paddingTop="2dp" android:paddingRight="5dp" android:paddingBottom="2dp" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="-2" android:layout_height="-2" android:text="" android:scrollHorizontally="true" android:singleLine="true" android:marqueeRepeatLimit="-1" />
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:gravity="11" android:id="@id/title" android:paddingLeft="5dp" android:paddingTop="2dp" android:paddingBottom="2dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:scrollHorizontally="true" android:layout_toRightOf="@id/unit_txt" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="0" android:background="@drawable/chart_bg" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/title_lay"
+                <LinearLayout android:orientation="0" android:id="@id/graphLayout" android:background="@drawable/chart_bg" android:layout_width="-1" android:layout_height="-1" /> />
+        </RelativeLayout>
+    </com.ifoer.image.MostChartPlayGridView> />

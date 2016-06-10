@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/transparent" android:layout_width="-1" android:layout_height="-1">
+    <ImageView android:id="@id/handleBackground" android:layout_width="-1" android:layout_height="-1" android:scaleType="7" android:contentDescription="@keyrecord/OWNER_USER" />
+    <LinearLayout android:orientation="0" android:id="@id/centerLayout" android:layout_width="200dp" android:layout_height="-1" android:baselineAligned="false" android:layout_centerHorizontal="true"
+        <LinearLayout android:gravity="1" android:id="@id/upLayout" android:visibility="0" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+            <ImageView android:focusable="false" android:clickable="false" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/sliding_opend" android:scaleType="1" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/line" android:background="@drawable/left_line" android:layout_width="2dp" android:layout_height="-1" />
+        <LinearLayout android:gravity="1" android:id="@id/downLayout" android:visibility="0" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+            <ImageView android:focusable="false" android:clickable="false" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/sliding_close" android:scaleType="1" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@id/leftLayout" android:layout_width="-1" android:layout_height="-1" android:layout_toLeftOf="@id/centerLayout" />
+    <LinearLayout android:id="@id/rightLayout" android:layout_width="-1" android:layout_height="-1" android:layout_toRightOf="@id/centerLayout" />
+</RelativeLayout>

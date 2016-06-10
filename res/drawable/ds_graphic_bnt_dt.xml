@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:textColor="@color/white" android:state_focused="true" android:drawable="@drawable/graphic_selected" />
+    <item android:textColor="@color/white" android:state_selected="true" android:drawable="@drawable/graphic_selected" />
+    <item android:textColor="@color/white" android:state_pressed="true" android:drawable="@drawable/graphic_selected" />
+    <item android:textColor="@color/black" android:drawable="@drawable/graphic_select" />
+</selector>

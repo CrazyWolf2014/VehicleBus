@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <ImageView android:id="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:src="@drawable/circle_return" />
+    <ScrollView android:id="@id/text" android:layout_width="-1" android:layout_height="-2" android:layout_above="@id/bottom" android:layout_below="@id/toright">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:layout_gravity="1" android:id="@id/texts" android:layout_width="-2" android:layout_height="-2" />
+            <ImageView android:id="@id/images" android:layout_width="-1" android:layout_height="-2" />
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout android:id="@id/bottom" android:layout_width="-2" android:layout_height="-2" android:layout_marginBottom="20dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/rename" android:background="@drawable/baogao" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <ImageView android:id="@id/del" android:background="@drawable/dels" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_toRightOf="@id/rename" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <ImageView android:id="@id/share" android:background="@drawable/mails" android:layout_width="35dp" android:layout_height="35dp" android:layout_marginLeft="40dp" android:layout_toRightOf="@id/del" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    </RelativeLayout>
+</RelativeLayout>

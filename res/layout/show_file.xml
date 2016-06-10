@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_head" />
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/main_head"
+        <RelativeLayout android:layout_width="-1" android:layout_height="-1"
+            <RelativeLayout android:id="@id/left1" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1">
+                <LinearLayout android:gravity="11" android:id="@id/top" android:layout_width="-1" android:layout_height="50dp">
+                    <RelativeLayout android:gravity="11" android:id="@id/guzhangma" android:layout_width="-2" android:layout_height="-1" android:layout_weight="1.0">
+                        <ImageView android:id="@id/gz1" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/guzhang1" />
+                        <TextView android:textColor="@color/hui1" android:id="@id/gztext" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/fault_code_name" android:layout_toRightOf="@id/gz1" />
+                    </RelativeLayout>
+                    <RelativeLayout android:gravity="11" android:id="@id/shujuliu" android:layout_width="-2" android:layout_height="-1" android:layout_weight="1.0" android:layout_toRightOf="@id/guzhangma">
+                        <ImageView android:id="@id/sh1" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/shuju1" />
+                        <TextView android:textColor="@color/hui1" android:id="@id/shtext" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/shtext" android:layout_toRightOf="@id/sh1" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <RelativeLayout android:id="@id/bottom" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="280dp" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_marginBottom="20dp" android:layout_alignParentBottom="true">
+                    <TextView android:gravity="1" android:id="@id/check_all" android:background="@drawable/check" android:layout_width="-2" android:layout_height="-2" android:text="@string/check_all" />
+                    <TextView android:gravity="1" android:id="@id/Invert" android:background="@drawable/check" android:layout_width="-2" android:layout_height="-2" android:text="@string/invert" android:layout_toRightOf="@id/check_all" />
+                    <TextView android:gravity="1" android:id="@id/del" android:background="@drawable/del1" android:layout_width="-2" android:layout_height="-2" android:text="@string/del" android:layout_alignParentRight="true" />
+                </RelativeLayout>
+                <ListView android:id="@id/view" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:listSelector="#00000000" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" android:layout_above="@id/bottom" android:layout_below="@id/top" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

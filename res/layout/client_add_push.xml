@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:layout_width="-1" android:layout_height="45dp" layout="@layout/customer_managerment" />
+    <ScrollView android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="15dp">
+        <RelativeLayout android:paddingLeft="20dp" android:paddingRight="20dp" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="16sp" android:gravity="10" android:id="@id/messtype" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:text="@string/sale_info" android:singleLine="true" />
+            <TextView android:textSize="16sp" android:gravity="10" android:id="@id/push_object" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/click_to_select" android:singleLine="true" android:layout_below="@id/messtype" />
+            <EditText android:id="@id/first_name" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/push" android:singleLine="true" android:layout_below="@id/push_object" />
+            <EditText android:id="@id/title" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/title" android:singleLine="true" android:layout_below="@id/first_name" />
+            <EditText android:textSize="16sp" android:id="@id/specification" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:minHeight="80dp" android:hint="@string/specifications" android:layout_below="@id/title" />
+            <RelativeLayout android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/specification">
+                <Button android:textColor="@color/white" android:id="@id/Submit" android:background="@drawable/btn_confirm" android:layout_width="110dp" android:layout_height="38dp" android:layout_marginTop="10dp" android:text="@string/push_send" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

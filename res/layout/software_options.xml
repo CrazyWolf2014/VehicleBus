@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/black" android:layout_width="-1" android:layout_height="-1">
+    <LinearLayout android:orientation="1" android:id="@id/software_top" android:background="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentTop="true">
+        <RelativeLayout android:id="@id/pop_header" android:background="@drawable/top_bg" android:layout_width="-1" android:layout_height="40dp">
+            <Button android:textColor="@color/white" android:id="@id/back" android:background="@drawable/del1" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/bluetooth_back" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <Button android:textColor="@color/white" android:id="@id/next" android:background="@drawable/del1" android:padding="5dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:text="@string/download_software_btn" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:text="@string/softselect" android:layout_toLeftOf="@id/next" android:layout_toRightOf="@id/back" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/white" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/download_software_name" android:layout_weight="1.0" />
+            <TextView android:textColor="@color/white" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/soVersions" android:layout_weight="1.0" />
+            <TextView android:textColor="@color/white" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/softwareSer" android:layout_weight="1.0" />
+            <CheckBox android:layout_gravity="11" android:visibility="1" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox android:textSize="18sp" android:textColor="@color/white" android:id="@id/software_checkbox" android:layout_width="-2" android:layout_height="40dp" android:layout_margin="10dp" android:checked="true" android:button="@keyrecord/OWNER_USER" android:text="@string/check_all" android:drawableRight="@drawable/softwarecheckbox_selector" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <ListView android:id="@id/softwareListview" android:background="@color/black" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-2" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@color/white" android:dividerHeight="0.5dp" android:layout_above="@id/software_checkbox" android:layout_below="@id/software_top" />
+</RelativeLayout>

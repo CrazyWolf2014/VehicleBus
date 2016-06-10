@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:gravity="1" android:id="@id/lay_main" android:paddingBottom="20dp" android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="30dp" android:layout_marginTop="10dp" android:layout_marginRight="30dp" android:layout_centerInParent="true">
+        <ScrollView android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="10dp">
+            <RelativeLayout android:layout_width="-1" android:layout_height="-1"
+                <RelativeLayout android:id="@id/content_lay1" android:background="@drawable/item_bg" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="15dp" android:layout_centerHorizontal="true"
+                    <RelativeLayout android:id="@id/port_lay" android:layout_width="-1" android:layout_height="40dp">
+                        <ImageView android:id="@id/port_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" android:src="@drawable/port_sg" android:layout_centerVertical="true" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/quick_starts" android:layout_toRightOf="@id/port_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/manual" android:background="@drawable/item_bg" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/content_lay1" android:layout_centerHorizontal="true"
+                    <RelativeLayout android:id="@id/port_lay" android:layout_width="-1" android:layout_height="40dp">
+                        <ImageView android:id="@id/port_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" android:src="@drawable/user_manual" android:layout_centerVertical="true" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/user_guide" android:layout_toRightOf="@id/port_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/more_rulesss" android:background="@drawable/item_bg" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/manual" android:layout_centerHorizontal="true"
+                    <RelativeLayout android:id="@id/port_lay" android:layout_width="-1" android:layout_height="40dp">
+                        <ImageView android:id="@id/more_rules_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" android:src="@drawable/more_rules" android:layout_centerVertical="true" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/more_rules_btn" android:layout_toRightOf="@id/more_rules_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/rule_statment" android:background="@drawable/item_bg" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/more_rulesss" android:layout_centerHorizontal="true"
+                    <RelativeLayout android:id="@id/more_statment" android:layout_width="-1" android:layout_height="40dp">
+                        <ImageView android:id="@id/statment_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" android:src="@drawable/more_rules" android:layout_centerVertical="true" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/statement" android:layout_toRightOf="@id/statment_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/download" android:background="@drawable/item_bg" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/rule_statment" android:layout_centerHorizontal="true"
+                    <RelativeLayout android:id="@id/port_lay" android:layout_width="-1" android:layout_height="40dp">
+                        <ImageView android:id="@id/port_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" android:src="@drawable/download_manual" android:layout_centerVertical="true" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="15dp" android:text="@string/specification" android:layout_toRightOf="@id/port_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/check_version" android:background="@drawable/item_bg" android:paddingLeft="15dp" android:layout_width="-1" android:layout_height="40dp" android:layout_marginTop="10dp" android:layout_below="@id/download" android:layout_centerHorizontal="true">
+                    <ImageView android:id="@id/about_sg" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/version_update" android:layout_centerVertical="true" />
+                    <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/check_version" android:layout_toRightOf="@id/about_sg" android:layout_centerVertical="true" />
+                    <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/about" android:background="@drawable/item_bg" android:paddingLeft="15dp" android:layout_width="-1" android:layout_height="40dp" android:layout_marginTop="10dp" android:layout_below="@id/check_version" android:layout_centerHorizontal="true">
+                    <ImageView android:id="@id/about_sg" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/about" android:layout_centerVertical="true" />
+                    <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/more_about" android:layout_toRightOf="@id/about_sg" android:layout_centerVertical="true" />
+                    <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

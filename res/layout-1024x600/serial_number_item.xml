@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+    <LinearLayout android:gravity="10" android:id="@id/info" android:layout_width="-1" android:layout_height="50dp">
+        <TextView android:textSize="18sp" android:textColor="@color/hui" android:id="@id/serial_number_name" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" />
+    </LinearLayout>
+</LinearLayout>

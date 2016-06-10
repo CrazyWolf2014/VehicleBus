@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <LinearLayout android:orientation="1" android:background="@drawable/bg_radius" android:padding="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_centerInParent="true">
+        <TextView android:textSize="15sp" android:textColor="@color/red" android:layout_width="-2" android:layout_height="-2" android:text="@string/main_notic_text" />
+        <LinearLayout android:orientation="0" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_marginTop="10dp" />
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="12sp" android:textColor="@color/lightgray" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/main_notic_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_marginTop="10dp" />
+        <RelativeLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+            <CheckBox android:id="@id/main_selected" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" />
+            <Button android:textColor="@color/white" android:id="@id/readbtn" android:background="@drawable/read_btn" android:layout_width="-2" android:layout_height="-2" android:text="@string/main_notic_read" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textColor="@color/lightgray" android:id="@id/text" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/main_notic" android:layout_toLeftOf="@id/readbtn" android:layout_toRightOf="@id/main_selected" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

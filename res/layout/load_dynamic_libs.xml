@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="11" android:layout_gravity="11" android:background="@drawable/load_dynamic_bg" android:padding="5dp" android:layout_width="-1" android:layout_height="-1">
+    <Button android:textSize="16sp" android:textColor="@color/white" android:id="@id/checkVersion" android:background="@drawable/top_bg02_selector" android:visibility="2" android:nextFocusDown="@id/listview" android:layout_width="-1" android:layout_height="-2" android:minHeight="30dp" android:text="@string/check_latest_version" android:layout_alignParentBottom="true" />
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1" android:layout_above="@id/checkVersion">
+        <RelativeLayout android:id="@id/pop_header" android:background="@drawable/top_bg02" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/load_dynamic" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/selectCarVersions" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="@style/laod_title" />
+            <ImageView android:id="@id/img_close" android:paddingRight="10dp" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/main_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="10" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-2" android:minHeight="53dp">
+            <TextView android:textColor="@color/black" android:gravity="1" android:id="@id/loadTitle" android:layout_width="-1" android:layout_height="-2" android:minWidth="80dp" android:text="@string/carType" android:layout_weight="2.0" style="@style/laod_version" />
+            <TextView android:textColor="@color/black" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:minWidth="80dp" android:text="@string/soVersions" android:layout_weight="2.0" style="@style/laod_version" />
+            <LinearLayout android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:layout_weight="3.0">
+                <Button android:textSize="20sp" android:textColor="@color/white" android:gravity="1" android:background="@drawable/red_btn_bg" android:visibility="1" android:layout_width="-2" android:layout_height="-2" android:minWidth="80dp" android:text="@string/del" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:background="@drawable/fengexian_hui" android:layout_width="-1" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+        <ListView android:id="@id/listview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-2" android:listSelector="@drawable/mgrid_selector" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/fengexian_hui" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/black" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/main_head" android:background="@drawable/top_bg" android:layout_width="-1" android:layout_height="40dp">
+        <ImageView android:id="@id/flagImage" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:src="@drawable/top_flag" android:scaleType="3" android:layout_centerInParent="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/login_content" android:paddingLeft="30dp" android:paddingRight="30dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/main_head"
+        <RelativeLayout android:id="@id/login_relaout" android:layout_width="-1" android:layout_height="-2"
+            <RelativeLayout android:id="@id/login_layout" android:paddingTop="5dp" android:layout_width="-1" android:layout_height="-2" android:layout_centerHorizontal="true">
+                <TextView android:textSize="30sp" android:textColor="@color/red" android:id="@id/text_login" android:layout_width="-2" android:layout_height="-2" android:text="@string/text_login" />
+                <EditText android:id="@id/name" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="5dp" android:hint="@string/login_name" android:singleLine="true" android:layout_below="@id/text_login" />
+                <EditText android:id="@id/password" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="15dp" android:hint="@string/login_pwd" android:singleLine="true" android:maxLength="20" android:layout_below="@id/name" />
+                <RelativeLayout android:id="@id/tishi" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/password"
+                    <RelativeLayout android:id="@id/pwdresetLayout" android:layout_width="-2" android:layout_height="-2" android:minHeight="40dp" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                        <TextView android:textColor="@color/red" android:id="@id/pwdreset" android:layout_width="-2" android:layout_height="-2" android:text="@string/pwdreset" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-2" android:layout_toLeftOf="@id/pwdresetLayout" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+                        <CheckBox android:textColor="@color/lightgray" android:id="@id/check" android:layout_width="-1" android:layout_height="-2" android:layout_marginRight="5dp" android:text="@string/login_check" android:layout_alignParentLeft="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <LinearLayout android:gravity="10" android:layout_gravity="10" android:layout_width="-2" android:layout_height="-2" android:layout_below="@id/tishi" android:layout_centerHorizontal="true">
+                    <Button android:textColor="@color/white" android:layout_gravity="1" android:id="@id/login_btn" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:text="@string/login_btn" android:layout_weight="1.0" />
+                    <Button android:textColor="@color/white" android:layout_gravity="1" android:id="@id/unlogin_btn" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:text="@string/text_regiser" android:layout_weight="1.0" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/login_line" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_marginTop="10dp" android:layout_below="@id/login_relaout" android:contentDescription="@keyrecord/OWNER_USER" />
+        <RelativeLayout android:id="@id/zhuce" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/login_line">
+            <LinearLayout android:orientation="1" android:id="@id/login_left" android:paddingLeft="20dp" android:paddingTop="20dp" android:paddingRight="20dp" android:layout_width="-1" android:layout_height="-2" android:layout_centerHorizontal="true"
+                <LinearLayout android:orientation="0" android:id="@id/text_zhuce" android:layout_width="-1" android:layout_height="-2"
+                    <LinearLayout android:gravity="5" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                        <ImageView android:id="@id/toright" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/circle_return1" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:textSize="15sp" android:textColor="@color/lightgray" android:id="@id/text_tishi_1" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/text_tishi_1" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <ViewFlipper android:id="@id/guide_view" android:background="#ff000000" android:visibility="2" android:persistentDrawingCache="1" android:layout_width="-1" android:layout_height="-1" android:inAnimation="@anim/left_in" android:outAnimation="@anim/left_out" android:flipInterval="1000">
+        <LinearLayout android:orientation="1" android:id="@id/guidepage1" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage1" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_1" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage2" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage2" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage3" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage3" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_3" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage4" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage4" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_4" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage5" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage5" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_5" />
+        </LinearLayout>
+    </ViewFlipper>
+</RelativeLayout>

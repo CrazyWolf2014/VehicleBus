@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:layout_width="-1" android:layout_height="0dp" android:layout_weight="1.0">
+        <ImageView android:id="@id/image" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentLeft="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <TextView android:id="@id/field" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/vin_layout" android:background="@drawable/scan_letter_bg" android:layout_width="-1" android:layout_height="-2" />
+    <LinearLayout android:id="@id/BottomLayout" android:layout_width="-1" android:layout_height="-2">
+        <Button android:id="@id/cancel" android:layout_width="-1" android:layout_height="-2" android:text="@string/cancel" android:layout_weight="1.0" />
+        <Button android:id="@id/capture" android:layout_width="-1" android:layout_height="-2" android:text="@string/enter" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

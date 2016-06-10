@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="11" android:background="@drawable/bg_radius" android:paddingTop="5dp" android:paddingBottom="25dp" android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/layout_top" android:layout_width="-1" android:layout_height="-2">
+        <ImageView android:layout_gravity="5" android:id="@id/repu_close" android:layout_width="30dp" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/login_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/login_pop_success_text" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="1" android:id="@id/line1" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_marginTop="10dp" android:layout_below="@id/layout_top" />
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_below="@id/line1">
+        <TextView android:textSize="16sp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="20dp" android:text="@string/login_pop_success_content" />
+        <LinearLayout android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="20dp">
+            <Button android:textColor="@color/white" android:id="@id/regs" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:text="@string/port_affirm" android:layout_weight="1.0" />
+            <Button android:textColor="@color/white" android:id="@id/noRgs" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:text="@string/no_connector" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

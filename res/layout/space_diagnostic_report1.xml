@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentTop="true" layout="@layout/main_header_record" />
+    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/switch_button" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="3dp" android:layout_below="@id/main_head">
+        <Button android:textColor="#ffffff" android:id="@id/bgtext" android:background="@drawable/btn_switch_selevrot" android:nextFocusLeft="@id/diagnosis_playback" android:nextFocusRight="@id/diagnosis_playback" android:nextFocusUp="@id/backSuperior" android:nextFocusDown="@id/pngListview" android:layout_width="-2" android:layout_height="26dp" android:text="@string/bgtext" android:layout_weight="1.0" />
+        <Button android:textColor="#ffffff" android:id="@id/diagnosis_playback" android:background="@drawable/btn_switch_selevrot" android:nextFocusLeft="@id/bgtext" android:nextFocusRight="@id/bgtext" android:nextFocusUp="@id/backSuperior" android:nextFocusDown="@id/pngListview" android:layout_width="-2" android:layout_height="26dp" android:text="@string/diagnosis_playback" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textStyle="1" android:textColor="@color/space_yello_color" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:text="@string/bgtext" />
+            <ListView android:id="@id/pngListview" android:fadingEdge="0" android:nextFocusLeft="@id/bgtext" android:nextFocusRight="@id/diagnosis_playback" android:nextFocusUp="@id/bgtext" android:nextFocusDown="@id/backSuperior" android:layout_width="-1" android:layout_height="-1" android:listSelector="@drawable/mgrid_selector" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@color/white" android:dividerHeight="0.5dp" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:visibility="2" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textStyle="1" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:text="@string/diagnosis_playback" />
+            <ListView android:id="@id/recordListview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/hengxian" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

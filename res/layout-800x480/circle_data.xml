@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_head" />
+    <include android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head" layout="@layout/circle_head" />
+    <RelativeLayout android:id="@id/left" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/top"
+        <RelativeLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1"
+            <RelativeLayout android:id="@id/right_info" android:layout_width="-1" android:layout_height="50dp">
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/quanmember" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <com.ifoer.view.HorizontialListView android:id="@id/member_listview" android:background="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="50dp" />
+            <ImageView android:id="@id/fengexian2" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="80dp" android:layout_below="@id/right_info" />
+            <RelativeLayout android:id="@id/right_info1" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian2">
+                <TextView android:textColor="@color/white" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_data" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView android:id="@id/fengexian3" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info1" />
+            <RelativeLayout android:id="@id/right_info2" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian3">
+                <TextView android:textColor="@color/white" android:id="@id/name" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_name" android:layout_centerVertical="true" />
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="路虎天地" android:layout_toRightOf="@id/name" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView android:id="@id/fengexian4" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info2" />
+            <RelativeLayout android:id="@id/right_info3" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian4">
+                <TextView android:textColor="@color/white" android:id="@id/creator" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_hoster" android:layout_centerVertical="true" />
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="我有路虎" android:layout_toRightOf="@id/creator" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView android:id="@id/fengexian5" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info3" />
+            <RelativeLayout android:id="@id/right_info4" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian5">
+                <TextView android:textColor="@color/white" android:id="@id/condition" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_condition" android:layout_centerVertical="true" />
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="需创建者通过验证" android:layout_toRightOf="@id/condition" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <ImageView android:id="@id/fengexian6" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

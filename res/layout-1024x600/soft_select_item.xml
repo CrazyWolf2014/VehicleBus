@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-2">
+    <LinearLayout android:orientation="0" android:id="@id/content" android:layout_width="-1" android:layout_height="-2">
+        <CheckBox android:layout_gravity="10" android:id="@id/checkBox" android:focusable="false" android:clickable="false" android:layout_width="-2" android:layout_height="-2" android:button="@drawable/checkbox_selector" />
+        <LinearLayout android:gravity="11" android:background="@drawable/gridview_bg" android:padding="5dp" android:layout_width="80dp" android:layout_height="80dp" android:layout_marginLeft="5dp">
+            <com.ifoer.image.AsyncImageView android:id="@id/carFlag" android:layout_width="-2" android:layout_height="-2" />
+            <TextView android:textAppearance="?unknown_attr_ref: 1010040" android:textSize="16sp" android:textStyle="1" android:textColor="#3f3f3f" android:gravity="1" android:id="@id/CarNameText" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:maxLines="2" />
+        </LinearLayout>
+        <LinearLayout android:gravity="10" android:layout_gravity="10" android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="5dp"
+            <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_car_type" />
+                <TextView android:textColor="@color/white" android:id="@id/carXi" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="SMART" />
+            </LinearLayout>
+            <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_car_version" />
+                <TextView android:textColor="@color/white" android:id="@id/carVer" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="17.27" />
+            </LinearLayout>
+            <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_car_price" />
+                <TextView android:textColor="@color/red" android:id="@id/softPrice" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="120.00" />
+                <TextView android:textColor="@color/white" android:id="@id/priceType" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/order_rmb" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:background="@drawable/hengxian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/content" />
+</RelativeLayout>

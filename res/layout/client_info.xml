@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2"
+    <LinearLayout android:orientation="0" android:paddingTop="7dp" android:paddingBottom="7dp" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+        <ImageView android:layout_gravity="10" android:id="@id/client_soft_name" android:background="@drawable/item_line" android:layout_width="-2" android:layout_height="40dp" android:layout_marginLeft="10dp" android:layout_marginTop="2dp" android:contentDescription="@string/client_soft_name" />
+        <LinearLayout android:orientation="1" android:layout_width="-2" android:layout_height="-2">
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_gravity="10" android:id="@id/customer_name" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="junjun" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:gravity="11" android:layout_gravity="10" android:id="@id/serialNo" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="963890003342" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

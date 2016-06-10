@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/top" android:layout_width="-1" android:layout_height="40dp">
+        <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="40dp">
+            <TextView android:textSize="12sp" android:textColor="@color/hui1" android:id="@id/time" android:layout_width="-1" android:layout_height="-2" android:text="@string/diagnose_info_time" android:layout_weight="1.0" android:layout_alignParentLeft="true" />
+            <TextView android:textSize="12sp" android:textColor="@color/hui1" android:id="@id/address" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="20dp" android:text="2013-01-02" android:layout_weight="1.0" android:layout_toLeftOf="@id/chexing" android:layout_toRightOf="@id/time" />
+            <TextView android:textSize="12sp" android:textColor="@color/hui1" android:gravity="1" android:id="@id/chexing" android:layout_width="-1" android:layout_height="-2" android:text="@string/diagnose_info_chexing" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/top" />
+</RelativeLayout>

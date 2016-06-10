@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false">
+    <item android:duration="200" android:drawable="@drawable/loading_icon1" />
+    <item android:duration="200" android:drawable="@drawable/loading_icon2" />
+    <item android:duration="200" android:drawable="@drawable/loading_icon3" />
+    <item android:duration="200" android:drawable="@drawable/loading_icon4" />
+    <item android:duration="200" android:drawable="@drawable/loading_icon5" />
+    <item android:duration="200" android:drawable="@drawable/loading_icon6" />
+</animation-list>

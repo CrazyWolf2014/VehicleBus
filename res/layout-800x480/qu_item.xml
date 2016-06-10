@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-2">
+    <TextView android:textSize="20sp" android:textColor="@color/white" android:id="@id/quitem" android:layout_width="-1" android:layout_height="-2" />
+</RelativeLayout>

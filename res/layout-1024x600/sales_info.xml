@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include layout="@layout/push_head" />
+    <RelativeLayout android:layout_width="-1" android:layout_height="-2">
+        <TextView android:textSize="18sp" android:id="@id/mess_title" android:layout_width="-2" android:layout_height="-2" android:text="信息标题sssssssssss" />
+        <TextView android:textSize="12sp" android:id="@id/push_time" android:layout_width="-2" android:layout_height="-2" android:text="时间" android:layout_below="@id/mess_title" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <TextView android:textSize="16sp" android:id="@id/detail_info" android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="20dp" android:text="信息详情" />
+</LinearLayout>

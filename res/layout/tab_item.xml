@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="11" android:layout_width="-1" android:layout_height="-1">
+    <ImageView android:id="@id/tabItemIcon" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    <ImageView android:id="@id/tabItemLine" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    <TextView android:textSize="18sp" android:textColor="@color/white" android:gravity="11" android:id="@id/tabItemLabel" android:layout_width="240dp" android:layout_height="93dp" android:text="@string/add_customer" android:layout_centerInParent="true" />
+</RelativeLayout>

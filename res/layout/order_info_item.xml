@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+    <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2"
+        <LinearLayout android:layout_gravity="11" android:orientation="1" android:background="@drawable/gridview_bg" android:padding="2dp" android:layout_width="80dp" android:layout_height="80dp">
+            <com.ifoer.image.AsyncImageView android:id="@id/softLogo" android:visibility="2" android:layout_width="-1" android:layout_height="-1" android:adjustViewBounds="true" />
+            <TextView android:textAppearance="?unknown_attr_ref: 1010040" android:textSize="18sp" android:textStyle="1" android:textColor="#3f3f3f" android:gravity="11" android:layout_gravity="10" android:id="@id/CarNameText" android:layout_width="-1" android:layout_height="-1" android:maxLines="2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="5dp"
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_car_type" />
+                <TextView android:textColor="@color/white" android:id="@id/Chexi" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="2dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_car_version" />
+                <TextView android:textColor="@color/white" android:id="@id/orderVer" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="2dp" />
+            </LinearLayout>
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_car_price" />
+                <TextView android:textColor="@color/red" android:id="@id/orderPrice" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="2dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

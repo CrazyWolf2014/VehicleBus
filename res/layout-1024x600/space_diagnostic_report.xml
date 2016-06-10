@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="45dp" layout="@layout/myspace_top" />
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textStyle="1" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:text="@string/bgtext" />
+            <ListView android:id="@id/pngListview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/hengxian" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textStyle="1" android:textColor="@color/space_yello_color" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="8dp" android:layout_marginBottom="8dp" android:text="@string/diagnosis_playback" />
+            <ListView android:id="@id/recordListview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/hengxian" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

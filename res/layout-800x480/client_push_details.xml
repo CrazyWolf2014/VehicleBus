@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:layout_width="-1" android:layout_height="45dp" layout="@layout/customer_managerment" />
+    <LinearLayout android:gravity="10" android:orientation="0" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp">
+        <ImageView android:id="@id/back" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/circle_return" />
+        <Button android:textSize="14sp" android:textColor="@color/white" android:gravity="11" android:id="@id/resolvedFlag" android:background="@keyrecord/OWNER_USER" android:focusable="false" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" />
+    </LinearLayout>
+    <LinearLayout android:gravity="11" android:paddingTop="5dp" android:paddingBottom="5dp" android:layout_width="-1" android:layout_height="-2">
+        <Button android:textSize="15sp" android:textColor="@color/black" android:id="@id/faultCodeBtn" android:background="@drawable/switch_off01" android:layout_width="-2" android:layout_height="-2" android:text="@string/fault_code_name" />
+        <Button android:textSize="15sp" android:textColor="@color/black" android:id="@id/streamBtn" android:background="@drawable/switch_on01" android:layout_width="-2" android:layout_height="-2" android:text="@string/shtext" />
+    </LinearLayout>
+    <LinearLayout android:orientation="1" android:id="@id/faultCodeView" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp"
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:id="@id/title" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" />
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/carType" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:layout_weight="1.0" />
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/version" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:layout_weight="1.0" />
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/language" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:layout_weight="1.0" />
+            </LinearLayout>
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/time" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" />
+        </LinearLayout>
+        <RelativeLayout android:layout_width="-1" android:layout_height="-1">
+            <LinearLayout android:orientation="0" android:id="@id/title1" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                <TextView android:textSize="20sp" android:textColor="@color/jinhuang" android:gravity="13" android:layout_gravity="10" android:id="@id/oneText" android:focusable="true" android:layout_width="0dp" android:layout_height="-2" android:text="@string/fault_code_name" android:singleLine="true" android:layout_weight="1.0" />
+                <TextView android:textSize="20sp" android:textColor="@color/jinhuang" android:gravity="11" android:layout_gravity="10" android:id="@id/twoText" android:focusable="true" android:layout_width="0dp" android:layout_height="-2" android:text="@string/fault_code_dec" android:singleLine="true" android:layout_weight="2.0" />
+                <TextView android:textSize="20sp" android:textColor="@color/jinhuang" android:gravity="11" android:layout_gravity="10" android:id="@id/threeText" android:focusable="true" android:layout_width="0dp" android:layout_height="-2" android:text="@string/download_software_condition" android:singleLine="true" android:layout_weight="1.0" />
+            </LinearLayout>
+            <ImageView android:id="@id/fengexians" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/title1" android:contentDescription="@keyrecord/OWNER_USER" />
+            <RelativeLayout android:id="@id/list_view" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/fengexians">
+                <ListView android:id="@id/view" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="1" android:id="@id/streamView" android:paddingLeft="10dp" android:paddingRight="10dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp"
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/carSpeed" />
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:id="@id/carSpeed" android:layout_width="-2" android:layout_height="-2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/rotateSpeed" />
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:id="@id/rotateSpeed" android:layout_width="-2" android:layout_height="-2" />
+        </LinearLayout>
+        <RelativeLayout android:layout_width="-1" android:layout_height="-1">
+            <LinearLayout android:orientation="0" android:id="@id/stream_title1" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+                <TextView android:textSize="20sp" android:textColor="@color/jinhuang" android:gravity="13" android:layout_gravity="10" android:id="@id/streamOneText" android:focusable="true" android:layout_width="0dp" android:layout_height="-2" android:text="@string/oneText" android:singleLine="true" android:layout_weight="1.0" />
+                <TextView android:textSize="20sp" android:textColor="@color/jinhuang" android:gravity="11" android:layout_gravity="10" android:id="@id/streamTwoText" android:focusable="true" android:layout_width="0dp" android:layout_height="-2" android:text="@string/twoText" android:singleLine="true" android:layout_weight="2.0" />
+                <TextView android:textSize="20sp" android:textColor="@color/jinhuang" android:gravity="11" android:layout_gravity="10" android:id="@id/streamThreeText" android:focusable="true" android:layout_width="0dp" android:layout_height="-2" android:text="@string/threeText" android:singleLine="true" android:layout_weight="1.0" />
+            </LinearLayout>
+            <ImageView android:id="@id/stream_fengexians" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/stream_title1" android:contentDescription="@keyrecord/OWNER_USER" />
+            <RelativeLayout android:id="@id/stream_list_view" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/stream_fengexians">
+                <ListView android:id="@id/streamListview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

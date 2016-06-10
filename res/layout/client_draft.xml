@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_marginBottom="10sp">
+        <ImageView android:id="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:src="@drawable/circle_return" />
+        <TextView android:textSize="18sp" android:layout_width="-2" android:layout_height="-2" android:text="@string/draft" android:layout_centerInParent="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ListView android:id="@id/listview" android:layout_width="-1" android:layout_height="-2" android:listSelector="#00000000" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/hengxian" />
+</LinearLayout>

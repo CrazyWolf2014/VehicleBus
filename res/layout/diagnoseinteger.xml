@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="1" android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="20sp" android:id="@id/title" android:layout_width="-2" android:layout_height="-2" android:text="@string/diagnose_title" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="30sp" android:id="@id/context" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/diagnose_context" android:layout_below="@id/title" android:layout_centerHorizontal="true" />
+    <EditText android:textSize="30sp" android:id="@id/info" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:minHeight="40dp" android:singleLine="true" android:layout_below="@id/context" android:inputType="2" />
+</RelativeLayout>

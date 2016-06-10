@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:"http://schemas.android.com/apk/res/android" android:versionCode="59" android:versionName="1.19.000" android:installLocation="internalOnly" package="com.ifoer.expedition.crp229">
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="10" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <application android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:name="com.ifoer.image.GDApplication" android:allowBackup="true">
+        <activity android:theme="@*android:style/Theme.NoTitleBar" android:name="com.ifoer.pro.expeditionphone.WelcomeActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" android:windowSoftInputMode="20">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.ifoer.pro.util.BroadIntent">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/app_name" android:name="com.ifoer.pro.util.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@*android:style/Theme.Black.NoTitleBar" android:name="com.ifoer.pro.expeditionphone.GuideActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.pro.expeditionphone.MainMenuActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" android:windowSoftInputMode="21" />
+        <activity android:theme="@style/AppTheme" android:name="com.ifoer.pro.expeditionphone.MainActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" android:windowSoftInputMode="21" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.CarDiagnoseActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.CarDiagnoseActivityTwo" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.ActiveTestActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.StreamSelectActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.StreamSelectActivityTwo" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.DataStreamActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeFrozenActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.VWDataStreamActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.AgingWindowActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.DataStreamItemActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.SpecialFunctionActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeByIdActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeByFrozenActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="org.vudroid.pdfdroid.PdfViewerActivity" android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:mimeType="application/pdf" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeByCombineActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeExByCombineActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeFrozenByCombineActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeFrozenExByCombineActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.FaultCodeByLoopModeActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:label="ShowWaitMessageBox" android:name="com.ifoer.expedition.BluetoothChat.ShowNoWaiteMessageBox" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.ShowProgressBarActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.CombinationActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.CombinationTwoActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expedition.BluetoothChat.DeviceListActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expedition.BluetoothChat.DataStreamSelectActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.MostChartPlayActivity" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.DataValueShowActivity" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.SerialNumberActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.CircleActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.CircleRecordActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.Tab01Activity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.Tab02Activity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.ShowFileActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.GetPGS" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.ShowImageActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DiagnosisdatabaseActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.InformationInfoActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DiagnoseActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DiagnoseLogActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.YuanzhengInformationActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.yuanzhengInfoActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.LoginActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.PersonDataActivty" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.CircleDataActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.CirclePepActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.CircleAddActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.UserActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.MoreDataActivty" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.PortActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.ModiPassWordActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.FindPasswordQuestionActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.ModiQuestionActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.RegActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.RegActivity2" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.client.NotificationSettingsActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.NotificationActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.InvoiceInformationActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.MoreActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.ShowFileInfoActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.SoftwareOptionsActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.DownloadSoftwareActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.DownloadBinActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.LoadDynamicLibsActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.DownloadUpdateActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.FindPwdActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.expeditionphone.KeyToUpgradeActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.pro.expeditionphone.KeyToUpgradeActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DownloadAllSoftwareActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DownloadFragment" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SoftInfoActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SoftOrderActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SoftOrderInfoActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.ESSoftOrderInfoActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SoftShoppCarActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SoftPackActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SoftSelectActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.BankRemittanceActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.NetworkBankTransferAccounts" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.OfflinePaymentActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DiagnosticReportLayout" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SpaceDiagnosticReportLayout" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.OperationRecordsLayout" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SpaceOperationRecordsLayout" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.SpaceOrderLayout" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.MakeBillActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.alipay.android.appDemo4.AlixDemo" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.paypal.android.MEP.PayPalActivity" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" />
+        <activity android:theme="@*android:style/Theme.Translucent.NoTitleBar" android:name="com.ifoer.expeditionphone.P_DFScanActivity" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DiagnoseReportActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.DiagnoseDetailActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.SelectPushObjectActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.CombineChartPlayActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expedition.BluetoothChat.DataStreamChartTabActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.LoginActivity2" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.RegisterIfProt" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.RegisterProt" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar" android:name="com.ifoer.expeditionphone.SpaceDataRecord" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.cnmobi.im.ImMainActivity" android:launchMode="singleTop" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.cnmobi.im.FirstActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.MessageActivity" android:screenOrientation="landscape" android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.cnmobi.im.FriendActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.CircleActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.MineActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.ChatWindowsActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" android:windowSoftInputMode="12" />
+        <activity android:name="com.cnmobi.im.ChatActivity" android:screenOrientation="landscape" android:windowSoftInputMode="2" />
+        <activity android:name="com.cnmobi.im.folder.FolderActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.AddChatRoomActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.ChatRoomWindowsActivity" android:screenOrientation="landscape" android:windowSoftInputMode="2" />
+        <activity android:name="com.cnmobi.im.SearchRiderActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.RiderDetailActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.NewFriendListActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.SettingActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.ChatroomDetailActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.cnmobi.im.ChangeNicknameActivity" android:screenOrientation="landscape" />
+        <activity android:theme="@style/MyDialogStyleBottom" android:name="com.cnmobi.im.PicMenuDialog" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.cnmobi.im.cropImage.CropImageActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.expeditionphone.FastDiagnosisActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:windowSoftInputMode="2" />
+        <activity android:name="com.ifoer.expeditionphone.FastDiagnosisNewActivity" android:launchMode="singleTask" android:screenOrientation="landscape" android:windowSoftInputMode="2" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.ifoer.expeditionphone.vin.VinCameraActivity" android:screenOrientation="landscape" />
+        <activity android:theme="@style/MyDialogStyle" android:name="com.ifoer.expeditionphone.vin.VinVoiceActivity" android:screenOrientation="landscape" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:name="com.ifoer.expeditionphone.vin.VinPhotoActivity" android:screenOrientation="landscape" />
+        <activity android:theme="@style/myDialogTheme" android:name="com.ifoer.expeditionphone.RegRuleActivity" android:screenOrientation="landscape" android:configChanges="locale|keyboardHidden|orientation" />
+        <activity android:name="com.ifoer.expeditionphone.ComRegActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.expeditionphone.ComIsRegActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.MySpaceUIActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.SpecialFunctionActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.SpaceDiagnosticReportActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.ReadFileUiActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.SpaceCurrentModeActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.SpaceDataStreamActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.SpaceOperationRecordsActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.SpaceOrderActivty" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.SpaceShoppingCarActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.DiagnosisdatabaseActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.FastDiagnosisActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.UserActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.RecordOfpinCardActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.CheckCardInfoActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.MoreActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.LoginActivity3" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.MainMenuActivity" android:screenOrientation="landscape" />
+        <activity android:name="com.ifoer.ui.RegistActivity" android:screenOrientation="landscape" />
+        <service android:name="com.baidu.location.f" android:permission="android.permission.BAIDU_LOCATION_SERVICE" android:enabled="true" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" />
+            </intent-filter>
+        </service>
+        <service android:label="NotificationService" android:name="com.ifoer.expedition.client.NotificationService" android:enabled="true">
+            <intent-filter>
+                <action android:name="com.ifoer.expedition.client.NotificationServicePro" />
+            </intent-filter>
+        </service>
+        <receiver android:name="com.ifoer.expedition.BluetoothChat.BluetoothConnectActivityReceiver">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ifoer.expeditionphone.VinJumpCardiag">
+            <intent-filter>
+                <action android:name="X431.FRAMEWORK.VIN.JUMP.DIAG" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ifoer.expeditionphone.SelectBroadcastReceiver">
+            <intent-filter>
+                <action android:name="SelectPushObject" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ifoer.expeditionphone.UsbBroadCastReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ifoer.service.GetLocationService" android:enabled="true">
+            <intent-filter>
+                <action android:name="com.ifoer.service.GetLocationService" />
+            </intent-filter>
+        </service>
+        <service android:name="com.ifoer.service.BatteryService" android:enabled="true">
+            <intent-filter>
+                <action android:name="com.ifoer.service.BatteryService" />
+            </intent-filter>
+        </service>
+    </application>
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+</manifest>

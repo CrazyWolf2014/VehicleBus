@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_pressed="true" android:drawable="@drawable/wenzi3" />
+    <item android:state_focused="true" android:drawable="@drawable/wenzi2" />
+    <item android:drawable="@drawable/wenzi1" />
+</selector>

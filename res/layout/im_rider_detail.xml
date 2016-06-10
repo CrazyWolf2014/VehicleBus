@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@color/light_gray" android:layout_width="-1" android:layout_height="-1">
+    <include layout="@layout/im_title" />
+    <ScrollView android:layout_width="-1" android:layout_height="-2">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+            <LinearLayout android:orientation="1" android:id="@id/firstArea" android:background="@drawable/im_area_bg" android:layout_width="-1" android:layout_height="-2" android:layout_margin="10dp">
+                <RelativeLayout android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textSize="16sp" android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_margin="5dp" android:text="@string/head" android:layout_centerVertical="true" />
+                    <ImageView android:id="@id/head" android:background="0x106000d" android:layout_width="50dp" android:layout_height="50dp" android:layout_margin="5dp" android:src="@drawable/default_logo" android:layout_alignParentRight="true" />
+                    <TextView android:background="@drawable/im_area_line" android:layout_width="-1" android:layout_height="1dp" android:layout_marginTop="2dp" android:layout_below="@id/head" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="1" android:id="@id/secondArea" android:background="@drawable/im_area_bg" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" />
+            <Button android:textSize="18sp" android:id="@id/riderBtn" android:background="@drawable/chat_send_btn" android:padding="8dp" android:layout_width="-1" android:layout_height="-2" android:layout_margin="10dp" />
+            <Button android:textSize="18sp" android:id="@id/chageNickNameBtn" android:background="@drawable/chat_send_btn" android:padding="8dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:text="@string/changeNickName" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

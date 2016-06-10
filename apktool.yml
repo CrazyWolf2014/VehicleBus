@@ -1,0 +1,46 @@
+version: 2.0.1
+apkFileName: com.ifoer.expedition.crp229-2.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '10'
+  targetSdkVersion: '10'
+packageInfo:
+  forced-package-id: '127'
+versionInfo:
+  versionCode: '59'
+  versionName: 1.19.000
+compressionType: false
+sharedLibrary: false
+unknownFiles:
+  LICENSE.txt: '8'
+  Android.mk: '8'
+  com_cnlaunch_mycar_jni_JniX431File.c: '8'
+  com_cnlaunch_mycar_jni_JniX431File.h: '8'
+  file.c: '8'
+  file.h: '8'
+  fileinfo.c: '8'
+  fileinfo.h: '8'
+  hash.c: '8'
+  hash.h: '8'
+  list.c: '8'
+  list.h: '8'
+  lsx.c: '8'
+  lsx.h: '8'
+  lsxdef.h: '8'
+  memblock.c: '8'
+  memblock.h: '8'
+  util.c: '8'
+  util.h: '8'
+  org/achartengine/image/zoom-1.png: '8'
+  org/achartengine/image/zoom_in.png: '8'
+  org/achartengine/image/zoom_out.png: '8'
+  org/apache/http/entity/mime/version.properties: '8'
+  pinyindb/pinyin_gwoyeu_mapping.xml: '8'
+  pinyindb/pinyin_mapping.xml: '8'
+  pinyindb/unicode_to_hanyu_pinyin.txt: '8'
+  com/paypal/android/utils/data/data.bin: '8'
+  com/paypal/android/utils/data/locale.bin: '8'
+  com/ifoer/expedition/cto/CToJava.java.bak: '8'

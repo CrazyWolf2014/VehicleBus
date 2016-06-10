@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2">
+    <ImageView android:id="@id/formclient_row_userHead" android:layout_width="-2" android:layout_height="-2" android:layout_margin="5dp" android:src="@drawable/default_head_portrait" android:layout_alignParentRight="true" />
+    <LinearLayout android:orientation="0" android:id="@id/formclient_row_timeArea" android:layout_width="-2" android:layout_height="-2" android:layout_toLeftOf="@id/formclient_row_userHead">
+        <TextView android:textColor="#ff666666" android:id="@id/formclient_row_userid" android:layout_width="-2" android:layout_height="-2" />
+        <TextView android:textColor="#ff666666" android:id="@id/formclient_row_date" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginRight="20dp" />
+    </LinearLayout>
+    <LinearLayout android:background="@drawable/outgoing" android:paddingLeft="10dp" android:paddingTop="3dp" android:paddingRight="20dp" android:paddingBottom="3dp" android:layout_width="-2" android:layout_height="-2" android:layout_toLeftOf="@id/formclient_row_userHead" android:layout_below="@id/formclient_row_timeArea">
+        <TextView android:textColor="#ff000000" android:id="@id/formclient_row_msg" android:layout_width="-2" android:layout_height="-2" />
+    </LinearLayout>
+</RelativeLayout>

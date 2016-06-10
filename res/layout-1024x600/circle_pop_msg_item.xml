@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="50" android:layout_width="-1" android:layout_height="-2">
+    <TextView android:textSize="15sp" android:textColor="@color/white" android:id="@id/circleMsgTitle" android:layout_width="-2" android:layout_height="-2" android:text="中的地方史志的地方的" android:maxLines="2" />
+    <TextView android:textSize="12sp" android:textColor="@color/red" android:id="@id/circleMsgStay" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="已处理" android:maxLines="2" android:layout_toRightOf="@id/circleMsgTitle" />
+</RelativeLayout>

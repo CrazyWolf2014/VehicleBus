@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/mainTop" style="@style/top_title">
+        <TextView android:textSize="25sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/data_list" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/toright" android:focusable="true" android:nextFocusLeft="@keyrecord/OWNER_USER" android:nextFocusRight="@keyrecord/OWNER_USER" android:nextFocusUp="@id/listview" android:nextFocusDown="@id/listview" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/btn_back_selector" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ListView android:id="@id/listview" android:paddingLeft="10dp" android:nextFocusLeft="@id/font" android:nextFocusRight="@id/del" android:nextFocusUp="@id/toright" android:nextFocusDown="@id/font" android:layout_width="-1" android:layout_height="-2" android:listSelector="@drawable/mgrid_selector" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/fengexian" android:layout_above="@id/bottom" android:layout_below="@id/mainTop" />
+    <RelativeLayout android:id="@id/bottom" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="35dp">
+            <TextView android:textSize="15sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/mode_selection" />
+            <Button android:gravity="11" android:id="@id/font" android:background="@drawable/text_record_selector" android:nextFocusLeft="@id/del" android:nextFocusRight="@id/pic" android:nextFocusUp="@id/listview" android:nextFocusDown="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" />
+            <Button android:gravity="11" android:id="@id/pic" android:background="@drawable/data_selector" android:nextFocusLeft="@id/font" android:nextFocusRight="@id/del" android:nextFocusUp="@id/listview" android:nextFocusDown="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" />
+            <Button android:gravity="11" android:id="@id/del" android:background="@drawable/dele_selector" android:nextFocusLeft="@id/pic" android:nextFocusRight="@id/font" android:nextFocusUp="@id/listview" android:nextFocusDown="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

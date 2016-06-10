@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="50dp" android:baselineAligned="false">
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/sales" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:id="@id/sales_text" android:paddingLeft="3dp" android:paddingRight="3dp" android:layout_width="-2" android:layout_height="50dp" android:text="@string/sale_info" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view4" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/market" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:id="@id/markettext" android:paddingLeft="3dp" android:paddingRight="3dp" android:layout_width="-2" android:layout_height="50dp" android:text="@string/market" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view0" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/product" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:id="@id/product_Text" android:paddingLeft="3dp" android:paddingRight="3dp" android:layout_width="-2" android:layout_height="50dp" android:text="@string/product" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view1" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/upgrade" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:id="@id/upgrade_Text" android:paddingLeft="3dp" android:paddingRight="3dp" android:layout_width="-2" android:layout_height="50dp" android:text="@string/upgrade" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view2" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/company" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:id="@id/companytext" android:paddingLeft="3dp" android:paddingRight="3dp" android:layout_width="-2" android:layout_height="50dp" android:text="@string/company" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view3" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+</LinearLayout>

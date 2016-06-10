@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="1" android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <Button android:id="@id/rightCloseBtn" android:background="@drawable/right_close" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" />
+    <Button android:id="@id/rightBackBtn" android:background="@drawable/diag_back_btn_selector" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" />
+    <Button android:id="@id/rightBeginBtn" android:background="@drawable/right_begin" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" />
+    <Button android:id="@id/rightStopBtn" android:background="@drawable/right_stop01" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" />
+    <Button android:id="@id/rightSureBtn" android:background="@drawable/right_sure" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" />
+</LinearLayout>

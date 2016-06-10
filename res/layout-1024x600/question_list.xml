@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="20dp" android:paddingRight="20dp" android:layout_width="-1" android:layout_height="500dp">
+    <ListView android:id="@id/qu_listview" android:fadingEdge="0" android:layout_width="-2" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" />
+</RelativeLayout>

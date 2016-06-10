@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="25sp" android:textColor="@color/white" android:gravity="11" android:id="@id/title" android:layout_width="-1" android:text="@string/report_detail" android:layout_alignParentTop="true" style="@style/top_title" />
+    <ImageView android:id="@id/toright" android:focusable="true" android:nextFocusLeft="@id/rename" android:nextFocusRight="@id/share" android:nextFocusUp="@id/rename" android:nextFocusDown="@id/text" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:src="@drawable/btn_back_selector" />
+    <ScrollView android:id="@id/text" android:nextFocusLeft="@id/rename" android:nextFocusRight="@id/share" android:nextFocusUp="@id/toright" android:layout_width="-1" android:layout_height="-2" android:layout_above="@id/bottom" android:layout_below="@id/title">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:layout_gravity="1" android:id="@id/texts" android:layout_width="-2" android:layout_height="-2" />
+            <ImageView android:id="@id/images" android:layout_width="-1" android:layout_height="-2" />
+        </LinearLayout>
+    </ScrollView>
+    <RelativeLayout android:id="@id/bottom" android:layout_width="-2" android:layout_height="-2" android:layout_marginBottom="20dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/rename" android:background="@drawable/rename_selector" android:focusable="true" android:nextFocusLeft="@id/share" android:nextFocusRight="@id/del" android:nextFocusUp="@id/text" android:nextFocusDown="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <ImageView android:id="@id/del" android:background="@drawable/dele_selector" android:focusable="true" android:nextFocusLeft="@id/rename" android:nextFocusRight="@id/share" android:nextFocusUp="@id/text" android:nextFocusDown="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_toRightOf="@id/rename" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <ImageView android:id="@id/share" android:background="@drawable/at_selector" android:focusable="true" android:visibility="2" android:nextFocusLeft="@id/del" android:nextFocusRight="@id/rename" android:nextFocusUp="@id/text" android:nextFocusDown="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_toRightOf="@id/del" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    </RelativeLayout>
+</RelativeLayout>

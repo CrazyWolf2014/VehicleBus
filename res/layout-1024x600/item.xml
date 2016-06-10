@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:gravity="11" android:id="@id/tv" android:background="@drawable/populist_bg_selector" android:layout_width="-2" android:layout_height="48dp" />

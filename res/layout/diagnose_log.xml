@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/main_head"
+        <RelativeLayout android:layout_width="-1" android:layout_height="-1">
+            <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="45dp" layout="@layout/myspace_top" />
+            <LinearLayout android:id="@id/lineLay2" android:background="@drawable/softline" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/top" />
+            <RelativeLayout android:id="@id/center1" android:paddingLeft="20dp" android:paddingRight="20dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/lineLay2">
+                <LinearLayout android:orientation="0" android:id="@id/title" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textSize="15sp" android:textColor="@color/jinhuang" android:id="@id/time" android:layout_width="-1" android:layout_height="-2" android:text="@string/buy1time" android:layout_weight="1.0" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15sp" android:textColor="@color/jinhuang" android:id="@id/address" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="20dp" android:text="@string/buy1address" android:layout_weight="1.0" android:layout_toRightOf="@id/time" android:layout_centerVertical="true" />
+                    <TextView android:textSize="15sp" android:textColor="@color/jinhuang" android:gravity="1" android:id="@id/chexing" android:layout_width="-1" android:layout_height="-2" android:text="@string/chexing" android:layout_weight="1.0" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </LinearLayout>
+                <ListView android:id="@id/view1" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" android:layout_below="@id/title" />
+                <ListView android:id="@id/view" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" android:layout_below="@id/title" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

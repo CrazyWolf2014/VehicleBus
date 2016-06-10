@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_head" />
+    <RelativeLayout android:gravity="10" android:id="@id/data_stream_title" android:background="@drawable/about_btn" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head" android:layout_alignParentLeft="true">
+        <TextView android:id="@id/data_stream_title_text" android:layout_width="-2" android:layout_height="-2" android:layout_margin="8dp" android:text="custom_title" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="5" android:orientation="0" android:id="@id/bottom_button_layout" android:background="@drawable/diagnose_bg" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <Button android:id="@id/image_button" android:background="@drawable/shuju2" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="15dp" />
+        <LinearLayout android:gravity="11" android:orientation="0" android:id="@id/record_button" android:background="@drawable/red_btn_bg" android:focusable="true" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp" android:layout_weight="1.0">
+            <TextView android:textSize="16sp" android:textColor="@color/black" android:id="@id/recordStatus" android:layout_width="-2" android:layout_height="-2" android:text="@string/start_recorder" />
+            <Chronometer android:textColor="@color/black" android:id="@id/chronometer" android:visibility="2" android:layout_width="-2" android:layout_height="-2" />
+        </LinearLayout>
+        <Button android:id="@id/help_button" android:background="@drawable/circle_record" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="5dp" />
+        <Button android:id="@id/back_button" android:background="@drawable/diag_back_btn_selector" android:layout_width="-2" android:layout_height="-2" />
+    </LinearLayout>
+    <LinearLayout android:gravity="1" android:orientation="1" android:layout_width="-1" android:layout_height="-1" android:layout_above="@id/bottom_button_layout" android:layout_below="@id/data_stream_title">
+        <ListView android:id="@id/list_view" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" android:layout_weight="1.0" />
+        <TextView android:id="@id/list_item_content" android:background="@drawable/circle_add_icon_bg" android:layout_width="-1" android:layout_height="-1" android:layout_weight="7.0" />
+    </LinearLayout>
+</RelativeLayout>

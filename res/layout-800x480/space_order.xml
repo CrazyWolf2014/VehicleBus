@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="45dp" layout="@layout/myspace_top" />
+    <LinearLayout android:gravity="11" android:paddingTop="5dp" android:paddingBottom="5dp" android:layout_width="-1" android:layout_height="-2">
+        <Button android:textSize="15sp" android:textColor="@color/black" android:id="@id/paidBtn" android:background="@drawable/space_paid" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_list_finish" />
+        <Button android:textSize="15sp" android:textColor="@color/black" android:id="@id/unPaidBtn" android:background="@drawable/switch_on01" android:layout_width="-2" android:layout_height="-2" android:text="@string/order_list_none" />
+    </LinearLayout>
+    <com.ifoer.view.PublicListViewNoFoot android:id="@id/listview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/hengxian" />
+</LinearLayout>

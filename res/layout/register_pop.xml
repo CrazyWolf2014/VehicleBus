@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/black" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/main_head" android:background="@drawable/top_bg" android:layout_width="-1" android:layout_height="40dp">
+        <ImageView android:id="@id/flagImage" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:src="@drawable/top_flag" android:scaleType="3" android:layout_centerInParent="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head" android:layout_centerHorizontal="true"
+        <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="30dp" android:layout_marginTop="10dp" android:layout_marginRight="30dp">
+            <TextView android:textSize="30sp" android:textColor="@color/red" android:id="@id/reg_title" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/text_regiser" />
+            <EditText android:id="@id/account" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/reg_account" android:singleLine="true" android:layout_below="@id/reg_title" />
+            <EditText android:id="@id/pwd" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/reg_pwd" android:singleLine="true" android:layout_below="@id/account" />
+            <EditText android:id="@id/regpwd" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/reg_affirm_pwd" android:singleLine="true" android:layout_below="@id/pwd" />
+            <EditText android:id="@id/email" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="10dp" android:hint="@string/reg_email" android:singleLine="true" android:layout_below="@id/regpwd" />
+            <Button android:textColor="@color/white" android:id="@id/registerbtn" android:background="@drawable/red_btn_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-2" android:layout_height="50dp" android:layout_marginTop="15dp" android:minWidth="120dp" android:text="@string/registerbtn" android:layout_below="@id/email" android:layout_centerHorizontal="true" />
+            <ImageView android:id="@id/reg_line" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_marginTop="10dp" android:layout_below="@id/registerbtn" />
+            <LinearLayout android:orientation="1" android:id="@id/to_login" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/reg_line">
+                <TextView android:textSize="15sp" android:textColor="@color/lightgray" android:id="@id/regnotic" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="15dp" android:text="@string/regnotic" />
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp">
+                    <ImageView android:id="@id/toleft" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:src="@drawable/circle_return" />
+                    <TextView android:textSize="18sp" android:textColor="@color/lightgray" android:id="@id/back" android:layout_width="-2" android:layout_height="-2" android:layout_margin="5dp" android:text="@string/back" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

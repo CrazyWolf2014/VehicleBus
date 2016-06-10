@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/lay_selectport" android:background="@drawable/about_bg" android:padding="10dp" android:layout_width="-2" android:layout_height="120dp" android:layout_centerInParent="true">
+        <TextView android:textColor="@color/white" android:autoLink="1" android:id="@id/about_text" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/if_update_client" android:layout_centerHorizontal="true" />
+        <LinearLayout android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="20dp" android:layout_below="@id/about_text" android:layout_centerHorizontal="true">
+            <Button android:textColor="@color/white" android:id="@id/ikonwBtn" android:background="@drawable/abouts" android:layout_width="-2" android:layout_height="-2" android:text="@string/yes" />
+            <Button android:textColor="@color/white" android:id="@id/no" android:background="@drawable/abouts" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/no" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

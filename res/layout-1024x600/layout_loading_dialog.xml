@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="11" android:orientation="1" android:layout_width="-2" android:layout_height="-2">
+    <ImageView android:id="@id/dialog_image" android:layout_width="-2" android:layout_height="-2" android:layout_margin="20dp" android:src="@drawable/animation_loading" />
+</LinearLayout>

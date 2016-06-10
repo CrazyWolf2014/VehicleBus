@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head" layout="@layout/circle_head" />
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="10dp" android:layout_below="@id/top"
+        <RelativeLayout android:id="@id/record_lay" android:layout_width="-1" android:layout_height="-1"
+            <RelativeLayout android:id="@id/circle_content_bottom" android:layout_width="-1" android:layout_height="80dp" android:layout_alignParentBottom="true">
+                <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+                    <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="30dp">
+                        <Button android:id="@id/addImage" android:background="#88888888" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/circle_image" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="10" android:orientation="0" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginBottom="10dp">
+                        <EditText android:textColor="@color/black" android:id="@id/sendEdit" android:background="@drawable/circle_ed" android:padding="2dp" android:layout_width="-1" android:layout_height="60dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:maxLines="4" android:layout_weight="1.0" />
+                        <Button android:textColor="@color/white" android:id="@id/clancelImage" android:background="@drawable/red_btn_bg" android:padding="2dp" android:visibility="2" android:layout_width="-1" android:layout_height="60dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:text="@string/circle_cancle_image" android:maxLines="4" android:layout_weight="1.0" />
+                        <Button android:textSize="16sp" android:textColor="@color/white" android:id="@id/sendBtn" android:background="@drawable/red_btn_bg" android:layout_width="-1" android:layout_height="60dp" android:layout_marginLeft="5dp" android:text="@string/sendBtn" android:layout_weight="5.0" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <ImageView android:id="@id/circle_line" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_above="@id/circle_content_bottom" />
+            <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_above="@id/circle_line" android:layout_below="@id/circle_right_sub" />
+            <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_above="@id/circle_line">
+                <TextView android:textColor="@color/white" android:id="@id/circle_record" android:layout_width="-2" android:layout_height="-2" android:text="@string/circle_record" android:layout_centerHorizontal="true" />
+                <TextView android:textColor="@color/white" android:id="@id/circle_time" android:layout_width="-2" android:layout_height="-2" android:layout_below="@id/circle_record" android:layout_centerHorizontal="true" />
+                <ListView android:id="@id/circle_text_listview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@keyrecord/OWNER_USER" android:layout_below="@id/circle_time" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/data_lay" android:visibility="2" android:layout_width="-1" android:layout_height="-1"
+            <RelativeLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1"
+                <RelativeLayout android:id="@id/right_info" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="@color/white" android:id="@id/circlePepNums" android:layout_width="-2" android:layout_height="-2" android:text="@string/quanmember" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <HorizontalScrollView android:id="@id/popListView" android:scrollbars="0" android:layout_width="-2" android:layout_height="90dp" android:layout_marginTop="5dp" android:layout_below="@id/right_info" android:layout_centerHorizontal="true">
+                    <LinearLayout android:orientation="0" android:id="@id/popLinearLay" android:layout_width="-2" android:layout_height="-2" />
+                </HorizontalScrollView>
+                <ImageView android:id="@id/fengexian2" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="95dp" android:layout_below="@id/right_info" />
+                <ScrollView android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/fengexian2">
+                    <RelativeLayout android:layout_width="-1" android:layout_height="-1"
+                        <RelativeLayout android:id="@id/right_info1" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian2">
+                            <TextView android:textColor="@color/white" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_data" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <ImageView android:id="@id/fengexian3" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info1" />
+                        <RelativeLayout android:id="@id/right_info2" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian3">
+                            <TextView android:textColor="@color/white" android:id="@id/name" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_name" android:layout_centerVertical="true" />
+                            <TextView android:textColor="@color/white" android:id="@id/cir_name" android:layout_width="-2" android:layout_height="-2" android:text="路虎天地" android:layout_toRightOf="@id/name" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <ImageView android:id="@id/fengexian4" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info2" />
+                        <RelativeLayout android:id="@id/right_info3" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian4">
+                            <TextView android:textColor="@color/white" android:id="@id/name" android:layout_width="80dp" android:layout_height="-2" android:text="@string/fault_code_dec" android:layout_centerVertical="true" />
+                            <TextView android:textColor="@color/white" android:id="@id/cir_desc" android:layout_width="-2" android:layout_height="-2" android:text="豪车 好人 一路平安" android:layout_toRightOf="@id/name" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <ImageView android:id="@id/fengexian5" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info3" />
+                        <RelativeLayout android:id="@id/right_info4" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian5">
+                            <TextView android:textColor="@color/white" android:id="@id/creator" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_hoster" android:layout_centerVertical="true" />
+                            <TextView android:textColor="@color/white" android:id="@id/cir_admin" android:layout_width="-2" android:layout_height="-2" android:text="我有路虎" android:layout_toRightOf="@id/creator" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <ImageView android:id="@id/fengexian6" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info4" />
+                        <RelativeLayout android:id="@id/right_info5" android:layout_width="-1" android:layout_height="50dp" android:layout_below="@id/fengexian6">
+                            <TextView android:textColor="@color/white" android:id="@id/condition" android:layout_width="80dp" android:layout_height="-2" android:text="@string/circle_condition" android:layout_centerVertical="true" />
+                            <TextView android:textColor="@color/white" android:id="@id/cir_term" android:layout_width="-2" android:layout_height="-2" android:text="@string/circle_test" android:layout_toRightOf="@id/condition" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <ImageView android:id="@id/fengexian7" android:background="@drawable/fengexian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/right_info5" />
+                        <Button android:textColor="@color/white" android:id="@id/circle_quit" android:background="@drawable/top_bg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="10dp" android:layout_marginRight="10dp" android:text="@string/circle_quit" android:layout_below="@id/fengexian7" />
+                    </RelativeLayout>
+                </ScrollView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

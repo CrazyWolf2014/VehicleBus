@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_pressed="true" android:drawable="@drawable/hui_btn_bg_print" />
+    <item android:state_focused="true" android:state_window_focused="true" android:drawable="@drawable/homescreen_blue_strong_holo" />
+    <item android:state_focused="true" android:state_window_focused="false" android:drawable="0x106000d" />
+    <item android:drawable="0x106000d" />
+</selector>

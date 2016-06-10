@@ -1,0 +1,33 @@
+package org.codehaus.jackson.sym;
+
+import org.xmlpull.v1.XmlPullParser;
+
+public final class Name1 extends Name {
+    static final Name1 sEmptyName;
+    final int mQuad;
+
+    static {
+        sEmptyName = new Name1(XmlPullParser.NO_NAMESPACE, 0, 0);
+    }
+
+    Name1(String name, int hash, int quad) {
+        super(name, hash);
+        this.mQuad = quad;
+    }
+
+    static final Name1 getEmptyName() {
+        return sEmptyName;
+    }
+
+    public boolean equals(int quad) {
+        return quad == this.mQuad;
+    }
+
+    public boolean equals(int quad1, int quad2) {
+        return quad1 == this.mQuad && quad2 == 0;
+    }
+
+    public boolean equals(int[] quads, int qlen) {
+        return qlen == 1 && quads[0] == this.mQuad;
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <LinearLayout android:gravity="1" android:layout_width="-1" android:layout_height="-1"
+        <LinearLayout android:gravity="1" android:layout_gravity="50" android:orientation="1" android:id="@id/layout" android:background="@drawable/exit_dialog_bg" android:layout_width="-1" android:layout_height="-2">
+            <Button android:textSize="18sp" android:textColor="@color/gray" android:gravity="11" android:id="@id/photographBtn" android:background="@drawable/btn_style_alert_dialog_button" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="15dp" android:layout_marginRight="10dp" android:text="@string/photograph" />
+            <Button android:textSize="18sp" android:textColor="@color/gray" android:gravity="11" android:id="@id/localPhotosBtn" android:background="@drawable/btn_style_alert_dialog_button" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="15dp" android:layout_marginRight="10dp" android:layout_marginBottom="10dp" android:text="@string/selectLocalPhotos" />
+            <Button android:textSize="18sp" android:textColor="@color/white" android:gravity="11" android:id="@id/cancelBtn" android:background="@drawable/btn_style_alert_dialog_cancel" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="15dp" android:layout_marginRight="10dp" android:layout_marginBottom="10dp" android:text="@string/imCancle" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

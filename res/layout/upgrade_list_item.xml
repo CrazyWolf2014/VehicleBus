@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="13" android:orientation="0" android:layout_width="-1" android:layout_height="-1">
+    <CheckBox android:id="@id/cbox_item" android:focusable="false" android:clickable="true" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" />
+    <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="13" android:id="@id/tv_carname_item" android:paddingTop="15dp" android:paddingBottom="15dp" android:layout_width="0dp" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_weight="1.0" />
+    <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="13" android:id="@id/tv_curversion_item" android:layout_width="0dp" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_weight="1.0" />
+    <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="13" android:id="@id/tv_upgradeversion_item" android:layout_width="0dp" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:singleLine="true" android:layout_weight="1.0" />
+</LinearLayout>

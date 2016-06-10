@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:gravity="10" android:id="@id/top" android:layout_width="-1" android:layout_height="-2">
+        <ImageView android:id="@id/item_line_imageView" android:paddingLeft="5dp" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/item_line" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/item_arrows_imageView" android:paddingRight="5dp" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_margin="5dp" android:layout_toLeftOf="@id/item_arrows_imageView" android:layout_toRightOf="@id/item_line_imageView" android:layout_centerVertical="true">
+            <TextView android:textSize="16sp" android:textColor="#ffffffff" android:id="@id/item_name_textView" android:layout_width="-1" android:layout_height="-2" android:text="DEMO_DS_123456789.PDF" />
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textSize="14sp" android:textColor="#ffaaaaaa" android:id="@id/item_time_textView" android:layout_width="-2" android:layout_height="-2" android:text="2013-05-14 11:34:06" />
+                <TextView android:textSize="14sp" android:textColor="@color/space_yello_color" android:id="@id/item_number_textView" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" android:text="963890002250" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

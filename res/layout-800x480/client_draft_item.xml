@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="0" android:padding="10dp" android:layout_width="-1" android:layout_height="-1" android:baselineAligned="false"
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0"
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/client_client_name" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/first_name" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/phone_number" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/phone_number" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/serial_num" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/verification_code" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/next_mm" android:layout_weight="1.0" />
+            <TextView android:textSize="16sp" android:textColor="@color/white" android:id="@id/maintenance_mileage" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="10" android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_weight="2.0">
+        <Button android:textColor="@color/white" android:id="@id/Submit" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:text="@string/Submit" />
+        <Button android:textColor="@color/white" android:id="@id/edit" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:text="@string/edit" />
+        <Button android:textColor="@color/white" android:id="@id/del" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:text="@string/client_delete" />
+    </LinearLayout>
+</LinearLayout>

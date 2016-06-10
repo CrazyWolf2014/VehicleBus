@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="-1" android:layout_height="-2">
+    <RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+        <RelativeLayout android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/main_head">
+            <Button android:textColor="@color/white" android:id="@id/returnBtn" android:background="@drawable/del1" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/bluetooth_back" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/tetle" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/user_modi_pwd" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/lay_selectport" android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="30dp" android:layout_marginRight="30dp" android:layout_below="@id/top" android:layout_centerInParent="true">
+            <LinearLayout android:orientation="1" android:id="@id/modipwd_content" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp">
+                <EditText android:textColor="#000000" android:id="@id/old_pwd" android:background="@drawable/item_bg" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="30dp" android:hint="@string/old_pwd" android:singleLine="true" />
+                <EditText android:id="@id/new_pwd" android:background="@drawable/item_bg" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="15dp" android:hint="@string/new_pwd" android:singleLine="true" />
+                <EditText android:id="@id/new_pwd_affirm" android:background="@drawable/item_bg" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="15dp" android:hint="@string/new_pwd_affirm" android:singleLine="true" />
+            </LinearLayout>
+            <RelativeLayout android:gravity="11" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="30dp" android:layout_below="@id/modipwd_content"
+                <RelativeLayout android:layout_width="-2" android:layout_height="-2">
+                    <Button android:textColor="@color/white" android:id="@id/modipwd_affirm" android:background="@drawable/read_btn" android:layout_width="-2" android:layout_height="30dp" android:text="@string/enter" android:layout_centerVertical="true" />
+                    <Button android:textColor="@color/white" android:id="@id/cancel_btn" android:background="@drawable/read_btn" android:layout_width="-2" android:layout_height="30dp" android:layout_marginLeft="20dp" android:text="@string/cancel" android:layout_toRightOf="@id/modipwd_affirm" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:gravity="10" android:id="@id/pushTop" android:background="@drawable/top_bg" android:layout_width="-1" android:layout_height="35dp">
+        <LinearLayout android:gravity="11" android:id="@id/return_btn" android:paddingLeft="5dp" android:paddingRight="5dp" android:clickable="true" android:layout_width="-2" android:layout_height="-1" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/return_btn" android:scaleType="3" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/linec" android:background="@drawable/top_line" android:layout_width="3dp" android:layout_height="-1" android:layout_toRightOf="@id/return_btn" />
+        <LinearLayout android:gravity="11" android:id="@id/return_btn1" android:paddingLeft="5dp" android:paddingRight="5dp" android:visibility="1" android:clickable="true" android:layout_width="-2" android:layout_height="-1" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/return_btn" android:scaleType="3" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/liner" android:background="@drawable/top_line" android:visibility="1" android:layout_width="3dp" android:layout_height="-1" android:layout_toLeftOf="@id/return_btn1" />
+        <ImageView android:id="@id/flagImage" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/top_flag" android:scaleType="3" android:layout_toLeftOf="@id/liner" android:layout_toRightOf="@id/linec" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    </RelativeLayout>
+</RelativeLayout>

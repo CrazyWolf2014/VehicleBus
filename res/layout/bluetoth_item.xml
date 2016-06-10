@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2">
+    <ImageView android:id="@id/item_image" android:layout_width="-2" android:layout_height="50dp" android:src="@drawable/bluetooth_device_enable" android:scaleType="3" android:contentDescription="@keyrecord/OWNER_USER" />
+    <RelativeLayout android:gravity="10" android:id="@id/top" android:layout_width="-1" android:layout_height="50dp" android:layout_marginRight="10dp" android:layout_toRightOf="@id/item_image"
+        <RelativeLayout android:gravity="10" android:id="@id/info" android:layout_width="-1" android:layout_height="23dp">
+            <TextView android:textColor="@color/hui" android:gravity="10" android:layout_gravity="5" android:id="@id/bluetooth_zhuangtai" android:layout_width="-2" android:layout_height="-2" android:text="Nicht angeschlossen" android:singleLine="true" android:layout_alignParentRight="true" />
+            <TextView android:textSize="16sp" android:textColor="@color/hui" android:gravity="10" android:layout_gravity="3" android:id="@id/bluetooth_name" android:layout_width="-2" android:layout_height="-2" android:text="982690000300dddd" android:singleLine="true" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="10" android:layout_width="-1" android:layout_height="20dp" android:layout_below="@id/info">
+            <TextView android:textColor="@color/hui" android:id="@id/bluetooth_xuliehao" android:layout_width="-2" android:layout_height="-2" android:text="00:18:e4:2F:DD:5D" />
+            <TextView android:textColor="@color/hui" android:id="@id/bluetooth_peidui" android:layout_width="-2" android:layout_height="-2" android:text="angeschlossen" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

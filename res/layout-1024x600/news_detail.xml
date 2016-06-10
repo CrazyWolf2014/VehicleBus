@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1">
+    <ImageView android:id="@id/back" android:layout_width="50dp" android:layout_height="40dp" android:layout_marginLeft="20dp" android:src="@drawable/circle_return" />
+    <ScrollView android:layout_width="-1" android:layout_height="-2">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+            <LinearLayout android:gravity="1" android:orientation="1" android:id="@id/imageLinear" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" />
+            <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/content" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

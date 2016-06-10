@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="11" android:background="@drawable/bg_radius" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/layout_top" android:layout_width="-1" android:layout_height="-2">
+        <ImageView android:layout_gravity="5" android:id="@id/repu_close" android:layout_width="45dp" android:layout_height="-2" android:layout_marginLeft="5dp" android:src="@drawable/main_close" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="20sp" android:textColor="@color/red" android:layout_width="-2" android:layout_height="-2" android:text="@string/port_affirm" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="1" android:id="@id/conent" android:paddingLeft="8dp" android:paddingRight="8dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/layout_top"
+        <LinearLayout android:gravity="11" android:orientation="0" android:background="@drawable/list_view_top" android:paddingLeft="6dp" android:paddingRight="6dp" android:layout_width="-1" android:layout_height="-2">
+            <EditText android:id="@id/port_num" android:background="@keyrecord/OWNER_USER" android:layout_width="0dp" android:layout_height="-2" android:layout_marginLeft="3dp" android:hint="@string/port_num1" android:singleLine="true" android:layout_weight="8.0" android:imeOptions="5" />
+        </LinearLayout>
+        <LinearLayout android:gravity="11" android:orientation="0" android:background="@drawable/list_view_bottom" android:paddingLeft="6dp" android:paddingRight="6dp" android:layout_width="-1" android:layout_height="-2">
+            <EditText android:id="@id/port_pwd_ed" android:background="@keyrecord/OWNER_USER" android:layout_width="0dp" android:layout_height="-2" android:layout_marginLeft="3dp" android:hint="@string/port_pwd" android:singleLine="true" android:layout_weight="1.0" android:inputType="81" android:imeOptions="6" />
+        </LinearLayout>
+        <Button android:textColor="@color/white" android:layout_gravity="1" android:id="@id/port_affirm" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="30dp" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:text="@string/text_regiser" />
+    </LinearLayout>
+</RelativeLayout>

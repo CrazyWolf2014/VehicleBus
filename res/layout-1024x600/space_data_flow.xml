@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="45dp" layout="@layout/myspace_top" />
+    <LinearLayout android:orientation="0" android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head">
+        <ImageView android:id="@id/toright" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:src="@drawable/arrow_left" />
+        <TextView android:textSize="25sp" android:textColor="@color/jinhuang" android:id="@id/title" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:text="@string/data_list" />
+    </LinearLayout>
+    <ListView android:id="@id/listview" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="-2" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/hengxian" android:layout_above="@id/bottom" android:layout_below="@id/top" />
+    <RelativeLayout android:id="@id/bottom" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/one" android:layout_width="-1" android:layout_height="45dp"
+            <LinearLayout android:gravity="11" android:id="@id/placeOrder" android:layout_width="-2" android:layout_height="-2" android:layout_weight="2.0">
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:visibility="1" android:layout_width="-2" android:layout_height="-2" android:text="@string/mode_selection" />
+            </LinearLayout>
+            <LinearLayout android:gravity="11" android:id="@id/edit" android:visibility="1" android:layout_width="-2" android:layout_height="-2" android:layout_weight="1.0">
+                <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/font2" android:contentDescription="@string/app_name" />
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/rename" />
+            </LinearLayout>
+            <LinearLayout android:gravity="11" android:id="@id/del" android:layout_width="-2" android:layout_height="-2" android:layout_weight="1.0">
+                <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/dels" android:contentDescription="@string/app_name" />
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/del" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="45dp" android:layout_below="@id/one"
+            <LinearLayout android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:layout_weight="2.0">
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/mode_selection" />
+            </LinearLayout>
+            <LinearLayout android:gravity="11" android:id="@id/font" android:layout_width="-2" android:layout_height="-2" android:layout_weight="1.0">
+                <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/wenzi2" android:contentDescription="@string/app_name" />
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/character" />
+            </LinearLayout>
+            <LinearLayout android:gravity="11" android:id="@id/pic" android:layout_width="-2" android:layout_height="-2" android:layout_weight="1.0">
+                <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/pic2" android:contentDescription="@string/app_name" />
+                <TextView android:textSize="15sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/graph" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

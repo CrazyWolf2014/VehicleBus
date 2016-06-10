@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="-1" android:layout_height="-2">
+    <RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+        <RelativeLayout android:id="@id/top" style="@style/top_title">
+            <Button android:textColor="@color/white" android:id="@id/returnBtn" android:background="@drawable/btn_back_selector" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="25sp" android:textColor="@color/white" android:id="@id/tetle" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/check_info" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="0" android:id="@id/emaillL" android:visibility="0" android:layout_below="@id/top" style="@style/user_person_data_item">
+            <TextView android:text="@string/email" style="@style/user_person_data_textview" />
+            <TextView android:textColor="@color/white" android:textColorHint="@color/white" android:id="@id/e_mail" android:background="@drawable/transparent" android:hint="@string/data_email" style="@style/user_person_data_paddingLeft_edittextsize" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/zipL" android:layout_below="@id/emaillL" style="@style/user_person_data_item">
+            <TextView android:text="@string/zipname" style="@style/user_person_data_textview" />
+            <TextView android:textColor="@color/white" android:textColorHint="@color/white" android:id="@id/zipEdt" android:background="@drawable/transparent" android:hint="@string/zipname" android:singleLine="true" style="@style/user_person_data_paddingLeft_edittextsize" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/userName" android:visibility="0" android:layout_below="@id/zipL" style="@style/user_person_data_item">
+            <TextView android:text="@string/login_name" style="@style/user_person_data_textview" />
+            <TextView android:textColor="@color/white" android:textColorHint="@color/white" android:id="@id/name" android:background="@drawable/transparent" android:hint="@string/login_name" android:singleLine="true" style="@style/user_person_data_paddingLeft_edittextsize" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/CCLay" android:visibility="0" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/userName" style="@style/user_person_data_item">
+            <TextView android:text="CC" style="@style/user_person_data_textview" />
+            <TextView android:textColor="@color/white" android:textColorHint="@color/white" android:id="@id/cc" android:background="@drawable/transparent" android:hint="CC" style="@style/user_person_data_paddingLeft_edittextsize" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/setL" android:visibility="2" android:layout_below="@id/zipL" style="@style/user_person_data_item">
+            <TextView android:text="@string/data_sex" style="@style/user_person_data_textview" />
+            <RelativeLayout android:id="@id/account" android:background="@drawable/modi_pwd_textbg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="-1" android:hint="@string/data_sex" android:singleLine="true">
+                <TextView android:textSize="18sp" android:id="@id/account_sex" android:layout_width="-2" android:layout_height="-2" android:hint="@string/data_sex" android:layout_centerVertical="true" />
+                <RadioGroup android:gravity="10" android:orientation="0" android:id="@id/sexgroup" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="-1" android:checkedButton="@id/sex1" android:layout_toRightOf="@id/account_sex" android:layout_centerVertical="true">
+                    <RadioButton android:textSize="18sp" android:textColor="@color/black" android:id="@id/sex1" android:layout_width="-2" android:layout_height="-1" android:checked="true" android:button="@drawable/sigle_checkbox" android:text="@string/data_sex1" />
+                    <RadioButton android:textSize="18sp" android:textColor="@color/black" android:id="@id/sex2" android:layout_width="-2" android:layout_height="-1" android:button="@drawable/sigle_checkbox" android:text="@string/data_sex2" />
+                </RadioGroup>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/accoutnL" android:visibility="2" android:layout_below="@id/setL" style="@style/user_person_data_item">
+            <TextView android:text="@string/data_birth" style="@style/user_person_data_textview" />
+            <TextView android:id="@id/account_name" android:hint="@string/data_birth" android:singleLine="true" android:phoneNumber="true" style="@style/user_person_data_paddingLeft_edittextsize" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/pswL" android:visibility="2" android:layout_below="@id/userName" style="@style/user_person_data_item">
+            <TextView android:text="@string/phone" style="@style/user_person_data_textview" />
+            <TextView android:id="@id/pwd" android:hint="@string/data_phone" android:singleLine="true" android:phoneNumber="true" style="@style/user_person_data_paddingLeft_edittextsize" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/adressL" android:visibility="2" android:layout_below="@id/pswL" style="@style/user_person_data_item">
+            <TextView android:text="@string/data_address" style="@style/user_person_data_textview" />
+            <EditText android:id="@id/regpwd" android:hint="@string/data_address" android:singleLine="true" style="@style/user_person_data_paddingLeft_edittextsize" />
+        </LinearLayout>
+        <Button android:id="@id/registerbtn" android:visibility="2" android:text="@string/data_btn" android:layout_below="@id/CCLay" style="@style/user_person_data_submit" />
+        <Button android:id="@id/cancel_btn" android:visibility="2" android:layout_marginLeft="20dp" android:text="@string/Cancel" android:layout_toRightOf="@id/registerbtn" android:layout_below="@id/CCLay" style="@style/user_person_data_submit" />
+    </RelativeLayout>
+</ScrollView>

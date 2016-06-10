@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/black" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/main_head" style="@style/top_title">
+        <TextView android:textSize="25sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/text_login" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/login_content" android:paddingLeft="30dp" android:paddingRight="30dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/main_head"
+        <RelativeLayout android:id="@id/login_relaout" android:layout_width="-1" android:layout_height="-2"
+            <RelativeLayout android:id="@id/login_layout" android:paddingTop="5dp" android:layout_width="-1" android:layout_height="-2" android:layout_centerHorizontal="true">
+                <EditText android:id="@id/name" android:background="@drawable/login_input" android:paddingLeft="10dp" android:nextFocusDown="@id/password" android:layout_width="-1" android:layout_height="40dp" android:layout_marginTop="5dp" android:hint="@string/login_name" android:singleLine="true" />
+                <EditText android:id="@id/password" android:background="@drawable/login_input" android:paddingLeft="10dp" android:nextFocusUp="@id/name" android:layout_width="-1" android:layout_height="40dp" android:layout_marginTop="15dp" android:hint="@string/login_pwd" android:singleLine="true" android:maxLength="20" android:layout_below="@id/name" />
+                <RelativeLayout android:id="@id/tishi" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_below="@id/password"
+                    <RelativeLayout android:id="@id/pwdresetLayout" android:layout_width="-2" android:layout_height="-2" android:minHeight="40dp" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                        <TextView android:textSize="20sp" android:textColor="@drawable/login_text_forget_selector" android:id="@id/pwdreset" android:focusable="true" android:layout_width="-2" android:layout_height="-2" android:text="@string/pwdreset" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-2" android:layout_toLeftOf="@id/pwdresetLayout" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+                        <CheckBox android:textColor="@drawable/login_text_save_selector" android:id="@id/check" android:focusable="true" android:layout_width="-1" android:layout_height="-2" android:layout_marginRight="5dp" android:text="@string/login_check" android:layout_alignParentLeft="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <LinearLayout android:gravity="10" android:layout_gravity="10" android:layout_width="-2" android:layout_height="-2" android:layout_below="@id/tishi" android:layout_centerHorizontal="true">
+                    <Button android:textColor="@color/white" android:layout_gravity="1" android:id="@id/unlogin_btn" android:background="@drawable/login_btn_unlogin_selector" android:visibility="2" android:layout_width="-2" android:layout_height="90dp" android:text="@string/unlogin_btn" android:layout_weight="1.0" />
+                    <Button android:textColor="@color/white" android:layout_gravity="1" android:id="@id/login_btn" android:background="@drawable/login_btn_login_selector" android:layout_width="-2" android:layout_height="40dp" android:layout_marginLeft="20dp" android:text="@string/login_btn" android:layout_weight="1.0" />
+                    <Button android:textColor="@color/white" android:layout_gravity="1" android:id="@id/regist_btn" android:background="@drawable/login_btn_regist_selector" android:layout_width="-2" android:layout_height="40dp" android:layout_marginLeft="20dp" android:text="@string/text_regiser" android:layout_weight="1.0" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/login_line" android:background="@drawable/line" android:visibility="2" android:layout_width="-1" android:layout_height="2dp" android:layout_marginTop="10dp" android:layout_below="@id/login_relaout" android:contentDescription="@keyrecord/OWNER_USER" />
+        <RelativeLayout android:id="@id/zhuce" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/login_line">
+            <LinearLayout android:orientation="1" android:id="@id/login_left" android:paddingLeft="20dp" android:paddingTop="20dp" android:paddingRight="20dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_centerHorizontal="true"
+                <LinearLayout android:orientation="0" android:id="@id/text_zhuce" android:visibility="2" android:layout_width="-1" android:layout_height="-2"
+                    <LinearLayout android:gravity="5" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                        <ImageView android:id="@id/toright" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/circle_return1" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:textSize="15sp" android:textColor="@color/lightgray" android:id="@id/text_tishi_1" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/text_tishi_1" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

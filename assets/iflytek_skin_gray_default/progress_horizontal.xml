@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list>
+    <item android:id="0x1020000">
+        <shape>
+            <corners android:radius="5dp" />
+            <gradient android:startColor="#ff1b1b1b" android:endColor="#ff1b1b1b" android:angle="270.0" android:centerY="0.5" android:centerColor="#ff1b1b1b" />
+            <stroke android:width="1dp" android:color="#ff1b1b1b" />
+        </shape>
+    </item>
+    <item android:id="0x102000f">
+        <clip>
+            <shape>
+                <corners android:radius="5dp" />
+                <gradient android:startColor="#ff2d2d2e" android:endColor="#ff2d2d2e" android:angle="270.0" android:centerY="0.5" android:centerColor="#ff2d2d2e" />
+                <stroke android:width="1dp" android:color="#ff2d2d2e" />
+            </shape>
+        </clip>
+    </item>
+    <item android:id="0x102000d">
+        <clip>
+            <shape>
+                <corners android:radius="5dp" />
+                <gradient android:startColor="#ff71e4fe" android:endColor="#ff0953bb" android:angle="270.0" android:centerY="0.5" android:centerColor="#ff13a4e4" />
+                <stroke android:width="1dp" android:color="#ff00347d" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

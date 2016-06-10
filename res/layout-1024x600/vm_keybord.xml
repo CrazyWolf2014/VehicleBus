@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+    <LinearLayout android:gravity="7" android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2">
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="1" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="2" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="3" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="4" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="5" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="6" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="7" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="8" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="9" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="7" android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2">
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="Q" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="W" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="E" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="R" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="T" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="Y" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="U" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="I" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="O" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="P" />
+    </LinearLayout>
+    <LinearLayout android:gravity="7" android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2">
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="A" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="S" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="D" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="F" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="G" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="H" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="J" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="K" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="L" />
+        <Button android:layout_width="50dp" android:layout_height="40dp" android:text="关闭" />
+    </LinearLayout>
+    <LinearLayout android:gravity="7" android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2">
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="Z" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="X" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="C" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="V" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="B" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="N" />
+        <Button android:layout_width="40dp" android:layout_height="40dp" android:text="M" />
+        <Button android:visibility="2" android:layout_width="50dp" android:layout_height="40dp" android:text="增加" />
+        <Button android:visibility="2" android:layout_width="50dp" android:layout_height="40dp" android:text="删除" />
+    </LinearLayout>
+</LinearLayout>

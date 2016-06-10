@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ifoer.image.GridViewLayout android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:background="@drawable/gridview_bg" android:layout_width="-1" android:layout_height="-1" android:layout_centerInParent="true">
+        <com.ifoer.image.AsyncImageView android:id="@id/ItemImage" android:layout_width="60dp" android:layout_height="60dp" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/free" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <TextView android:textAppearance="?unknown_attr_ref: 1010040" android:textSize="20sp" android:textStyle="1" android:textColor="#3f3f3f" android:gravity="1" android:id="@id/CarNameText" android:layout_width="-2" android:layout_height="-2" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <RelativeLayout android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <com.ifoer.image.AsyncImageView android:id="@id/sigl" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/load_sign" android:adjustViewBounds="true" />
+        </RelativeLayout>
+        <TextView android:textSize="13sp" android:textColor="@color/black" android:ellipsize="3" android:id="@id/car_name" android:paddingBottom="5dp" android:layout_width="-2" android:layout_height="-2" android:text="DEMO" android:singleLine="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</com.ifoer.image.GridViewLayout>

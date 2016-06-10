@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentTop="true" layout="@layout/main_head" />
+    <LinearLayout android:orientation="0" android:id="@id/switch_button_layout" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head">
+        <Button android:textSize="12sp" android:textColor="#ffffff" android:id="@id/MostActivity" android:background="@drawable/btn_switch_selevrot" android:nextFocusLeft="@id/backSuperior1" android:nextFocusRight="@id/CombinActivity" android:nextFocusDown="@id/frame" android:layout_width="-2" android:layout_height="25dp" android:text="@string/chart_tab_multiple" android:layout_weight="1.0" />
+        <Button android:textSize="12sp" android:textColor="#ffffff" android:id="@id/CombinActivity" android:background="@drawable/btn_switch_selevrot" android:nextFocusLeft="@id/MostActivity" android:nextFocusRight="@id/backSuperior1" android:nextFocusDown="@id/frame" android:layout_width="-2" android:layout_height="25dp" android:text="@string/chart_tab_combin" android:layout_weight="1.0" />
+        <Button android:layout_gravity="10" android:id="@id/backSuperior1" android:background="@drawable/diag_back_btn_selector" android:visibility="2" android:nextFocusLeft="@id/CombinActivity" android:nextFocusRight="@id/MostActivity" android:layout_width="-2" android:layout_height="-2" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/frame" android:nextFocusLeft="@id/suspended" android:nextFocusRight="@id/jietu" android:nextFocusUp="@id/MostActivity" android:nextFocusDown="@id/suspended" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/switch_button_layout" android:layout_alignParentBottom="true" />
+</RelativeLayout>

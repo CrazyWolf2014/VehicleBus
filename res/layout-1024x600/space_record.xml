@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentTop="true" layout="@layout/main_head" />
+    <LinearLayout android:orientation="0" android:id="@id/switch_button_layout" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="3dp" android:layout_below="@id/main_head">
+        <Button android:textColor="#ffffff" android:id="@id/MostActivity" android:background="@drawable/switch_paid_selected" android:layout_width="-2" android:layout_height="-2" android:text="@string/chart_tab_multiple" android:layout_weight="1.0" />
+        <Button android:textColor="#ffffff" android:id="@id/CombinActivity" android:background="@drawable/switch_off01" android:layout_width="-2" android:layout_height="-2" android:text="@string/chart_tab_combin" android:layout_weight="1.0" />
+        <Button android:layout_gravity="10" android:id="@id/backSuperior1" android:background="@drawable/diag_back_btn_selector" android:layout_width="-2" android:layout_height="-2" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/frame" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/switch_button_layout" android:layout_alignParentBottom="true" />
+</RelativeLayout>

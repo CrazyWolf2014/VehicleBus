@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="menu_icon">
+        <item name="android:layout_width">85.0dip</item>
+        <item name="android:layout_height">85.0dip</item>
+    </style>
+    <style name="menu_text">
+        <item name="android:textSize">15.0sp</item>
+    </style>
+    <style name="menu_relayout">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_width">180.0dip</item>
+        <item name="android:layout_height">130.0dip</item>
+    </style>
+    <style name="menu_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="menu_layout1">
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="laod_title">
+        <item name="android:textSize">12.0sp</item>
+    </style>
+    <style name="laod_version">
+        <item name="android:textSize">13.0sp</item>
+    </style>
+    <style name="car_size">
+        <item name="android:textSize">12.0sp</item>
+    </style>
+</resources>

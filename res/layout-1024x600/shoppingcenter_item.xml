@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="0" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-2"
+    <LinearLayout android:gravity="10" android:background="@drawable/item_bg" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+        <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/softName" android:layout_width="-1" android:layout_height="-2" android:text="华晨宝马" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/version" android:layout_width="-1" android:layout_height="-2" android:text="23.70" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/red" android:gravity="11" android:id="@id/price" android:layout_width="-1" android:layout_height="-2" android:text="80.00" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/serialNo" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0" />
+        <LinearLayout android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+            <CheckBox android:layout_gravity="11" android:id="@id/checkbox" android:focusable="false" android:clickable="false" android:layout_width="-2" android:layout_height="-2" android:button="@drawable/checkbox_selector" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

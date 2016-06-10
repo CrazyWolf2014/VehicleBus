@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="1" android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_header_diag" />
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/main_head"
+        <RelativeLayout android:id="@id/progressbar_header" android:background="@drawable/top_bg02" android:layout_width="-1" android:layout_height="-2" android:minHeight="40dp">
+            <TextView android:textSize="18sp" android:gravity="1" android:id="@id/pb_title" android:layout_width="-1" android:layout_height="-2" android:text="@string/diagnose_title" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="0" android:id="@id/line1" android:background="@color/hui" android:layout_width="-1" android:layout_height="2dp" android:layout_below="@id/progressbar_header" />
+        <TextView android:textSize="18sp" android:gravity="10" android:id="@id/pb_context" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="170dp" android:text="@string/diagnose_context" android:layout_below="@id/line1" android:layout_alignParentLeft="true" />
+        <com.ifoer.util.ProgressbarForText android:id="@id/progressBar" android:paddingLeft="1dp" android:paddingRight="1dp" android:layout_width="-1" android:layout_height="40dp" android:layout_marginTop="10dp" android:layout_below="@id/pb_context" android:layout_centerInParent="true" android:layout_centerVertical="true" style="@style/ProgressBar_Blue" />
+        <RelativeLayout android:id="@id/progressbar_boom" android:background="@drawable/top_bg" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true">
+            <ImageView android:id="@id/backSuperior" android:paddingRight="5dp" android:layout_width="-2" android:layout_height="50dp" android:src="@drawable/diag_back_btn_selector" android:scaleType="3" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:contentDescription="@keyrecord/OWNER_USER" />
+            <LinearLayout android:orientation="0" android:id="@id/line2" android:background="@color/hui" android:layout_width="-1" android:layout_height="2dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+            <ImageView android:id="@id/backSuperior2" android:paddingRight="5dp" android:visibility="2" android:layout_width="-2" android:layout_height="50dp" android:src="@drawable/diag_back_btn_selector" android:scaleType="3" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

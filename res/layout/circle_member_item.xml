@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-2" android:layout_height="-2">
+    <ImageView android:id="@id/member_head" android:background="@drawable/member_bg" android:padding="2dp" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/shuaige" />
+    <ImageView android:id="@id/member_sign" android:background="@drawable/memner_right" android:layout_width="-2" android:layout_height="-2" android:layout_alignRight="@id/member_head" android:layout_alignBottom="@id/member_head" />
+    <TextView android:textColor="@color/white" android:id="@id/userName" android:layout_width="-2" android:layout_height="-2" android:text="14131" android:layout_below="@id/member_head" android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_focused="true" android:state_checked="true" android:drawable="@drawable/up_on_02" />
+    <item android:state_focused="true" android:state_checked="false" android:drawable="@drawable/un_off_02" />
+    <item android:state_checked="false" android:drawable="@drawable/un_off_01" />
+    <item android:state_checked="true" android:drawable="@drawable/upgrade_on_01" />
+</selector>

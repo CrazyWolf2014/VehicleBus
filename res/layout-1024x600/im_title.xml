@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:background="@drawable/im_title_bg" android:layout_width="-1" android:layout_height="35dp">
+    <ImageButton android:id="@id/backBtn" android:background="@keyrecord/OWNER_USER" android:padding="10dp" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/back_btn" android:layout_alignParentLeft="true" />
+    <TextView android:textSize="@dimen/title_text_size" android:textColor="@color/white" android:id="@id/topBarTitle" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_marginRight="40dp" android:singleLine="true" android:shadowColor="#ff404040" android:shadowDx="1.2" android:shadowDy="1.2" android:shadowRadius="1.0" android:layout_centerInParent="true" />
+    <ImageButton android:id="@id/titleRightBtn" android:background="@keyrecord/OWNER_USER" android:padding="8dp" android:visibility="1" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentRight="true" />
+</RelativeLayout>

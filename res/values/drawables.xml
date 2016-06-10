@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="login_save_1color">#ff949494</item>
+    <item type="drawable" name="login_save_2color">#ff555555</item>
+    <item type="drawable" name="login_forget_1color">#ffe25c0c</item>
+    <item type="drawable" name="login_forger_2color">#ff9a400a</item>
+    <item type="drawable" name="green">#ff28cb2b</item>
+    <item type="drawable" name="gray">#ff9a9893</item>
+    <item type="drawable" name="black">#ff333333</item>
+    <item type="drawable" name="bgwhite">#fff7f7f7</item>
+    <item type="drawable" name="bggray">#ffededed</item>
+    <item type="drawable" name="blue">#ff1e5185</item>
+    <item type="drawable" name="pwhite">#ffffffff</item>
+    <item type="drawable" name="nearby_search_area_color">#ff424242</item>
+    <item type="drawable" name="listline">#ffebebeb</item>
+</resources>

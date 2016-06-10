@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/jbshape" android:layout_width="-1" android:layout_height="-1">
+    <LinearLayout android:layout_gravity="11" android:orientation="0" android:id="@id/chart" android:focusable="true" android:nextFocusUp="@id/CombinActivity" android:nextFocusDown="@id/suspended" android:layout_width="-1" android:layout_height="-1" android:layout_above="@id/bottom" />
+    <RelativeLayout android:id="@id/bottom" android:layout_width="-1" android:layout_height="16dp" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/suspended" android:focusable="true" android:nextFocusLeft="@id/jietu" android:nextFocusRight="@id/down" android:nextFocusUp="@id/chart" android:nextFocusDown="@id/CombinActivity" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:src="@drawable/right_bigen_selector" android:layout_centerVertical="true" android:contentDescription="@string/app_name" />
+        <ImageView android:id="@id/down" android:focusable="true" android:nextFocusLeft="@id/suspended" android:nextFocusRight="@id/jietu" android:nextFocusUp="@id/chart" android:nextFocusDown="@id/CombinActivity" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="18dp" android:src="@drawable/kuaijin_selector" android:layout_toRightOf="@id/suspended" android:layout_centerVertical="true" android:contentDescription="@string/app_name" />
+        <ImageView android:id="@id/jietu" android:focusable="true" android:nextFocusLeft="@id/down" android:nextFocusRight="@id/suspended" android:nextFocusUp="@id/chart" android:nextFocusDown="@id/CombinActivity" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="20dp" android:src="@drawable/xiangji_selector" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/app_name" />
+        <LinearLayout android:gravity="11" android:layout_width="-1" android:layout_height="-1">
+            <TextView android:textSize="13sp" android:textColor="@color/jinhuang" android:id="@id/current_frame_number" android:layout_width="-2" android:layout_height="-2" android:text="9" />
+            <TextView android:textSize="13sp" android:textColor="@color/jinhuang" android:layout_width="-2" android:layout_height="-2" android:text="/" />
+            <TextView android:textSize="13sp" android:textColor="@color/jinhuang" android:id="@id/total_number_of_frames" android:layout_width="-2" android:layout_height="-2" android:text="23" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

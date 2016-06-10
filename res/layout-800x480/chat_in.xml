@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2"
+    <LinearLayout android:orientation="0" android:layout_width="-2" android:layout_height="-2">
+        <TextView android:textColor="#ff666666" android:id="@id/formclient_row_userid" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" />
+        <TextView android:textColor="#ff666666" android:id="@id/formclient_row_date" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" />
+    </LinearLayout>
+    <LinearLayout android:background="@drawable/incoming" android:paddingLeft="15dp" android:paddingTop="3dp" android:paddingRight="10dp" android:paddingBottom="3dp" android:layout_width="-2" android:layout_height="-2">
+        <TextView android:textColor="#ff000000" android:id="@id/formclient_row_msg" android:layout_width="-2" android:layout_height="-2" />
+    </LinearLayout>
+</LinearLayout>

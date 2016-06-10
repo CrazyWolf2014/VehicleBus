@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/circle_circle" android:layout_width="-1" android:layout_height="-2">
+        <ImageView android:id="@id/circle_head" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:src="@drawable/person_head" android:layout_alignParentLeft="true" />
+        <RelativeLayout android:id="@id/circle_person" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_toRightOf="@id/circle_head">
+            <TextView android:textColor="@color/white" android:id="@id/circle_name" android:layout_width="-2" android:layout_height="-2" android:text="@string/circle_item_name" android:layout_alignParentTop="true" />
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginBottom="5dp" android:layout_below="@id/circle_name">
+                <TextView android:textColor="@color/lightgray" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/circle_item_hoster" />
+                <TextView android:textColor="@color/white" android:id="@id/circle_host" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/circle_item_host" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:background="@drawable/hengxian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/circle_person" />
+    </RelativeLayout>
+</RelativeLayout>

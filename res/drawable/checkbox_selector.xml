@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_checked="true" android:drawable="@drawable/checkbox_checked" />
+    <item android:state_checked="false" android:drawable="@drawable/checkbox_usual" />
+    <item android:drawable="@drawable/checkbox_usual" />
+</selector>

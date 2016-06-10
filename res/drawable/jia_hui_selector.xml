@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_pressed="true" android:drawable="@drawable/jiahui" />
+    <item android:state_focused="true" android:drawable="@drawable/jialv" />
+    <item android:drawable="@drawable/jiahui" />
+</selector>

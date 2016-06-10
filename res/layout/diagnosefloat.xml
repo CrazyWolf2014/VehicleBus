@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="1" android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="18sp" android:gravity="1" android:id="@id/title" android:layout_width="250dp" android:layout_height="-2" android:text="@string/diagnose_title" />
+    <ScrollView android:scrollbars="0" android:layout_width="250dp" android:layout_height="-2" android:maxHeight="250dp">
+        <TextView android:textSize="15sp" android:id="@id/context" android:layout_width="250dp" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/diagnose_context" />
+    </ScrollView>
+    <EditText android:textSize="20sp" android:id="@id/info" android:layout_width="250dp" android:layout_height="-2" android:layout_marginTop="10dp" android:singleLine="true" android:inputType="3002" />
+    <LinearLayout android:orientation="0" android:layout_width="250dp" android:layout_height="-2" android:layout_marginTop="10dp">
+        <Button android:textSize="18sp" android:textColor="@color/black" android:id="@id/sure" android:background="@drawable/btn_confirm_selector" android:layout_width="-1" android:layout_height="50dp" android:text="@string/sure" android:layout_weight="1.0" />
+        <Button android:textSize="18sp" android:textColor="@color/black" android:id="@id/Cancel" android:background="@drawable/circle_send1_socuses1" android:layout_width="-1" android:layout_height="50dp" android:layout_marginLeft="10dp" android:text="@string/Cancel" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

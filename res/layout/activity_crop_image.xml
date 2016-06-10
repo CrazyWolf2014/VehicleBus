@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:background="#333333" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <view android:layout_gravity="11" android:id="@id/gl_modify_avatar_image" android:layout_width="-1" android:layout_height="-1" class="com.cnmobi.im.cropImage.CropImageView" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="0" android:id="@id/gl_modify_avatar_bottom" android:background="@drawable/ic_crop_bottom_bg" android:padding="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_centerVertical="true">
+        <Button android:id="@id/gl_modify_avatar_rotate_left" android:background="@drawable/gl_rotate_left" android:visibility="2" android:layout_width="32dp" android:layout_height="32dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" />
+        <Button android:textSize="16sp" android:id="@id/gl_modify_avatar_cancel" android:background="@drawable/btn_crop_image" android:paddingLeft="20dp" android:paddingTop="5dp" android:paddingRight="20dp" android:paddingBottom="5dp" android:layout_width="-2" android:layout_height="-2" android:text="@string/imCancle" />
+        <TextView android:layout_width="0dp" android:layout_height="-2" android:layout_weight="1.0" />
+        <Button android:textSize="16sp" android:id="@id/gl_modify_avatar_save" android:background="@drawable/btn_crop_image" android:paddingLeft="20dp" android:paddingTop="5dp" android:paddingRight="20dp" android:paddingBottom="5dp" android:layout_width="-2" android:layout_height="-2" android:text="@string/imUpload" />
+        <Button android:id="@id/gl_modify_avatar_rotate_right" android:background="@drawable/gl_rotate_right" android:visibility="2" android:layout_width="32dp" android:layout_height="32dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" />
+    </LinearLayout>
+</LinearLayout>

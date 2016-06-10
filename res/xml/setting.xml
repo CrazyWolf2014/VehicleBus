@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen>
+    <CheckBoxPreference android:title="@string/ring" android:key="ring" android:defaultValue="true" />
+    <CheckBoxPreference android:title="@string/shock" android:key="shock" android:defaultValue="true" />
+</PreferenceScreen>

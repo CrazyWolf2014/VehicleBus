@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="-1" android:layout_height="-1">
+    <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2">
+        <TextView android:textSize="24sp" android:textStyle="1" android:textColor="@color/white" android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="20dp" android:layout_marginBottom="20dp" android:text="@string/fast_diagnosis" />
+        <ImageView android:background="@drawable/fast_diagnosis_line" android:layout_width="-1" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+        <LinearLayout android:orientation="0" android:padding="10dp" android:layout_width="-1" android:layout_height="-2"
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_marginBottom="20dp">
+                <TextView android:textSize="18sp" android:textStyle="1" android:textColor="0x106000b" android:layout_gravity="11" android:layout_width="0dp" android:layout_height="-2" android:layout_marginLeft="20dp" android:text="@string/vin_scan" android:layout_weight="1.0" />
+                <LinearLayout android:layout_gravity="11" android:orientation="0" android:layout_width="-2" android:layout_height="-2"
+                    <LinearLayout android:orientation="0" android:id="@id/ll_fast_diagnosis_photo_album" android:clickable="true" android:layout_width="-2" android:layout_height="-2">
+                        <ImageView android:layout_gravity="11" android:focusable="true" android:layout_width="54dp" android:layout_height="48dp" android:src="@drawable/btn_image_selector" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="18sp" android:textColor="0x1060000" android:layout_gravity="11" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/photo_album" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="0" android:id="@id/ll_fast_diagnosis_car_window" android:nextFocusRight="@id/ll_fast_diagnosis_photo_album" android:clickable="true" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp">
+                        <ImageView android:layout_gravity="11" android:focusable="true" android:layout_width="62dp" android:layout_height="48dp" android:src="@drawable/btn_take_winpic_selector" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="18sp" android:textColor="0x1060000" android:layout_gravity="11" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/car_window" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:background="@drawable/fast_diagnosis_line" android:layout_width="-1" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+        <LinearLayout android:orientation="0" android:padding="10dp" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="18sp" android:textStyle="1" android:textColor="0x106000b" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:text="@string/voiceRecognition" android:layout_weight="1.0" />
+            <LinearLayout android:orientation="0" android:id="@id/ll_fast_diagnosis_car_voice" android:clickable="true" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="40dp">
+                <ImageView android:layout_gravity="11" android:focusable="true" android:layout_width="62dp" android:layout_height="59dp" android:src="@drawable/btn_voice_selector" android:contentDescription="@keyrecord/OWNER_USER" />
+                <TextView android:textSize="18sp" android:textColor="0x1060000" android:layout_gravity="11" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="@string/voiceRecognition" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:background="@drawable/fast_diagnosis_line" android:layout_width="-1" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+        <LinearLayout android:orientation="1" android:padding="10dp" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="18sp" android:textStyle="1" android:textColor="0x106000b" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:text="@string/vin_input" />
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="20dp" android:layout_marginBottom="20dp">
+                <EditText android:textSize="18sp" android:layout_gravity="11" android:id="@id/et_fast_dignosis" android:background="@drawable/edit_input_selector" android:paddingLeft="10dp" android:layout_width="0dp" android:layout_height="40dp" android:hint="@string/vin_hint" android:singleLine="true" android:layout_weight="1.0" />
+                <Button android:textSize="18sp" android:textColor="0x106000b" android:layout_gravity="11" android:id="@id/btn_fast_diagnosis" android:background="@drawable/btn_confirm_selector" android:paddingLeft="20dp" android:paddingRight="20dp" android:layout_width="-2" android:layout_height="-1" android:layout_marginLeft="5dp" android:text="@string/enter" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView android:background="@drawable/fast_diagnosis_line" android:layout_width="-1" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+        <LinearLayout android:orientation="1" android:padding="10dp" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textSize="18sp" android:textStyle="1" android:textColor="0x106000b" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:text="@string/obd_diagnosis" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

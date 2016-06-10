@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="16sp" android:gravity="11" android:id="@id/repotr_title" android:background="@drawable/top_bg" android:layout_width="-1" android:layout_height="-2" android:text="@string/bgtext" />
+    <ListView android:id="@id/pngListview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/hengxian" />
+</LinearLayout>

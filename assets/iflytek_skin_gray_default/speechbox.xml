@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+    <TextView android:textSize="20sp" android:textColor="#ffffffff" android:gravity="11" android:tag="title" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" />
+    <LinearLayout android:orientation="1" android:tag="box" android:layout_width="-1" android:layout_height="0dp" android:layout_weight="1.0">
+        <TextView android:textSize="12sp" android:gravity="5" android:tag="link" android:layout_width="-1" android:layout_height="-2" android:layout_marginRight="1dp" android:layout_marginBottom="1dp" />
+    </LinearLayout>
+</merge>

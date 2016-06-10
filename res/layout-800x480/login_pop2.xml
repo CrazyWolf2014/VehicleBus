@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="11" android:background="@drawable/bg_radius" android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/layout_top" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="3dp">
+        <LinearLayout android:gravity="15" android:id="@id/repu_close" android:layout_width="-1" android:layout_height="20dp" android:layout_marginTop="20dp" android:layout_marginRight="10dp" android:layout_centerInParent="true" android:layout_centerVertical="true">
+            <ImageView android:layout_width="30dp" android:layout_height="-2" android:src="@drawable/main_close" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/login_content" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginBottom="20dp" android:layout_below="@id/layout_top" android:layout_centerInParent="true">
+        <TableLayout android:id="@id/dictTable" android:layout_width="-1" android:layout_height="-2" android:stretchColumns="1" android:collapseColumns="1">
+            <TableRow android:gravity="11" android:layout_width="-1">
+                <RelativeLayout android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="#ffffff" android:gravity="5" android:id="@id/USERNAME" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:minWidth="100dp" android:text="@string/login_name" android:singleLine="true" />
+                    <EditText android:id="@id/name" android:background="@drawable/item_bg" android:paddingLeft="3dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="5dp" android:hint="@string/login_name" android:singleLine="true" android:maxLength="21" />
+                </RelativeLayout>
+            </TableRow>
+            <TableRow android:gravity="11" android:layout_width="-1">
+                <RelativeLayout android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textColor="#ffffff" android:gravity="5" android:id="@id/USERPASS" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="15dp" android:layout_marginRight="10dp" android:minWidth="100dp" android:text="@string/login_pwd" android:singleLine="true" />
+                    <EditText android:id="@id/password" android:background="@drawable/item_bg" android:paddingLeft="3dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="15dp" android:hint="@string/login_pwd" android:singleLine="true" android:maxLength="20" />
+                </RelativeLayout>
+            </TableRow>
+            <TableRow android:gravity="1" android:layout_width="-1" android:layout_marginTop="10dp">
+                <LinearLayout android:layout_gravity="1" android:layout_width="-2" android:layout_height="-2">
+                    <CheckBox android:textColor="#767676" android:id="@id/check" android:layout_width="-2" android:layout_height="-2" android:button="@drawable/check_box_selector" android:text="@string/login_check" android:layout_weight="1.0" />
+                    <TextView android:textColor="#ff0000" android:id="@id/pwdreset" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:text="@string/pwdreset" android:layout_weight="1.0" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow android:gravity="1" android:layout_width="-1" android:layout_marginTop="10dp">
+                <LinearLayout android:layout_gravity="1" android:layout_width="-1" android:layout_height="-2">
+                    <Button android:textColor="@color/white" android:id="@id/login_btn" android:background="@drawable/red_btn_bg" android:layout_width="-2" android:layout_height="-2" android:text="@string/login_btn" />
+                    <ImageView android:layout_gravity="10" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="20dp" android:src="@drawable/login_arrow" />
+                    <Button android:textColor="@color/white" android:id="@id/register" android:layout_width="-2" android:layout_height="-2" android:text="@string/text_regiser" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+</RelativeLayout>

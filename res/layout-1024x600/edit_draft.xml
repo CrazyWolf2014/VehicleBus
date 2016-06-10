@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="-1" android:layout_height="-1">
+    <ScrollView android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:orientation="1" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1"
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/client_client_name" android:layout_weight="1.0" />
+                <EditText android:textSize="14sp" android:textColor="@color/black" android:id="@id/customerName" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/phone_number" android:layout_weight="1.0" />
+                <EditText android:textSize="14sp" android:textColor="@color/black" android:id="@id/mobile" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:inputType="2" />
+            </LinearLayout>
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/serial_num" android:layout_weight="1.0" />
+                <EditText android:textSize="14sp" android:textColor="@color/black" android:id="@id/serialNo" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:inputType="2" />
+            </LinearLayout>
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/login_pwd" android:layout_weight="1.0" />
+                <EditText android:textSize="14sp" android:textColor="@color/black" android:id="@id/serialNoPwd" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:inputType="81" />
+            </LinearLayout>
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp">
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:layout_width="-1" android:layout_height="-2" android:text="@string/next_mm" android:layout_weight="1.0" />
+                <EditText android:textSize="14sp" android:textColor="@color/black" android:id="@id/nextMaintanceMileage" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="-2" android:singleLine="true" android:maxLength="9" android:layout_weight="1.0" android:inputType="2" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

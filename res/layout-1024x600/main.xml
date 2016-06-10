@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/main" android:background="@drawable/black_bg" android:layout_width="-1" android:layout_height="-1">
+    <ImageView android:background="@drawable/launch" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_marginTop="30dp" android:layout_alignParentTop="true" android:contentDescription="@string/app_name" />
+    <ImageView android:id="@id/welcom_image" android:background="@drawable/x431_pro" android:layout_width="-2" android:layout_height="-2" android:layout_centerInParent="true" android:contentDescription="@string/app_name" />
+    <ImageView android:background="@drawable/website" android:layout_width="-2" android:layout_height="-2" android:layout_marginBottom="15dp" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:contentDescription="@string/app_name" />
+</RelativeLayout>

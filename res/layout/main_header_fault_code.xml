@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/mainTop" style="@style/top_title">
+        <LinearLayout android:gravity="11" android:id="@id/menuBtn" android:background="@drawable/menu_btn_selector" android:focusable="true" android:visibility="2" android:nextFocusLeft="@id/backSuperior" android:nextFocusRight="@id/backSuperior" android:clickable="true" android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="0.1dp" android:layout_alignParentLeft="true">
+            <ImageView android:layout_gravity="11" android:id="@id/menu_img" android:layout_width="56dp" android:layout_height="49dp" android:src="@drawable/menuleft" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+        <TextView android:textSize="25sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/app_name" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/backSuperior" android:focusable="true" android:visibility="2" android:nextFocusLeft="@id/jietu" android:nextFocusRight="@id/wenzi" android:nextFocusDown="@id/view" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/btn_back_selector" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <Button android:textSize="20sp" android:id="@id/jietu" android:background="@drawable/tupian_selector" android:nextFocusLeft="@id/wenzi" android:nextFocusRight="@id/wenzi" android:nextFocusUp="@id/view" android:nextFocusDown="@id/view" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:layout_toLeftOf="@id/backSuperior" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <Button android:textSize="20sp" android:id="@id/wenzi" android:background="@drawable/text_record_selector" android:nextFocusLeft="@id/jietu" android:nextFocusRight="@id/jietu" android:nextFocusUp="@id/view" android:nextFocusDown="@id/view" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="20dp" android:layout_toLeftOf="@id/jietu" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="60dp"
+    <RelativeLayout android:id="@id/circle_person" android:layout_width="-2" android:layout_height="50dp" android:layout_marginLeft="5dp">
+        <ImageView android:id="@id/circle_head" android:background="@drawable/person_head" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginTop="5dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <TextView android:textColor="@color/white" android:id="@id/friendName" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:text="@string/circle_item_name" android:layout_toRightOf="@id/circle_head" android:layout_alignParentTop="true" />
+        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_toRightOf="@id/circle_head" android:layout_below="@id/friendName">
+            <TextView android:textColor="@color/white" android:id="@id/groupName" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/circle_item_host" />
+            <ImageView android:id="@id/lineFlag" android:background="@drawable/discuss" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:background="@drawable/hengxian" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/circle_person" />
+</RelativeLayout>

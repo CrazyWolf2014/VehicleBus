@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="-1" android:layout_height="-2">
+    <RelativeLayout android:background="#00000000" android:paddingBottom="20dp" android:layout_width="-1" android:layout_height="-2"
+        <RelativeLayout android:background="@drawable/bg_radius" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+            <RelativeLayout android:id="@id/TOP" android:background="@drawable/login_title_background" android:layout_width="-1" android:layout_height="40dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+                <ImageView android:id="@id/login_pop_register_close" android:layout_width="15dp" android:layout_height="15dp" android:layout_marginRight="5dp" android:src="@drawable/login_close_register" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="20sp" android:textColor="@color/TextColorWhite" android:layout_width="-2" android:layout_height="-2" android:text="@string/dbscar" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_marginBottom="10dp" android:layout_below="@id/TOP"
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp">
+                    <TextView android:textSize="18sp" android:gravity="5" android:layout_gravity="10" android:layout_width="100dp" android:layout_height="-2" android:layout_margin="10dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:text="@string/port_num1" />
+                    <EditText android:id="@id/login_pop_register_serial_num" android:background="@drawable/item_bg" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginRight="20dp" android:singleLine="true" android:inputType="2" android:imeOptions="5" />
+                </LinearLayout>
+                <TextView android:textSize="15sp" android:textColor="@color/red" android:id="@id/login_pop_register_tishi_num" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="120dp" android:text="@string/login_pop_register_input_error" />
+                <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+                    <TextView android:textSize="18sp" android:gravity="5" android:layout_gravity="10" android:layout_width="100dp" android:layout_height="-2" android:layout_margin="10dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:text="@string/port_pwd" />
+                    <EditText android:layout_gravity="10" android:id="@id/login_pop_register_serial_password" android:background="@drawable/item_bg" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginRight="20dp" android:singleLine="true" android:maxLength="20" android:inputType="81" android:imeOptions="6" />
+                </LinearLayout>
+                <TextView android:textSize="15sp" android:textColor="@color/red" android:id="@id/login_pop_register_tishi_pwd" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="120dp" android:text="@string/login_pop_register_input_error" />
+                <Button android:textSize="18dp" android:textColor="@color/TextColorWhite" android:layout_gravity="1" android:id="@id/login_pop_register_sure" android:background="@drawable/red_btn_bg" android:padding="10dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/sure" />
+                <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="30dp" android:layout_marginTop="10dp" android:layout_marginRight="30dp">
+                    <TextView android:textSize="15dp" android:textColor="@color/gray" android:layout_width="-2" android:layout_height="-2" android:text="@string/login_pop_register_input_zhu" />
+                    <TextView android:textSize="15dp" android:textColor="@color/gray" android:layout_width="-2" android:layout_height="-2" android:text="@string/login_pop_register_input_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_weight="2.0"
+                    <LinearLayout android:gravity="1" android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/login_pop_register_serial_num_one" />
+                        <TextView android:textSize="15dp" android:textColor="@color/gray" android:gravity="1" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:text="@string/login_pop_register_xinfeng_one" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="1" android:orientation="1" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/login_pop_register_serial_num_two" />
+                        <TextView android:textSize="15dp" android:textColor="@color/gray" android:gravity="1" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:text="@string/login_pop_register_xinfeng_two" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1">
+        <ImageView android:id="@id/returnBtn" android:visibility="2" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:src="@drawable/circle_return" android:scaleType="3" android:layout_alignParentLeft="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        <RelativeLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/returnBtn">
+            <WebView android:id="@id/wv" android:layout_width="-1" android:layout_height="-1" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

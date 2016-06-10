@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1">
+    <ImageView android:id="@id/returnBtn" android:background="@drawable/circle_return" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_alignParentLeft="true" />
+    <RelativeLayout android:id="@id/port1" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="30dp" android:layout_marginLeft="30dp" android:layout_marginTop="10dp" android:layout_marginRight="30dp" android:layout_below="@id/returnBtn" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/port_sign" android:background="@drawable/about_sg" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" />
+        <EditText android:textSize="15sp" android:textColor="@color/black" android:id="@id/joint_inf" android:background="0x106000d" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:hint="@string/joint_inf" android:singleLine="true" android:layout_toRightOf="@id/port_sign" android:layout_centerVertical="true" android:imeOptions="6" />
+        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="16sp" android:gravity="11" android:id="@id/title" android:background="@drawable/top_bg" android:layout_width="-1" android:layout_height="-2" android:text="@string/report_detail" android:layout_alignParentTop="true" />
+    <ScrollView android:id="@id/text" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/title">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:layout_gravity="1" android:id="@id/texts" android:layout_width="-2" android:layout_height="-2" />
+            <ImageView android:id="@id/images" android:layout_width="-1" android:layout_height="-2" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:gravity="1" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/rename" android:background="@drawable/baogao" android:layout_width="-2" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+        <ImageView android:id="@id/del" android:background="@drawable/dels" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+        <ImageView android:id="@id/share" android:background="@drawable/mails" android:layout_width="35dp" android:layout_height="35dp" android:layout_marginLeft="40dp" android:contentDescription="@keyrecord/OWNER_USER" />
+    </LinearLayout>
+    <LinearLayout android:gravity="1" android:orientation="0" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true">
+        <TextView android:textSize="26dp" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/bgtext" />
+    </LinearLayout>
+</RelativeLayout>

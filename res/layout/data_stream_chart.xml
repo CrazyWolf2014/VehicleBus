@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:background="@drawable/jbshape" android:layout_width="-1" android:layout_height="-2">
+    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/switch_button_layout" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="3dp">
+        <Button android:textSize="13sp" android:textColor="#ffffff" android:id="@id/MostActivity" android:background="@drawable/btn_switch_selevrot" android:focusable="true" android:nextFocusLeft="@id/CombinActivity" android:nextFocusRight="@id/CombinActivity" android:nextFocusUp="@id/left" android:nextFocusDown="@id/left" android:layout_width="-2" android:layout_height="26dp" android:text="@string/chart_tab_multiple" android:layout_weight="1.0" />
+        <Button android:textSize="13sp" android:textColor="#ffffff" android:id="@id/CombinActivity" android:background="@drawable/btn_switch_selevrot" android:focusable="true" android:nextFocusLeft="@id/MostActivity" android:nextFocusRight="@id/MostActivity" android:nextFocusUp="@id/right" android:nextFocusDown="@id/right" android:layout_width="-2" android:layout_height="26dp" android:text="@string/chart_tab_combin" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="0" android:id="@id/bottom" android:paddingBottom="10dp" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+        <Button android:id="@id/left" android:background="@drawable/jian_seletor" android:nextFocusLeft="@id/right" android:nextFocusRight="@id/right" android:nextFocusUp="@id/MostActivity" android:nextFocusDown="@id/MostActivity" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="5dp" android:onClick="DoLeft" />
+        <TextView android:textSize="13sp" android:textColor="@color/red" android:gravity="11" android:layout_gravity="11" android:id="@id/showValue" android:background="@color/gray" android:layout_width="50dp" android:layout_height="25dp" android:layout_marginRight="5dp" />
+        <Button android:id="@id/right" android:background="@drawable/jiahao_selector" android:nextFocusLeft="@id/left" android:nextFocusRight="@id/left" android:nextFocusUp="@id/CombinActivity" android:nextFocusDown="@id/CombinActivity" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:onClick="DoRight" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/frame" android:focusableInTouchMode="false" android:layout_width="-1" android:layout_height="-1" android:layout_above="@id/bottom" android:layout_below="@id/switch_button_layout" />
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/mainTop" style="@style/top_title">
+        <LinearLayout android:gravity="11" android:id="@id/menuBtn" android:background="@drawable/menu_btn_selector" android:focusable="true" android:visibility="2" android:nextFocusLeft="@id/backSuperior" android:nextFocusRight="@id/backSuperior" android:clickable="true" android:layout_width="90dp" android:layout_height="76dp" android:layout_marginTop="0.1dp" android:layout_alignParentLeft="true">
+            <ImageView android:layout_gravity="11" android:id="@id/menu_img" android:layout_width="56dp" android:layout_height="49dp" android:src="@drawable/menuleft" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+        <LinearLayout android:orientation="0" android:id="@id/linec" android:background="@drawable/top_line" android:visibility="2" android:layout_width="1dp" android:layout_height="-1" android:layout_marginTop="0.1dp" android:layout_toRightOf="@id/menuBtn" />
+        <LinearLayout android:id="@id/derma" android:layout_width="-2" android:layout_height="-2" android:layout_alignParentRight="true" android:layout_centerInParent="true">
+            <TextView android:textColor="@color/white" android:id="@id/show_name" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="5dp" android:maxWidth="100dp" android:minWidth="40dp" android:singleLine="true" android:drawableLeft="@drawable/top_user_arrow" />
+            <ImageView android:id="@id/backSuperior" android:focusable="true" android:visibility="0" android:nextFocusLeft="@id/menuBtn" android:nextFocusRight="@id/menuBtn" android:nextFocusUp="@keyrecord/OWNER_USER" android:clickable="true" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/btn_back_selector" android:scaleType="3" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+        <LinearLayout android:gravity="11" android:id="@id/printBtn" android:background="@drawable/print_btn_focuses" android:paddingLeft="5dp" android:paddingRight="5dp" android:visibility="2" android:nextFocusUp="@keyrecord/OWNER_USER" android:clickable="true" android:layout_width="-2" android:layout_height="-1" android:layout_toRightOf="@id/linec">
+            <ImageView android:gravity="11" android:layout_gravity="11" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/dayin_btn" android:contentDescription="@keyrecord/OWNER_USER" />
+        </LinearLayout>
+        <Button android:textColor="@color/white" android:id="@id/login" android:background="@drawable/login_btn_selector" android:padding="2dp" android:visibility="2" android:layout_width="100dp" android:layout_height="70dp" android:layout_margin="5dp" android:text="@string/text_login" android:singleLine="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <LinearLayout android:orientation="0" android:id="@id/linebtn" android:background="@drawable/top_line" android:visibility="2" android:layout_width="1dp" android:layout_height="-1" android:layout_marginTop="0.1dp" android:layout_toLeftOf="@id/login" />
+        <RelativeLayout android:gravity="11" android:layout_width="-1" android:layout_height="-2" android:layout_alignBottom="@id/derma" android:layout_alignParentLeft="true">
+            <ImageView android:layout_gravity="1" android:id="@id/flagImage" android:padding="2dp" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/top_flag" android:scaleType="3" android:contentDescription="@keyrecord/OWNER_USER" />
+        </RelativeLayout>
+        <TextView android:textSize="25sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/app_name" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="15" android:id="@id/searchLay" android:visibility="2" android:layout_width="-1" android:layout_height="30dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:layout_below="@id/mainTop">
+        <EditText android:textSize="12sp" android:id="@id/topEdit" android:background="@drawable/search_edit_bg" android:paddingLeft="2dp" android:paddingRight="2dp" android:layout_width="120dp" android:layout_height="29dp" android:hint="@string/top_search_bg" android:singleLine="true" android:imeOptions="6" />
+        <Button android:id="@id/toSearch" android:background="@drawable/searh_bg" android:focusable="true" android:layout_width="30dp" android:layout_height="30dp" />
+    </LinearLayout>
+</RelativeLayout>

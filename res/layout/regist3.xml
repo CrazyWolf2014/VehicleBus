@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="11" android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <ScrollView android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:gravity="11" android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+            <RelativeLayout android:id="@id/layout_top" style="@style/top_title">
+                <Button android:id="@id/btn_back" android:background="@drawable/btn_back" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <Button android:id="@id/closeBtn" android:background="@drawable/btn_title_close" android:visibility="2" android:layout_width="71dp" android:layout_height="61dp" android:layout_marginRight="10dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <TextView android:textSize="25sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/text_regiser" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/login_content" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+                <ScrollView android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:fadeScrollbars="false">
+                    <TableLayout android:id="@id/dictTable" android:layout_width="-1" android:layout_height="-2" android:stretchColumns="1" android:collapseColumns="1">
+                        <LinearLayout android:visibility="2" android:layout_width="-1" android:layout_height="-2">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:layout_gravity="10" android:id="@id/SerialNO" android:layout_width="200dp" android:layout_height="-2" android:text="@string/reg_serialno" android:singleLine="true" android:layout_weight="1.0" />
+                            <EditText android:textSize="18sp" android:id="@id/serialno" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/reg_serialno" android:singleLine="true" android:maxLength="21" android:editable="false" android:layout_weight="2.0" />
+                        </LinearLayout>
+                        <LinearLayout android:visibility="2" android:layout_width="-1" android:layout_height="-2">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:layout_gravity="10" android:id="@id/SerialID" android:layout_width="200dp" android:layout_height="-2" android:text="@string/reg_serialid" android:singleLine="true" android:layout_weight="1.0" />
+                            <EditText android:textSize="18sp" android:id="@id/serialid" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/reg_serialid" android:singleLine="true" android:maxLength="21" android:editable="false" android:layout_weight="2.0" />
+                        </LinearLayout>
+                        <LinearLayout android:visibility="2" android:layout_width="-1" android:layout_height="-2">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:layout_gravity="10" android:id="@id/ACCOUNT" android:layout_width="200dp" android:layout_height="-2" android:text="@string/reg_account" android:singleLine="true" android:layout_weight="1.0" />
+                            <EditText android:textSize="18sp" android:id="@id/account" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/reg_account" android:singleLine="true" android:maxLength="21" android:layout_weight="2.0" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="-1" android:layout_height="-2">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:id="@id/EMAIL" android:layout_width="200dp" android:layout_height="-2" android:text="@string/reg_email" android:singleLine="true" android:layout_weight="1.0" />
+                            <EditText android:id="@id/email" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/reg_email" android:singleLine="true" android:drawableRight="@drawable/not_null" android:layout_weight="2.0" />
+                        </LinearLayout>
+                        <LinearLayout android:visibility="2" android:layout_width="-1" android:layout_height="-2">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:layout_gravity="10" android:id="@id/PWD" android:layout_width="200dp" android:layout_height="-2" android:text="@string/login_pwd" android:singleLine="true" android:layout_weight="1.0" />
+                            <EditText android:textColorHint="@color/gray" android:gravity="10" android:layout_gravity="10" android:id="@id/pwd" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/login_pwd" android:singleLine="true" android:drawableRight="@drawable/not_null" android:layout_weight="2.0" />
+                        </LinearLayout>
+                        <LinearLayout android:visibility="2" android:layout_width="-1" android:layout_height="-2">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:layout_gravity="10" android:id="@id/REGPWD" android:layout_width="200dp" android:layout_height="-2" android:text="@string/reg_affirm_pwd" android:singleLine="true" android:layout_weight="1.0" />
+                            <EditText android:id="@id/regpwd" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/reg_affirm_pwd" android:singleLine="true" android:drawableRight="@drawable/not_null" android:layout_weight="2.0" />
+                        </LinearLayout>
+                        <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:layout_gravity="10" android:id="@id/tv_zipname" android:layout_width="200dp" android:layout_height="-2" android:text="@string/zipname" android:singleLine="true" android:layout_weight="1.0" />
+                            <EditText android:id="@id/et_zip" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/zipname" android:singleLine="true" android:drawableRight="@drawable/not_null" android:layout_weight="2.0" />
+                        </LinearLayout>
+                        <TextView android:layout_gravity="5" android:id="@id/error_et_zip" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="120dp" android:layout_marginRight="20dp" android:text="@string/login_pop_register_input_error" style="18sp" />
+                        <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:id="@id/verification_codeTV" android:layout_width="130dp" android:layout_height="-2" android:text="@string/verification_code" android:singleLine="true" />
+                            <EditText android:textColor="#000000" android:id="@id/ed_verifycode" android:background="@drawable/modi_pwd_textbg" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="200dp" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="@string/verification_code" android:singleLine="true" android:drawableRight="@drawable/not_null" android:imeOptions="6" />
+                            <ImageView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_gravity="10" android:id="@id/send_verycode" android:layout_width="120dp" android:layout_height="50dp" android:layout_marginLeft="10dp" android:text="@string/set_verify_get" />
+                        </LinearLayout>
+                        <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp">
+                            <TextView android:textSize="15sp" android:textColor="#ffffff" android:layout_gravity="10" android:layout_width="200dp" android:layout_height="-2" android:text="@string/register_select_contury" android:singleLine="true" android:layout_weight="1.0" />
+                            <TextView android:textColor="@color/black" android:gravity="11" android:layout_gravity="10" android:id="@id/selecte_country" android:background="@color/gray" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="48dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:text="@string/register_select_contury" android:singleLine="true" android:drawableRight="@drawable/icon_arr02" android:layout_weight="2.0" />
+                        </LinearLayout>
+                    </TableLayout>
+                </ScrollView>
+                <RelativeLayout android:id="@id/login_relaout" android:visibility="2" android:layout_width="-1" android:layout_height="-2"
+                    <RelativeLayout android:id="@id/login_layout" android:paddingTop="5dp" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+                        <RelativeLayout android:id="@id/tishi" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="20dp"
+                            <RelativeLayout android:id="@id/pwdresetLayout" android:layout_width="-2" android:layout_height="-2" android:minHeight="40dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                            <RelativeLayout android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-2" android:layout_toLeftOf="@id/pwdresetLayout" android:layout_alignParentLeft="true" android:layout_centerVertical="true" /> />
+                        <LinearLayout android:gravity="10" android:layout_gravity="10" android:layout_width="-2" android:layout_height="-2" android:layout_marginBottom="10dp" android:layout_below="@id/tishi" android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <Button android:textSize="18sp" android:textColor="@color/white" android:layout_gravity="11" android:id="@id/registerbtn" android:background="@drawable/login_btn_regist_selector" android:paddingLeft="3dp" android:paddingRight="3dp" android:layout_width="170dp" android:layout_height="40dp" android:layout_marginTop="15dp" android:layout_marginBottom="50dp" android:text="@string/text_regiser" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

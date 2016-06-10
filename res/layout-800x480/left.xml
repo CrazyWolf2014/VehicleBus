@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="1" android:orientation="1" android:layout_width="70dp" android:layout_height="-2">
+    <ImageView android:id="@id/line" android:background="@drawable/left_line" android:layout_width="5dp" android:layout_height="-2" android:layout_alignParentRight="true" android:contentDescription="@keyrecord/OWNER_USER" />
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:id="@id/lines" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" />
+        <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_car_maintain" android:background="@drawable/btn_clicked" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/lines">
+            <ImageView android:id="@id/car_check" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/left_maintain" android:contentDescription="@keyrecord/OWNER_USER" />
+            <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_zhenduan" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/line1" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_car_maintain" />
+        <RelativeLayout android:id="@id/bottomBtns" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true">
+            <LinearLayout android:id="@id/line6" android:background="@drawable/left_hline" android:visibility="2" android:layout_width="-1" android:layout_height="3dp" />
+            <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_user" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line6">
+                <ImageView android:id="@id/account" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/left_user" android:contentDescription="@keyrecord/OWNER_USER" />
+                <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_guanli" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/line7" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_user" />
+            <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_more" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line7">
+                <ImageView android:id="@id/more" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/left_more" android:contentDescription="@keyrecord/OWNER_USER" />
+                <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_gduo" />
+            </LinearLayout>
+            <LinearLayout android:id="@id/line8" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_more" />
+        </RelativeLayout>
+        <ScrollView android:layout_width="-2" android:layout_height="-2" android:layout_above="@id/bottomBtns" android:layout_below="@id/line1">
+            <RelativeLayout android:layout_width="-1" android:layout_height="-1"
+                <RelativeLayout android:layout_width="-1" android:layout_height="-2" android:layout_centerInParent="true">
+                    <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_quick_check" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp">
+                        <ImageView android:id="@id/car_lib" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/left_quickcheck" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/fast_diagnosis" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="0" android:id="@id/line11" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_quick_check" />
+                    <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_maindb" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line11">
+                        <ImageView android:id="@id/car_lib" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/left_maindb" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_db" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@id/line2" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_maindb" />
+                    <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_space" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line2">
+                        <ImageView android:id="@id/mydata_img" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/mydata_selector" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_kongjian" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@id/line3" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_space" />
+                    <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_advisory" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line3">
+                        <ImageView android:id="@id/launch_info" android:layout_width="-1" android:layout_height="-2" android:src="@drawable/left_advisory" android:layout_centerHorizontal="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_zhixun" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@id/line4" android:background="@drawable/left_hline" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_advisory" />
+                    <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/btn_circle" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line4" android:layout_alignParentLeft="true">
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:src="@drawable/left_circle" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_quanzi" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@id/line5" android:background="@drawable/left_hline" android:visibility="2" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/btn_circle" />
+                    <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/customerManagement" android:visibility="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line5" android:layout_alignParentLeft="true">
+                        <ImageView android:id="@id/manager" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/customer_manager" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/customer_management" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="0" android:id="@id/line6" android:background="@drawable/left_hline" android:visibility="0" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/customerManagement" />
+                    <LinearLayout android:gravity="11" android:orientation="1" android:id="@id/upgrade" android:visibility="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_below="@id/line6" android:layout_alignParentLeft="true">
+                        <FrameLayout android:layout_width="-1" android:layout_height="-1">
+                            <LinearLayout android:gravity="11" android:orientation="1" android:visibility="0" android:layout_width="-1" android:layout_height="-2" android:minHeight="60dp" android:layout_alignParentLeft="true">
+                                <ImageView android:id="@id/upgradeimg" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/left_circle" android:contentDescription="@keyrecord/OWNER_USER" />
+                                <TextView android:textSize="12sp" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/a_key_to_upgrade" />
+                            </LinearLayout>
+                            <TextView android:textSize="11sp" android:textColor="@color/black" android:gravity="11" android:layout_gravity="5" android:id="@id/user_news" android:background="@drawable/left_new" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="3dp" android:layout_marginRight="3dp" android:text="new" android:singleLine="true" />
+                        </FrameLayout>
+                    </LinearLayout>
+                    <LinearLayout android:id="@id/line7" android:background="@drawable/left_hline" android:visibility="2" android:layout_width="-1" android:layout_height="3dp" android:layout_below="@id/upgrade" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

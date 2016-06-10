@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@drawable/load_dynamic_bg" android:padding="5dp" android:layout_width="-1" android:layout_height="-2">
+    <TextView android:textSize="15sp" android:textStyle="1" android:textColor="@color/red" android:gravity="1" android:layout_gravity="1" android:id="@id/tvname" android:layout_width="-2" android:layout_height="48dp" />
+    <ImageView android:background="@color/black" android:layout_width="-1" android:layout_height="0.5dp" />
+    <ListView android:id="@id/lv" android:layout_width="-1" android:layout_height="-2" android:listSelector="@drawable/mgrid_selector" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@drawable/fengexian_hui" android:dividerHeight="0.5dp" />
+</LinearLayout>

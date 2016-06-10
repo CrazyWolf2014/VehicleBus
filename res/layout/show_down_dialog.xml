@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="11" android:background="#1c1c1c" android:paddingBottom="20dp" android:layout_width="-1" android:layout_height="-2">
+    <LinearLayout android:gravity="15" android:id="@id/repu_close" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:layout_alignParentTop="true">
+        <ImageView android:layout_width="25dp" android:layout_height="-2" android:src="@drawable/login_close" />
+    </LinearLayout>
+    <LinearLayout android:gravity="1" android:orientation="1" android:id="@id/title_layout" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/repu_close">
+        <TextView android:textSize="18dp" android:id="@id/reg_status" android:layout_width="-2" android:layout_height="-2" android:text="@string/reg_success" />
+    </LinearLayout>
+    <ProgressBar android:id="@id/progressBar" android:layout_width="-1" android:layout_height="-2" android:layout_margin="10dp" android:maxHeight="14dp" android:progress="1" android:progressDrawable="@drawable/progress_horizontal2" android:minHeight="14dp" android:layout_below="@id/title_layout" android:layout_centerHorizontal="true" style="?unknown_attr_ref: 1010078" />
+    <TextView android:textSize="16dp" android:id="@id/down_status" android:layout_width="-2" android:layout_height="-2" android:layout_below="@id/progressBar" android:layout_centerHorizontal="true" />
+</RelativeLayout>

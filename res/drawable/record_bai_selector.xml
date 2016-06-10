@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_pressed="true" android:drawable="@drawable/record2" />
+    <item android:state_focused="true" android:state_window_focused="true" android:drawable="@drawable/record2" />
+    <item android:state_focused="true" android:state_window_focused="false" android:drawable="@drawable/record_1" />
+    <item android:drawable="@drawable/record_1" />
+</selector>

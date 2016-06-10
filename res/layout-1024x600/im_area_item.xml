@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="16sp" android:textColor="@color/black" android:id="@id/title" android:layout_width="-2" android:layout_height="-2" android:layout_margin="5dp" android:text="@string/signature" android:layout_centerVertical="true" />
+    <TextView android:textColor="@color/darkgrey" android:id="@id/value" android:background="0x106000d" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="55dp" android:layout_marginRight="5dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:id="@id/line" android:background="@drawable/im_area_line" android:layout_width="-1" android:layout_height="1dp" android:layout_marginTop="2dp" android:layout_below="@id/title" />
+</RelativeLayout>

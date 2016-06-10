@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="45dp" android:baselineAligned="false">
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/bg" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textColor="@color/white" android:gravity="11" android:id="@id/bgtext" android:layout_width="-2" android:layout_height="40dp" android:text="@string/bgtext" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view0" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/operate" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textColor="@color/white" android:gravity="11" android:id="@id/operatetext" android:layout_width="-2" android:layout_height="40dp" android:text="@string/operatetext" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view1" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/My_order" android:visibility="2" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textColor="@color/white" android:gravity="11" android:id="@id/My_order_Text" android:layout_width="-2" android:layout_height="40dp" android:text="@string/My_order" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view2" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="11" android:orientation="1" android:id="@id/pay_head_title" android:visibility="2" android:layout_width="-1" android:layout_height="-1" android:layout_weight="1.0">
+        <TextView android:textColor="@color/white" android:gravity="11" android:id="@id/pay_head_title_Text" android:layout_width="-2" android:layout_height="40dp" android:text="@string/pay_head_title" android:layout_centerInParent="true" />
+        <ImageView android:id="@id/view4" android:background="@drawable/yello_line" android:layout_width="-1" android:layout_height="-2" android:layout_alignParentBottom="true" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:id="@id/container" android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:id="@id/mainLayout" android:layout_width="-1" android:layout_height="-2"
+        <RelativeLayout android:orientation="0" android:id="@id/top" android:paddingLeft="10dp" android:paddingRight="10dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:minHeight="50dp">
+            <ImageView android:id="@id/backSuperior" android:paddingRight="5dp" android:visibility="2" android:layout_width="-2" android:layout_height="50dp" android:src="@drawable/diag_back_btn_selector" android:scaleType="3" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/contentsss" android:background="@drawable/jbshape" android:layout_width="-1" android:layout_height="-1" android:layout_margin="5dp" android:layout_below="@id/mainLayout">
+        <LinearLayout android:layout_gravity="11" android:orientation="0" android:id="@id/chart" android:layout_width="-1" android:layout_height="-1" />
+    </RelativeLayout> />

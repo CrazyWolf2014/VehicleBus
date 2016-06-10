@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <ScrollView android:background="#0b1c34" android:scrollbars="0" android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:gravity="11" android:layout_gravity="11" android:orientation="1" android:id="@id/pop_layout" android:paddingLeft="5dp" android:paddingTop="10dp" android:paddingRight="5dp" android:paddingBottom="10dp" style="@style/menu_layout"
+            <LinearLayout android:gravity="1" android:layout_gravity="1" android:orientation="0" style="@style/menu_layout1">
+                <RelativeLayout style="@style/menu_relayout">
+                    <Button android:id="@id/btn_diag" android:background="@drawable/grid_01_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_zhenduan" android:layout_below="@id/btn_diag" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+                <RelativeLayout style="@style/menu_relayout">
+                    <Button android:id="@id/btn_quick" android:background="@drawable/grid_02_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/special" android:layout_below="@id/btn_quick" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+                <RelativeLayout android:visibility="2" style="@style/menu_relayout">
+                    <Button android:id="@id/btn_golo" android:background="@drawable/grid_05_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/golo" android:layout_below="@id/btn_golo" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+                <RelativeLayout style="@style/menu_relayout">
+                    <Button android:id="@id/btn_mydata" android:background="@drawable/grid_04_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_kongjian" android:layout_below="@id/btn_mydata" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="1" android:orientation="0" style="@style/menu_layout1">
+                <RelativeLayout android:visibility="2" style="@style/menu_relayout">
+                    <Button android:id="@id/btn_data" android:background="@drawable/grid_03_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_db" android:layout_below="@id/btn_data" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+                <RelativeLayout style="@style/menu_relayout">
+                    <Button android:id="@id/btn_update" android:background="@drawable/grid_06_selecor" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/a_key_to_upgrade" android:layout_below="@id/btn_update" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+                <RelativeLayout style="@style/menu_relayout">
+                    <Button android:id="@id/btn_count" android:background="@drawable/grid_07_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:id="@id/textView1" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_guanli" android:layout_below="@id/btn_count" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+                <RelativeLayout style="@style/menu_relayout">
+                    <Button android:id="@id/btn_more" android:background="@drawable/grid_09_selector" android:layout_centerHorizontal="true" style="@style/menu_icon" />
+                    <TextView android:textStyle="1" android:textColor="@color/white" android:gravity="11" android:layout_width="-2" android:layout_height="-2" android:text="@string/left_btn_gduo" android:layout_below="@id/btn_more" android:layout_centerHorizontal="true" style="@style/menu_text" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:gravity="1" android:id="@id/more_poplay" android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="20dp" android:layout_marginRight="20dp">
+        <ScrollView android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="10dp">
+            <RelativeLayout android:id="@id/content" android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2"
+                <RelativeLayout android:id="@id/login1" android:background="@drawable/item_bg" android:paddingLeft="5dp" android:layout_width="-1" android:layout_height="40dp" android:layout_centerHorizontal="true">
+                    <ImageView android:id="@id/login_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:src="@drawable/login_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                    <ImageView android:id="@id/iv_rg" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                    <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/dbscar" android:layout_toLeftOf="@id/iv_rg" android:layout_toRightOf="@id/login_sg" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/content_lay" android:background="@drawable/item_bg" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="15dp" android:layout_below="@id/login1" android:layout_centerHorizontal="true"
+                    <RelativeLayout android:id="@id/updatedata" android:layout_width="-1" android:layout_height="40dp">
+                        <ImageView android:id="@id/updatedata_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/load_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/modi_data" android:layout_toRightOf="@id/updatedata_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/modify_diagdata" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/updatedata">
+                        <ImageView android:id="@id/modify_diagdata_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/dayin_btn_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/modify_diagprintdata" android:layout_toRightOf="@id/modify_diagdata_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/update" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/modify_diagdata">
+                        <ImageView android:id="@id/repwd_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/repwd_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/user_modi_pwd" android:layout_toRightOf="@id/repwd_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/notic" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/update">
+                        <ImageView android:id="@id/pwd_notic_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/pwd_notic_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <ImageView android:id="@id/iv_arrow" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/user_modi_que" android:layout_toLeftOf="@id/iv_arrow" android:layout_toRightOf="@id/pwd_notic_sg" android:layout_centerVertical="true" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/feedback" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/notic">
+                        <ImageView android:id="@id/find_pwd_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/find_pwd_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/user_findPwd" android:layout_toRightOf="@id/find_pwd_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/derma" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/feedback">
+                        <ImageView android:id="@id/derma_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/change_skin" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/skin_peeler" android:layout_toRightOf="@id/derma_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/serial_number" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/derma">
+                        <ImageView android:id="@id/serial_number_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/select_seri" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:id="@id/serial_number_text" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/serial_number" android:layout_toRightOf="@id/serial_number_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/firmware_upgrade" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/serial_number">
+                        <ImageView android:id="@id/firmware_upgrade_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/download" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <ImageView android:id="@id/iv_connup" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:id="@id/firmware_upgrade_text" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/FirmwareUpgrade" android:layout_toLeftOf="@id/iv_connup" android:layout_toRightOf="@id/firmware_upgrade_sg" android:layout_centerVertical="true" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/Local_upgrade" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/firmware_upgrade">
+                        <ImageView android:id="@id/Local_upgrade_sg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/find_pwd_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:id="@id/Local_upgrade_text" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/Localupgrade" android:layout_toRightOf="@id/Local_upgrade_sg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/keyToUpgrade" android:visibility="2" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/firmware_upgrade">
+                        <ImageView android:id="@id/upgrade_bg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:src="@drawable/update" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textColor="@color/black" android:id="@id/upgrade_text" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/a_key_to_upgrade" android:layout_toRightOf="@id/upgrade_bg" android:layout_centerVertical="true" />
+                        <ImageView android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/arrows" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                        <TextView android:textSize="11sp" android:textColor="@color/black" android:gravity="11" android:id="@id/user_news" android:background="@drawable/left_new" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="30dp" android:text="new" android:singleLine="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/show" android:background="@drawable/item_bg" android:paddingLeft="10dp" android:paddingTop="3dp" android:paddingBottom="3dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="15dp" android:minHeight="45dp" android:layout_below="@id/content_lay" android:layout_centerHorizontal="true">
+                    <ImageView android:id="@id/show_sg" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/show_sg" android:layout_centerVertical="true" android:contentDescription="@keyrecord/OWNER_USER" />
+                    <TextView android:textColor="@color/black" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/user_show" android:layout_toLeftOf="@id/slipButton" android:layout_toRightOf="@id/show_sg" android:layout_centerVertical="true" />
+                    <ToggleButton android:id="@id/slipButton" android:background="@drawable/btn_toggle" android:layout_width="-2" android:layout_height="28dp" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:checked="true" android:textOn="" android:textOff="" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+                <Button android:textSize="15sp" android:textColor="@color/white" android:id="@id/logout" android:background="@drawable/red_btn_bg" android:paddingLeft="10dp" android:paddingTop="10dp" android:paddingBottom="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="15dp" android:text="@string/Cancellation_of_the_user" android:layout_below="@id/show" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+    <include android:id="@id/portLay" android:visibility="2" layout="@layout/port_select" />
+    <include android:id="@id/modipswdLay" android:visibility="2" layout="@layout/modi_pwd" />
+    <include android:id="@id/modiquesLay" android:visibility="2" layout="@layout/modipwd_question" />
+</RelativeLayout>

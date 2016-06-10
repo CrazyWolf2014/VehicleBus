@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/circle_left" android:layout_width="-1" android:layout_height="-1">
+        <include android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head" layout="@layout/circle_head" />
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_below="@id/top"
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-1">
+                <ListView android:id="@id/circle_listview" android:layout_width="-2" android:layout_height="-1" android:listSelector="#00000000" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="#00000000" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

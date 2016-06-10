@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/softPackage" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="-1" android:layout_height="-1">
+    <LinearLayout android:orientation="1" android:background="@drawable/item_bg" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp"
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/Soft_PackageID" android:layout_weight="1.0" />
+            <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                <TextView android:textColor="@color/black" android:gravity="1" android:layout_width="-2" android:layout_height="-2" android:text=":" />
+                <TextView android:textColor="@color/black" android:id="@id/packID" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="6" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" />
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/Soft_Package_NAMA" android:layout_weight="1.0" />
+            <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                <TextView android:textColor="@color/black" android:gravity="1" android:layout_width="-2" android:layout_height="-2" android:text=":" />
+                <TextView android:textColor="@color/black" android:id="@id/packName" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="国内自选包" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" />
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/Type" android:layout_weight="1.0" />
+            <RelativeLayout android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                <ImageView android:id="@id/jt" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:src="@drawable/pay_sign" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <TextView android:textColor="@color/black" android:gravity="1" android:id="@id/tv" android:layout_width="-2" android:layout_height="-2" android:text=":" android:layout_centerVertical="true" />
+                <TextView android:textColor="@color/black" android:id="@id/packType" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_toLeftOf="@id/jt" android:layout_toRightOf="@id/tv" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" />
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/Total_Price" android:layout_weight="1.0" />
+            <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                <TextView android:textColor="@color/black" android:gravity="1" android:layout_width="-2" android:layout_height="-2" android:text=":" />
+                <TextView android:textColor="@color/black" android:id="@id/packPrice" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="6" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" />
+        <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+            <TextView android:textColor="@color/black" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/Amount" android:layout_weight="1.0" />
+            <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2" android:layout_weight="1.0">
+                <TextView android:textColor="@color/black" android:gravity="1" android:layout_width="-2" android:layout_height="-2" android:text=":" />
+                <TextView android:textColor="@color/black" android:id="@id/packAmount" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:text="6" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:background="@drawable/line" android:layout_width="-1" android:layout_height="1dp" /> />
+</RelativeLayout>

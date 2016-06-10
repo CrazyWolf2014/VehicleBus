@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost android:id="@id/tabhost" android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:background="@color/white" android:layout_width="-1" android:layout_height="-1">
+        <include android:id="@id/main_head" android:layout_width="-1" android:layout_height="-2" layout="@layout/main_head" />
+        <LinearLayout android:gravity="10" android:layout_gravity="10" android:orientation="0" android:id="@id/roomTop" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="35dp" android:layout_below="@id/main_head">
+            <Button android:textColor="@color/lightgray" android:id="@id/tab1" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/bank_wire_transfer" android:layout_weight="1.0" />
+            <ImageView android:background="@drawable/linea" android:layout_width="2dp" android:layout_height="-2" />
+            <Button android:textColor="@color/lightgray" android:id="@id/tab2" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/bank_transfers" android:layout_weight="1.0" />
+        </LinearLayout>
+        <FrameLayout android:id="0x1020011" android:layout_width="-1" android:layout_height="-1" android:layout_below="@id/roomTop" />
+        <TabWidget android:id="0x1020013" android:layout_width="-1" android:layout_height="0dp" />
+    </RelativeLayout>
+</TabHost>

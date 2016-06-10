@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="11" android:background="@color/white" android:layout_width="-1" android:layout_height="40dp">
+    <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="11" android:layout_gravity="10" android:id="@id/softwareName" android:layout_width="-1" android:layout_height="40dp" android:text="@string/download_software_name" android:layout_weight="1.0" />
+    <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="11" android:id="@id/softwareVer" android:visibility="0" android:layout_width="-1" android:layout_height="40dp" android:text="@string/download_software_version" android:layout_weight="1.0" />
+    <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/editText1" android:focusable="false" android:focusableInTouchMode="false" android:layout_width="-1" android:layout_height="40dp" android:drawableRight="@drawable/arra_01" android:layout_weight="1.0" />
+    <TextView android:textColor="@color/white" android:gravity="11" android:id="@id/softwareSer" android:visibility="2" android:layout_width="-1" android:layout_height="40dp" android:text="@string/softwareSer" android:layout_weight="1.0" />
+    <RelativeLayout android:gravity="11" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginLeft="30dp">
+        <CheckBox android:id="@id/checkBox" android:focusable="false" android:clickable="false" android:layout_width="-2" android:layout_height="-2" android:button="@drawable/upgrade_checkbox_selector" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="1" android:orientation="1" android:padding="10dp" android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="18dp" android:id="@id/title" android:layout_width="-2" android:layout_height="-2" android:text="@string/diagnose_title" />
+    <TextView android:textSize="16dp" android:id="@id/context" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:text="@string/diagnose_context" />
+    <EditText android:id="@id/info" android:background="@drawable/item_bg" android:layout_width="-1" android:layout_height="35dp" android:layout_marginTop="5dp" android:singleLine="true" />
+    <TextView android:layout_width="-2" android:layout_height="20dp" android:text="" />
+</LinearLayout>

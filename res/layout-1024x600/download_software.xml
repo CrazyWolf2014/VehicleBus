@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@color/black" android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:id="@id/pop_header" android:background="@drawable/top_bg" android:layout_width="-1" android:layout_height="40dp">
+        <Button android:textColor="@color/white" android:id="@id/back" android:background="@drawable/del1" android:padding="5dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/bluetooth_back" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <Button android:textColor="@color/white" android:id="@id/download" android:background="@drawable/del1" android:padding="5dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:text="@string/download_software_btn" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="14sp" android:textColor="@color/white" android:gravity="11" android:id="@id/download_title" android:layout_width="-1" android:layout_height="-2" android:text="@string/download_software_title" android:layout_toLeftOf="@id/download" android:layout_toRightOf="@id/back" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="10" android:layout_width="-1" android:layout_height="-2">
+        <TextView android:textColor="@color/white" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/download_software_name" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/white" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/download_software_version" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/white" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/download_software_progress" android:layout_weight="1.0" />
+        <TextView android:textColor="@color/white" android:gravity="1" android:layout_width="-1" android:layout_height="-2" android:text="@string/download_software_condition" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ListView android:id="@id/downloadListview" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="@color/white" android:dividerHeight="1dp" />
+</LinearLayout>

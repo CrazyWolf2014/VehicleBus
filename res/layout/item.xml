@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="11" android:background="@color/white" android:layout_width="-1" android:layout_height="-2">
+    <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/tv" android:layout_width="-2" android:layout_height="48dp" />
+</LinearLayout>

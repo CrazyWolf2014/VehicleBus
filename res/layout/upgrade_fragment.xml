@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout pull:gravity="11" pull:orientation="1" pull:layout_width="-1" pull:layout_height="-1"
+    <LinearLayout pull:gravity="10" pull:orientation="0" pull:background="@drawable/top_red" pull:layout_width="-1" pull:layout_height="-2">
+        <TextView pull:textSize="18sp" pull:textColor="@color/black" pull:id="@id/tv_upgrade_num" pull:layout_width="0dp" pull:layout_height="-2" pull:layout_weight="1.0" />
+        <TextView pull:textSize="18sp" pull:layout_width="-2" pull:layout_height="-2" pull:layout_marginRight="4dp" />
+        <TextView pull:textSize="18sp" pull:gravity="10" pull:id="@id/tv_spinner_serialNo" pull:layout_width="-2" pull:layout_height="-2" pull:minWidth="152dp" />
+    </LinearLayout>
+    <LinearLayout pull:gravity="13" pull:orientation="0" pull:layout_width="-1" pull:layout_height="-2">
+        <CheckBox pull:visibility="1" pull:layout_width="-2" pull:layout_height="-2" pull:layout_marginLeft="10dp" pull:layout_marginRight="10dp" />
+        <TextView pull:textSize="20sp" pull:textColor="@color/black" pull:gravity="13" pull:layout_width="0dp" pull:layout_height="-2" pull:layout_marginTop="4dp" pull:layout_marginBottom="4dp" pull:layout_weight="1.0" />
+        <TextView pull:textSize="20sp" pull:textColor="@color/black" pull:gravity="13" pull:layout_width="0dp" pull:layout_height="-2" pull:layout_weight="1.0" />
+        <TextView pull:textSize="20sp" pull:textColor="@color/black" pull:gravity="13" pull:layout_width="0dp" pull:layout_height="-2" pull:layout_marginLeft="10dp" pull:layout_weight="1.0" />
+        <TextView pull:textSize="20sp" pull:textColor="@color/black" pull:gravity="13" pull:id="@id/tv_remarks" pull:visibility="2" pull:layout_width="0dp" pull:layout_height="-2" pull:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout pull:gravity="10" pull:orientation="0" pull:layout_width="-1" pull:layout_height="0dp" pull:layout_weight="1.0">
+        <ListView pull:id="@id/pull_refresh_listview" pull:fadingEdge="0" pull:layout_width="-1" pull:layout_height="-1" pull:cacheColorHint="#00000000" pull:dividerHeight="1px" pull:fastScrollEnabled="false" pull:headerDividersEnabled="false" pull:footerDividersEnabled="false" pull:smoothScrollbar="true" />
+    </LinearLayout>
+    <LinearLayout pull:orientation="0" pull:layout_width="-1" pull:layout_height="-2">
+        <RadioButton pull:id="@id/radio_select_all" pull:layout_width="0dp" pull:layout_height="-1" pull:checked="false" pull:button="@keyrecord/OWNER_USER" pull:layout_weight="1.0" />
+        <Button pull:id="@id/radio_update" pull:layout_width="0dp" pull:layout_height="-2" pull:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

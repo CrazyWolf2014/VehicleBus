@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="11" android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+    <LinearLayout android:orientation="1" android:id="@id/ll_voice" android:background="0x106000b" android:paddingLeft="10dp" android:paddingTop="20dp" android:paddingRight="10dp" android:layout_width="-1" android:layout_height="-2"
+        <LinearLayout android:layout_width="-1" android:layout_height="0dp" android:layout_weight="1.0">
+            <ImageView android:id="@id/iv_voice_voice" android:background="@drawable/voice_search_start_anim" android:layout_width="58dp" android:layout_height="58dp" />
+            <EditText android:textColor="0x106000c" android:id="@id/et_text" android:background="@drawable/voice_edit" android:layout_width="-1" android:layout_height="-1" android:hint="@string/clickMicrophone2Voice" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/ll_voice_btn" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="15dp" android:layout_marginBottom="15dp">
+            <Button android:id="@id/btn_voice_cancel" android:background="@drawable/btn_style_alert_dialog_button" android:layout_width="-1" android:layout_height="-2" android:text="@string/cancel" android:layout_weight="1.0" />
+            <Button android:id="@id/btn_voice_ok" android:background="@drawable/btn_style_alert_dialog_button" android:layout_width="-1" android:layout_height="-2" android:text="@string/sure" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

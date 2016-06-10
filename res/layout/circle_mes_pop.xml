@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView android:id="@id/cir_pop_list" android:background="@drawable/pop_msg_bg" android:padding="10dp" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="@keyrecord/OWNER_USER" />

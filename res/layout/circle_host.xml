@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-2">
+    <include android:id="@id/top" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/main_head" layout="@layout/circle_head" />
+    <RelativeLayout android:id="@id/mainlay" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="10dp" android:layout_marginRight="10dp" android:layout_below="@id/top">
+        <LinearLayout android:gravity="50" android:id="@id/circle_head" android:background="@drawable/circle_add_bg" android:layout_width="80dp" android:layout_height="80dp">
+            <Button android:textSize="12dp" android:textColor="@color/white" android:background="@drawable/circle_add_icon_bg" android:focusable="false" android:clickable="false" android:layout_width="80dp" android:layout_height="30dp" android:text="@string/CricleAddChoseIcon" />
+        </LinearLayout>
+        <EditText android:textColor="@color/white" android:id="@id/circle_bigname" android:background="@keyrecord/OWNER_USER" android:layout_width="-1" android:layout_height="50dp" android:layout_marginLeft="20dp" android:hint="@string/host_title" android:singleLine="true" android:layout_toRightOf="@id/circle_head" />
+        <ImageView android:id="@id/host_line" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_marginLeft="20dp" android:layout_toRightOf="@id/circle_head" android:layout_below="@id/circle_bigname" />
+        <EditText android:textColor="@color/white" android:id="@id/circle_describe" android:background="@keyrecord/OWNER_USER" android:layout_width="-1" android:layout_height="50dp" android:layout_marginLeft="20dp" android:layout_marginTop="10dp" android:hint="@string/circle_describe" android:singleLine="true" android:layout_toRightOf="@id/circle_head" android:layout_below="@id/host_line" />
+        <ImageView android:id="@id/host_line2" android:background="@drawable/line" android:layout_width="-1" android:layout_height="2dp" android:layout_marginLeft="20dp" android:layout_toRightOf="@id/circle_head" android:layout_below="@id/circle_describe" />
+        <LinearLayout android:orientation="0" android:id="@id/selectLay" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="20dp" android:layout_toRightOf="@id/circle_head" android:layout_below="@id/host_line2">
+            <RadioGroup android:orientation="1" android:id="@id/radiogroup1" android:layout_width="-2" android:layout_height="-2">
+                <RadioButton android:textSize="15sp" android:textColor="@color/white" android:id="@id/check1" android:layout_width="-2" android:layout_height="-2" android:text="@string/check1" />
+                <RadioButton android:textSize="15sp" android:textColor="@color/white" android:id="@id/check2" android:layout_width="-2" android:layout_height="-2" android:checked="false" android:text="@string/check2" />
+            </RadioGroup>
+        </LinearLayout>
+    </RelativeLayout>
+    <Button android:textColor="@color/white" android:id="@id/submit" android:background="@drawable/top_bg01" android:layout_width="100dp" android:layout_height="-2" android:layout_marginTop="20dp" android:text="@string/host_submit" android:layout_below="@id/mainlay" android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@color/light_gray" android:layout_width="-1" android:layout_height="-1">
+    <include layout="@layout/im_title" />
+    <ListView android:id="@id/friendList" android:layout_width="-1" android:layout_height="-1" android:cacheColorHint="#00000000" />
+</LinearLayout>

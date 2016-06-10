@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:gravity="10" android:id="@id/top" android:layout_width="-1" android:layout_height="50dp">
+        <TextView android:textSize="18sp" android:textColor="@color/huihong" android:id="@id/file_name" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/liebiao" />
+    </RelativeLayout>
+</RelativeLayout>

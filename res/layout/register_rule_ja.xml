@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@drawable/bg_radius" android:layout_width="-1" android:layout_height="-1">
+    <FrameLayout android:id="@id/layout_rule_frame" android:layout_width="-1" android:layout_height="-1">
+        <RelativeLayout android:id="@id/layout_rule_relative" android:layout_width="-1" android:layout_height="-1" android:layout_marginBottom="45dp"
+            <RelativeLayout android:id="@id/title_content" android:layout_width="-1" android:layout_height="-2" android:layout_margin="5dp">
+                <ImageView android:id="@id/rule_back" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/rule_back_selector" android:layout_alignParentLeft="true" />
+                <TextView android:textSize="16sp" android:textColor="@color/white" android:gravity="1" android:id="@id/title_textView" android:layout_width="-1" android:layout_height="-2" android:layout_toRightOf="@id/rule_back" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <TextView android:textColor="@color/white" android:id="@id/content_textView" android:paddingLeft="5dp" android:fadingEdge="0" android:layout_width="-2" android:layout_height="-2" android:layout_below="@id/title_content" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="11" android:layout_gravity="51" android:orientation="0" android:id="@id/layout_rule_linear" android:layout_width="-1" android:layout_height="40dp">
+            <TextView android:textColor="@color/black" android:gravity="11" android:id="@id/rule_agree" android:background="@drawable/rule_disagree" android:layout_width="-2" android:layout_height="-2" android:text="@string/register_agree" />
+            <TextView android:textColor="@color/white" android:gravity="11" android:id="@id/rule_next" android:background="@drawable/rule_disagree_next" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="@string/register_next" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

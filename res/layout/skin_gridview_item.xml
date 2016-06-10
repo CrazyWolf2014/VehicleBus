@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-2" android:layout_height="-2">
+    <ImageView android:id="@id/ItemImage" android:layout_width="100dp" android:layout_height="150dp" android:src="@drawable/icon_vw" android:scaleType="1" android:contentDescription="@keyrecord/OWNER_USER" />
+</LinearLayout>

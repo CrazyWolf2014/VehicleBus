@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <EditText android:id="@id/com_editText" android:layout_width="-1" android:layout_height="-2" />
+    <EditText android:id="@id/com_password" android:layout_width="-1" android:layout_height="-2" />
+    <Button android:id="@id/com_register" android:layout_width="-1" android:layout_height="-2" android:text="IsRegister" />
+</LinearLayout>

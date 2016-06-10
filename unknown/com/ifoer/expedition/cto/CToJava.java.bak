@@ -1,0 +1,1769 @@
+package com.ifoer.expedition.cto;
+
+import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Locale;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+
+import com.cnlaunch.dbs.SearchId;
+import com.cnlaunch.x431frame.R;
+import com.ifoer.db.DBDao;
+import com.ifoer.entity.Constant;
+import com.ifoer.entity.MenuData;
+import com.ifoer.entity.OperatingRecordInfo;
+import com.ifoer.entity.PageInteractiveData;
+import com.ifoer.entity.SpecialFunction;
+import com.ifoer.entity.SptActiveTest;
+import com.ifoer.entity.SptActiveTestButton;
+import com.ifoer.entity.SptActiveTestStream;
+import com.ifoer.entity.SptExDataStreamIdItem;
+import com.ifoer.entity.SptExDataStreamIdItem34;
+import com.ifoer.entity.SptInputNumric;
+import com.ifoer.entity.SptInputStringEx;
+import com.ifoer.entity.SptMessageBoxText;
+import com.ifoer.entity.SptStreamSelectIdItem;
+import com.ifoer.entity.SptTroubleTest;
+import com.ifoer.entity.SptVwDataStreamIdItem;
+import com.ifoer.entity.Spt_Combination_Menu;
+import com.ifoer.entity.Spt_Nobuttonbox_Text;
+import com.ifoer.entity.Spt_Progressbar_Box;
+import com.ifoer.entity.SupportConnectorId;
+import com.ifoer.expedition.BluetoothChat.BluetoothChatService;
+import com.ifoer.expedition.BluetoothOrder.Analysis;
+import com.ifoer.expedition.BluetoothOrder.ByteHexHelper;
+import com.ifoer.expedition.BluetoothOrder.OrderMontage;
+import com.ifoer.expedition.BluetoothOrder.PageInteractiveDataAnalysis;
+import com.ifoer.expedition.ndk.StdJni;
+import com.ifoer.expeditionphone.MainActivity;
+import com.ifoer.util.AndroidToLan;
+import com.ifoer.util.Bridge;
+import com.ifoer.util.CarDiagnose;
+import com.ifoer.util.CarDiagnoseBridge;
+import com.ifoer.util.MySharedPreferences;
+import com.ifoer.util.ReadByteData;
+import com.ifoer.util.WriteByteData;
+import com.launch.thread.MemoryThread;
+import com.launch.thread.MemoryThreadPage;
+import com.launch.thread.MemoryThreadVW;
+
+public class CToJava {
+	/** 动作测试界面中动作按钮是否更新 */
+	public static Boolean activeChangeButton = false;
+	/** 动作测试界面是否返回数据 */
+	public static Boolean activeFlag = false;
+	/** 数据流界面是否返回数据 */
+	public static Boolean streamFlag = false;
+	/** 老化测试界面是否返回数据 */
+	public static Boolean agingFlag = false;
+	/** 进度条界面是否返回数据 */
+	public static Boolean progressbarFlag = false;
+	/** 有无获取数据 */
+	public static Boolean haveData = false;
+	
+	/** 有无获取数据 SPT_NOWAITMESSAGEBOX_TEXT*/
+	public static Boolean nowaitmessageboxtext = false;
+	/** 动作测试中弹出对话框的拦截 */
+	public static Boolean inputBox = true;
+	/** 数据流34界面是否返回数据 */
+	public static Boolean dataStreamFlag = false;
+
+	/** 循环故障码界面是否返回数据 */
+	public static Boolean faultCodeFlag = false;
+	public static Boolean combinationFlag = false;
+
+	private static final boolean D = true;
+	public static SearchId searchId = new SearchId();
+	public static MemoryThread memoryThread = null;
+	public static MemoryThreadVW memoryThreadVW = null;
+	public static MemoryThreadPage memoryThreadPage = null;
+	/**
+	 * 蓝牙发送并接收一条命令
+	 * 
+	 * @param sendBuffer
+	 *            发送缓冲区指针,需要蓝牙端做指令拼接，并发送蓝牙端拼接好的指令
+	 * @param sendDataLength
+	 *            需要发送的字节数量
+	 * @param receiveBuffer
+	 *            接收缓冲区指针
+	 * @param receiveBufferLength
+	 *            接收缓冲区长度，蓝牙端发送指令后反馈的指令（截取指令中的数据区）
+	 * @param maxWaitTime
+	 *            发送完数据包后,等待接收的最大等待时间,单位:毫秒
+	 * @return
+	 */
+	public static byte[] WriteAndRead(byte[] sendBuffer, int sendDataLength,
+			byte[] receiveBuffer, int receiveBufferLength, int maxWaitTime) {
+		StdJni stdJni = new StdJni();
+			Log.e("weizewei",
+					"CTOjava加密数据交互   "
+							+ ByteHexHelper.bytesToHexString(sendBuffer));
+		byte[] pSendBuffer = sendBuffer;
+		int iSendDataLength = sendDataLength;
+		byte[] pReceiveBuffer = receiveBuffer;
+		int iReceiveBufferLength = receiveBufferLength;
+		int iMaxWaitTime = maxWaitTime;
+		if (true)
+			Log.v("databuffer", "延迟时间为：   " + iMaxWaitTime);
+		String backOrder = "";
+		if(Constant.needLog)
+			System.out.println("zhangwei接收到的指令段为：  "
+					+ ByteHexHelper.bytesToHexString(pSendBuffer));
+		byte[] sendOrder = OrderMontage.smartBox2701No(pSendBuffer);// 发送到蓝牙端的指令
+		BluetoothChatService mChatService = Constant.mChatService;
+		if (mChatService == null
+				|| mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
+			if(Constant.needLog)
+				System.out.println("没有连接上蓝牙设备！");
+			return null;
+		}
+		Log.e("weizewei",
+				"CTOjava发送的命令  "
+						+ ByteHexHelper.bytesToHexString(sendOrder));
+		mChatService.setWaitTime(iMaxWaitTime);
+		if (sendOrder.length > 0) {
+			Bridge bridge = new Bridge();
+
+			Runnable dynamic = new WriteByteData(bridge, sendOrder);
+			BluetoothChatService.readData = "";
+			Thread t = new Thread(dynamic);
+			t.start();
+			try {
+				t.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			// 发送指令
+			// backOrder = mChatService.writeBack(sendOrder);
+			backOrder = BluetoothChatService.readData;
+			// // 发送指令
+			// backOrder = mChatService.writeBack(sendOrder);
+			// BluetoothChatService.readData = "";
+		}
+
+		Log.e("weizewei",
+				"CTOJava返回给c端的完整指令 = " + backOrder);
+		if (Analysis.analysisData(sendOrder,
+				ByteHexHelper.hexStringToBytes(backOrder)) == false) {
+			backOrder = null;
+		}
+		if (backOrder == null || backOrder.length() <= 0) {
+			stdJni.setStateCode(-14);
+
+			iReceiveBufferLength = 0;
+			pReceiveBuffer = new byte[0];
+		} else {
+			stdJni.setStateCode(0);
+
+			iReceiveBufferLength = ByteHexHelper.intPackLength(backOrder
+					.substring(8, 12)) - 1;
+			pReceiveBuffer = new byte[iReceiveBufferLength];
+			byte[] allOrder = ByteHexHelper.hexStringToBytes(backOrder);
+
+			int flag = 0;
+			for (int i = 7; i < 7 + iReceiveBufferLength; i++) {
+				pReceiveBuffer[flag] = allOrder[i];
+				flag++;
+			}
+		}
+
+		if(Constant.needLog) {
+			System.out.println("zhangwei接收到c端的指令段： pSendBuffer = "
+					+ ByteHexHelper.bytesToHexString(pSendBuffer));
+			System.out.println("zhangwei返回给c端的指令段长度： iSendDataLength = "
+					+ iSendDataLength);
+			System.out.println("zhangwei返回给c端的指令段： pReceiveBuffer = "
+					+ ByteHexHelper.bytesToHexString(pReceiveBuffer));
+			System.out.println("zhangwei返回给c端的指令段长度： iReceiveBufferLength = "
+					+ iReceiveBufferLength);
+
+			Log.v("zhangwei",
+					"lanya to c   "
+							+ ByteHexHelper.bytesToHexString(pReceiveBuffer));
+		}
+		return pReceiveBuffer;
+	}
+
+	/**
+	 * 蓝牙发送并接收一条命令
+	 * 
+	 * @param sendBuffer
+	 *            发送缓冲区指针,需要蓝牙端做指令拼接，并发送蓝牙端拼接好的指令
+	 * @param sendDataLength
+	 *            需要发送的字节数量
+	 * @param receiveBuffer
+	 *            接收缓冲区指针
+	 * @param receiveBufferLength
+	 *            接收缓冲区长度，蓝牙端发送指令后反馈的指令（截取指令中的数据区）
+	 * @param maxWaitTime
+	 *            发送完数据包后,等待接收的最大等待时间,单位:毫秒
+	 * @return
+	 */
+	public static byte[] WriteAndRead2701(byte[] sendBuffer,
+			int sendDataLength, byte[] receiveBuffer, int receiveBufferLength,
+			int maxWaitTime) {
+		StdJni stdJni = new StdJni();
+		if(Constant.needLog)
+			Log.v("zhangwei",
+					"WriteAndRead2701 lanya2701 to j   "
+							+ ByteHexHelper.bytesToHexString(sendBuffer));
+		byte[] pSendBuffer = sendBuffer;
+		int iSendDataLength = sendDataLength;
+		byte[] pReceiveBuffer = receiveBuffer;
+		int iReceiveBufferLength = receiveBufferLength;
+		int iMaxWaitTime = maxWaitTime;
+		if(Constant.needLog)
+			Log.v("databuffer", "延迟时间为：   " + iMaxWaitTime);
+		String backOrder = "";
+		if(Constant.needLog)
+			System.out.println("zhangwei WriteAndRead2701 2701接收到的指令段为：  "
+					+ ByteHexHelper.bytesToHexString(pSendBuffer));
+		byte[] sendOrder = OrderMontage.smartBox2701(pSendBuffer);// 发送到蓝牙端的指令
+		BluetoothChatService mChatService = Constant.mChatService;
+		if (mChatService == null
+				|| mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
+			if(Constant.needLog)
+				System.out.println("没有连接上蓝牙设备！");
+			return null;
+		}
+		mChatService.setWaitTime(iMaxWaitTime);
+		if (sendOrder.length > 0) {
+			Bridge bridge = new Bridge();
+
+			Runnable dynamic = new WriteByteData(bridge, sendOrder);
+			BluetoothChatService.readData = "";
+			Thread t = new Thread(dynamic);
+			t.start();
+			try {
+				t.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			backOrder = BluetoothChatService.readData;
+			// 发送指令
+			// backOrder = mChatService.writeBack(sendOrder);
+			// BluetoothChatService.readData = "";
+		}
+
+		if(Constant.needLog)
+			System.out.println("zhangwei WriteAndRead2701 2701返回给c端的完整指令 = " + backOrder);
+		if (backOrder == null || backOrder.length() <= 0) {
+			stdJni.setStateCode(-14);
+
+			iReceiveBufferLength = 0;
+			pReceiveBuffer = new byte[0];
+		} else {
+			stdJni.setStateCode(0);
+
+			iReceiveBufferLength = ByteHexHelper.intPackLength(backOrder
+					.substring(8, 12)) - 3;
+			pReceiveBuffer = new byte[iReceiveBufferLength];
+			byte[] allOrder = ByteHexHelper.hexStringToBytes(backOrder);
+
+			int flag = 0;
+			for (int i = 9; i < 9 + iReceiveBufferLength; i++) {
+				pReceiveBuffer[flag] = allOrder[i];
+				flag++;
+			}
+		}
+		if(Constant.needLog) {
+			System.out.println("zhangwei WriteAndRead2701 2701接收到c端的指令段： pSendBuffer = "
+					+ ByteHexHelper.bytesToHexString(pSendBuffer));
+			System.out.println("zhangwei WriteAndRead2701 2701返回给c端的指令段长度： iSendDataLength = "
+					+ iSendDataLength);
+			System.out.println("zhangwei WriteAndRead2701 2701返回给c端的指令段： pReceiveBuffer = "
+					+ ByteHexHelper.bytesToHexString(pReceiveBuffer));
+			System.out.println("zhangwei WriteAndRead2701 2701返回给c端的指令段长度： iReceiveBufferLength = "
+					+ iReceiveBufferLength);
+
+			Log.v("zhangwei",
+					"WriteAndRead2701 lanya2701 to c   "
+							+ ByteHexHelper.bytesToHexString(pReceiveBuffer));
+		}
+		
+		String generateOperatingRecord = MySharedPreferences.getStringValue(
+				MainActivity.contexts, MySharedPreferences.generateOperatingRecord);
+		if(generateOperatingRecord.equalsIgnoreCase("0")){
+			String softPackageId = MySharedPreferences.getStringValue(
+					MainActivity.contexts, MySharedPreferences.savesoftPackageId);
+			String serialNo = MySharedPreferences.getStringValue(
+					MainActivity.contexts, MySharedPreferences.serialNoKey);
+			if(Constant.ADDRESS == null || Constant.ADDRESS.equals("")){
+				Constant.ADDRESS = MySharedPreferences.getStringValue(
+						MainActivity.contexts, "CurrentPosition");
+			}
+			DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String date = df.format(new Date());
+			OperatingRecordInfo recordInfo = new OperatingRecordInfo();
+			recordInfo.setSerialNumber(serialNo);
+			recordInfo.setTestTime(date);
+			recordInfo.setTestSite(Constant.ADDRESS);
+			recordInfo.setTestCar(softPackageId);
+			Boolean flag = DBDao.getInstance(MainActivity.contexts).addOperatingRecord(recordInfo, MainActivity.database);
+			if(flag){
+				MySharedPreferences.setString(MainActivity.contexts,
+						MySharedPreferences.generateOperatingRecord, "1");
+			}
+		}
+		
+		return pReceiveBuffer;
+	}
+	/**********************************************************
+	 *                                                        *
+	 *   函数名:int ReceiveDataTime(char *pReceiveBuffer,     *
+	 *                         int iBufferLength,             *
+	 *                         int iMaxWaitTime )             *
+	 *   功  能:从SmartBox接收数据包,并解包校验后,将包内数    *
+	 *          存入接收缓冲区.                               *
+	 *   返回值:接收到的数据长度,如为0则说明接收出错,出错原   *
+	 *          因可通过GetErrorCode()函数取得出错代码得到;   *
+	 *          如返回值大于接收缓冲区长度,则超出部分被丢弃   *
+	 *   参数值:BYTE *pReceiveBuffer接收缓冲区指针            *
+	 *          int iBufferLength接收缓冲区长度.              *
+	 *          int iMaxWaitTime 最大等待接收时间,单位:毫秒   *
+	 *                                                        *
+	 **********************************************************/
+	public static byte[] ReceiveDataByTime( byte[] receiveBuffer, int receiveBufferLength,
+			int maxWaitTime) {
+		StdJni stdJni = new StdJni();
+		
+		byte[] pReceiveBuffer = receiveBuffer;
+		int iReceiveBufferLength = receiveBufferLength;
+		int iMaxWaitTime = maxWaitTime;
+		if(Constant.needLog)
+			Log.v("databuffer", "延迟时间为：   " + iMaxWaitTime);
+		String backOrder = "";
+
+		BluetoothChatService mChatService = Constant.mChatService;
+		if (mChatService == null
+				|| mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
+			if(Constant.needLog)
+				System.out.println("没有连接上蓝牙设备！");
+			return null;
+		}
+		   mChatService.setWaitTime(iMaxWaitTime);
+			Bridge bridge = new Bridge();
+
+			Runnable dynamic = new ReadByteData(bridge);
+			BluetoothChatService.readData = "";
+			Thread t = new Thread(dynamic);
+			t.start();
+			try {
+				t.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			backOrder = BluetoothChatService.readData;
+
+		if(Constant.needLog)
+			System.out.println("2701返回给c端的完整指令 = " + backOrder);
+		if (backOrder == null || backOrder.length() <= 0) {
+			stdJni.setStateCode(-14);
+
+			iReceiveBufferLength = 0;
+			pReceiveBuffer = new byte[0];
+		} else {
+			stdJni.setStateCode(0);
+
+			iReceiveBufferLength = ByteHexHelper.intPackLength(backOrder
+					.substring(8, 12)) - 3;
+			pReceiveBuffer = new byte[iReceiveBufferLength];
+			byte[] allOrder = ByteHexHelper.hexStringToBytes(backOrder);
+
+			int flag = 0;
+			for (int i = 9; i < 9 + iReceiveBufferLength; i++) {
+				pReceiveBuffer[flag] = allOrder[i];
+				flag++;
+			}
+		}
+		if(Constant.needLog)System.out.println("ReceiveDataByTime返回给c端的指令段： pReceiveBuffer = "
+					+ ByteHexHelper.bytesToHexString(pReceiveBuffer));
+		if(Constant.needLog)System.out.println("ReceiveDataByTime返回给c端的指令段长度： iReceiveBufferLength = "
+					+ iReceiveBufferLength);
+
+		if(Constant.needLog)Log.v("ReceiveDataByTime",
+					"ReceiveDataByTime to c   "
+							+ ByteHexHelper.bytesToHexString(pReceiveBuffer));		
+		return pReceiveBuffer;
+	}
+	/**
+	 * 
+	 * @param databuffer
+	 *            预处理指令段
+	 * @return
+	 */
+	public static byte[] getProtData(byte[] databuffer) {
+		byte[] feedback = null;// 反馈的指令集
+		// 反馈指令段
+		byte[] feedbackBuffer = databuffer;
+		if(Constant.needLog)
+			System.out.println("反馈指令为   = "
+					+ ByteHexHelper.bytesToHexString(feedbackBuffer));
+		if(Constant.needLog)
+			Log.i("反馈指令为", ByteHexHelper.bytesToHexString(feedbackBuffer));
+		
+		PageInteractiveData pageInteractiveData = PageInteractiveDataAnalysis
+				.dataUtil(feedbackBuffer);
+//		Log.d("weige", "type: " + pageInteractiveData.getPackageType() + "feedback: " +
+//				ByteHexHelper.bytesToHexString(feedbackBuffer));
+		Log.e("CToJava nxy", "pageInteractiveData.getPackageType()"+pageInteractiveData.getPackageType());
+		switch (pageInteractiveData.getPackageType()) {
+		case 1:// SPT_MENU_ID 1
+			ArrayList<MenuData> menuDataList = PageInteractiveDataAnalysis
+					.spt_menu_id1(pageInteractiveData);
+			String path = Constant.OBD2_EN_GGP_PATH;
+
+			if(Constant.needLog)
+				System.out.println("path = " + path);
+			if (path != null && path.length() > 0) {
+
+//				SearchId searchId = new SearchId();
+//				int back = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+//				if(Constant.needLog)
+//					System.out.println("打开OBD2_EN_GGP的结果为：" + back);
+				for (int i = 1; i < menuDataList.size(); i++) {
+					MenuData menuData = menuDataList.get(i);
+					String lString = "";
+					byte[] databuf = ByteHexHelper.hexStringToBytes(menuData
+							.getMenuId());
+					// 获取数据流名称
+					int v_id = (databuf[0] & 0xff) * 0x1000000
+							+ (databuf[1] & 0xff) * 0x10000
+							+ (databuf[2] & 0xff) * 0x100 + (databuf[3] & 0xff);
+					byte[] MenuContentbytes = searchId
+							.getTextFromLibReturnByte(v_id, 1);
+					byte[] menuContentbytes = null;
+					if (MenuContentbytes.length > 0) {
+						menuContentbytes = new byte[MenuContentbytes.length - 1];
+						for (int j = 0; j < menuContentbytes.length; j++) {
+							menuContentbytes[j] = MenuContentbytes[j];
+						}
+					} else {
+						menuContentbytes = new byte[0];
+					}
+					lString = ByteHexHelper.byteToWord(menuContentbytes);
+					if(lString.length() > 0){
+						menuData.setMenuContent(lString);
+					}else{
+						menuData.setMenuContent(menuData.getMenuId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+					}
+
+					if(Constant.needLog)
+						System.out.println(lString);
+				}
+//				searchId.ggpClose();//2014-6-5nxy 注释
+				// Intent closeNobuttonBox = new Intent("closeNobuttonBox");
+				// BluetoothChat.contexts.sendBroadcast(closeNobuttonBox);
+
+				Intent intent = new Intent("feedbackMeauData");
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("menuData", (Serializable) menuDataList);
+				bundle.putInt("type", 1);
+				intent.putExtras(bundle);
+				MainActivity.contexts.sendBroadcast(intent);
+				
+				CarDiagnoseBridge bridge = new CarDiagnoseBridge();
+				Runnable dynamic = new CarDiagnose(bridge);
+				Thread t = new Thread(dynamic);
+				t.start();
+				try {
+					t.join();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+//				for (int i = 0;; i++) {
+//					if (haveData == true) {
+//						haveData = false;
+//						break;
+//					}
+//				}
+				byte[] backData = Constant.feedback;
+				Constant.feedback = null;
+				feedback = PageInteractiveDataAnalysis.feedbackData(backData,
+						pageInteractiveData);
+			}
+			break;
+
+		case 2:// SPT_TROUBLE_CODE_ID 2
+
+			break;
+
+		case 3:// SPT_STREAM_SELECT_ID 3
+
+			break;
+
+		case 4:// SPT_DATASTREAM_ID 4
+
+			break;
+
+		case 5:// SPT_NOBUTTONBOX_TEXT 5
+			Log.e("CToJava", "执行5");
+			Spt_Nobuttonbox_Text nobuttonbox = PageInteractiveDataAnalysis
+					.Spt_Nobuttonbox_Text5(pageInteractiveData);
+			byte[] back5 = new byte[0];
+			Intent intentNobutton = new Intent("SPT_NOBUTTONBOX_TEXT");
+			Bundle bundleNobutton = new Bundle();
+			bundleNobutton.putSerializable("Nobuttonbox",
+					(Serializable) nobuttonbox);
+			bundleNobutton.putInt("type", 5);
+			intentNobutton.putExtras(bundleNobutton);
+			MainActivity.contexts.sendBroadcast(intentNobutton);
+			feedback = PageInteractiveDataAnalysis.feedbackData(back5,
+					pageInteractiveData);
+			Constant.feedback = null;
+			break;
+
+		case 6:// SPT_MESSAGEBOX_TEXT 6
+			SptMessageBoxText sptMessageBoxText = PageInteractiveDataAnalysis
+					.spt_messageBox_text6(pageInteractiveData);
+			Intent intentMessageBox = new Intent("SPT_MESSAGEBOX_TEXT");
+			Bundle bundleMessageBox = new Bundle();
+			bundleMessageBox.putSerializable("SPT_MESSAGEBOX_TEXT",
+					(Serializable) sptMessageBoxText);
+			bundleMessageBox.putInt("type", 6);
+			intentMessageBox.putExtras(bundleMessageBox);
+			MainActivity.contexts.sendBroadcast(intentMessageBox);
+			haveData = false;
+			for (int i = 0;; i++) {
+				if (haveData == true) {
+					haveData = false;
+					break;
+				}
+			}
+			byte[] backData = Constant.feedback;
+			Constant.feedback = null;
+			feedback = PageInteractiveDataAnalysis.feedbackData(backData,
+					pageInteractiveData);
+			break;
+
+		case 7:// SPT_INPUTBOX_TEXT 7
+			Spt_Nobuttonbox_Text inputBox = PageInteractiveDataAnalysis
+					.spt_inputBox_text7(pageInteractiveData);
+			Intent intentInputBox = new Intent("SPT_INPUTBOX_TEXT");
+			Bundle bundleInputBox = new Bundle();
+			bundleInputBox.putSerializable("SPT_INPUTBOX_TEXT",
+					(Serializable) inputBox);
+			bundleInputBox.putInt("type", 7);
+			intentInputBox.putExtras(bundleInputBox);
+			MainActivity.contexts.sendBroadcast(intentInputBox);
+			for (int i = 0;; i++) {
+				if (haveData == true) {
+					haveData = false;
+					break;
+				}
+			}
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					Constant.feedback, pageInteractiveData);
+			Constant.feedback = null;
+			break;
+
+		case 8:// SPT_INPUTSTRING 8
+			Spt_Nobuttonbox_Text inputStr = PageInteractiveDataAnalysis
+					.spt_inputString8(pageInteractiveData);
+			Intent intentInputStr = new Intent("SPT_INPUTSTRING");
+			Bundle bundleInputStr = new Bundle();
+			bundleInputStr.putSerializable("SPT_INPUTSTRING",
+					(Serializable) inputStr);
+			bundleInputStr.putInt("type", 8);
+			intentInputStr.putExtras(bundleInputStr);
+			MainActivity.contexts.sendBroadcast(intentInputStr);
+			for (int i = 0;; i++) {
+				if (haveData == true) {
+					haveData = false;
+					break;
+				}
+			}
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					Constant.feedback, pageInteractiveData);
+			Constant.feedback = null;
+			break;
+
+		case 9:// SPT_ACTIVE_TEST 9
+			SptActiveTest sptActiveTest = PageInteractiveDataAnalysis
+					.spt_active_test9(pageInteractiveData);
+			ArrayList<SptActiveTestButton> buttonList = sptActiveTest
+					.getActiveTestButtons();
+			ArrayList<SptActiveTestStream> streamList = sptActiveTest
+					.getActiveTestStreams();
+			path = Constant.OBD2_EN_GGP_PATH;
+			if(Constant.needLog)
+				System.out.println("path = " + path);
+			if (path != null && path.length() > 0) {
+
+//				SearchId searchId = new SearchId();
+//				int back = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+//				if(Constant.needLog)
+//					System.out.println("打开OBD2_EN_GGP的结果为：" + back);
+				for (int i = 0; i < streamList.size(); i++) {
+					SptActiveTestStream activeTestStream = streamList.get(i);
+					String lString = "";
+					byte[] databuf = ByteHexHelper
+							.hexStringToBytes(activeTestStream
+									.getDataStreamId());
+					// 获取数据流名称
+					int v_id = (databuf[0] & 0xff) * 0x1000000
+							+ (databuf[1] & 0xff) * 0x10000
+							+ (databuf[2] & 0xff) * 0x100 + (databuf[3] & 0xff);
+					byte[] activeContentbytes = searchId
+							.getTextFromLibReturnByte(v_id, 3);
+					byte[] activeContent = null;
+					if (activeContentbytes.length > 0) {
+						activeContent = new byte[activeContentbytes.length - 1];
+						for (int j = 0; j < activeContent.length; j++) {
+							activeContent[j] = activeContentbytes[j];
+						}
+					} else {
+						activeContent = new byte[0];
+					}
+					String[] activeIdContent = PageInteractiveDataAnalysis
+							.separateString(ByteHexHelper
+									.bytesToHexString(activeContent));
+					if (activeIdContent != null && activeIdContent.length > 0) {
+						if (activeIdContent.length >= 1
+								&& activeIdContent[0].equalsIgnoreCase("---")) {
+							activeTestStream.setDataStreamContent(activeTestStream.getDataStreamId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						} else if (activeIdContent.length >= 1
+								&& !activeIdContent[0].equalsIgnoreCase("---")) {
+							activeTestStream
+									.setDataStreamContent(ByteHexHelper.byteToWord(ByteHexHelper
+											.hexStringToBytes(activeIdContent[0])));
+						}
+						if (activeIdContent.length > 1
+								&& activeIdContent[1].equalsIgnoreCase("---")) {
+							activeTestStream.setUnit("");
+						} else if (activeIdContent.length > 1
+								&& !activeIdContent[1].equalsIgnoreCase("---")) {
+							activeTestStream
+									.setUnit(ByteHexHelper.byteToWord(ByteHexHelper
+											.hexStringToBytes(activeIdContent[1])));
+						}
+					} else {
+						lString = ByteHexHelper.byteToWord(activeContent);
+						if(lString.length() > 0){
+							activeTestStream.setDataStreamContent(lString);
+						}else{
+							activeTestStream.setDataStreamContent(activeTestStream.getDataStreamId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						}
+						if(Constant.needLog)
+							System.out.println(lString);
+					}
+				}
+				for (int i = 0; i < buttonList.size(); i++) {
+					SptActiveTestButton activeTestButton = buttonList.get(i);
+					String lString = "";
+					byte[] databuf = ByteHexHelper
+							.hexStringToBytes(activeTestButton
+									.getActiveButtonId());
+					// 获取数据流名称
+					int v_id = (databuf[0] & 0xff) * 0x1000000
+							+ (databuf[1] & 0xff) * 0x10000
+							+ (databuf[2] & 0xff) * 0x100 + (databuf[3] & 0xff);
+					byte[] activeContentbytes = searchId
+							.getTextFromLibReturnByte(v_id, 1);
+					byte[] activeContent = null;
+					if (activeContentbytes.length > 0) {
+						activeContent = new byte[activeContentbytes.length - 1];
+						for (int j = 0; j < activeContent.length; j++) {
+							activeContent[j] = activeContentbytes[j];
+						}
+					} else {
+						activeContent = new byte[0];
+					}
+					lString = ByteHexHelper.byteToWord(activeContent);
+					if(lString.length() > 0){
+						activeTestButton.setActiveButtonContent(lString);
+					}else{
+						activeTestButton.setActiveButtonContent(activeTestButton.getActiveButtonId());
+					}
+					if(Constant.needLog)
+						System.out.println(activeTestButton.getActiveButtonContent());
+				}
+//				searchId.ggpClose();
+				Intent intent = new Intent("SPT_ACTIVE_TEST");
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("ACTIVE_TEST",
+						(Serializable) sptActiveTest);
+				bundle.putInt("type", 9);
+				intent.putExtras(bundle);
+				MainActivity.contexts.sendBroadcast(intent);
+				for (int i = 0;; i++) {
+					if (activeFlag == true && CToJava.inputBox == true) {
+						activeFlag = false;
+						break;
+					}
+				}
+				// feedback =
+				// PageInteractiveDataAnalysis.feedbackData(Constant.feedback,
+				// pageInteractiveData);
+				// Constant.feedback = null;
+				// haveData = false;
+				feedback = PageInteractiveDataAnalysis.feedbackData(
+						Constant.activeNextCode, pageInteractiveData);
+				Log.e("weige","feedback"+ByteHexHelper.bytesToHexString(feedback));
+				if (ByteHexHelper.intPackLength(Constant.activeNextCode) != 255) {
+					// activeChangeButton = true;
+					Constant.activeNextCode = Constant.noButton;
+				}
+				haveData = false;
+
+			}
+			break;
+
+		case 10:// SPT_EXIT_SHOW_WINDOW 10
+			Intent exitIntent = new Intent("SPT_EXIT_SHOW_WINDOW");
+			MainActivity.contexts.sendBroadcast(exitIntent);
+			byte[] back10 = new byte[0];
+			feedback = PageInteractiveDataAnalysis.feedbackData(back10,
+					pageInteractiveData);
+			searchId.ggpClose();
+			break;
+
+		case 11:// SPT_SHOW_PICTURE 11
+			byte[] pictureByte = pageInteractiveData.getData();
+			String pictureName = "";
+			path = Constant.OBD2_EN_GGP_PATH;
+			if(Constant.needLog)
+				System.out.println("path = " + path);
+			if (path != null && path.length() > 0) {
+
+//				SearchId searchId = new SearchId();
+//				int back = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+//				if(Constant.needLog)
+//					System.out.println("打开OBD2_EN_GGP的结果为：" + back);
+				// 获取数据流名称
+				int v_id = (pictureByte[0] & 0xff) * 0x1000000
+						+ (pictureByte[1] & 0xff) * 0x10000
+						+ (pictureByte[2] & 0xff) * 0x100
+						+ (pictureByte[3] & 0xff);
+				byte[] pictureContentbytes = searchId.getTextFromLibReturnByte(
+						v_id, 12);
+				String lString = ByteHexHelper.byteToWord(pictureContentbytes);
+				pictureName = ByteHexHelper.replaceBlank(lString);
+
+				if(Constant.needLog)
+					System.out.println(lString);
+//				searchId.ggpClose();
+
+				Intent intent = new Intent("SPT_SHOW_PICTURE");
+				Bundle bundle = new Bundle();
+				bundle.putString("SPT_SHOW_PICTURE", pictureName);
+				bundle.putInt("type", 11);
+				intent.putExtras(bundle);
+				MainActivity.contexts.sendBroadcast(intent);
+				for (int i = 0;; i++) {
+					if (haveData == true) {
+						haveData = false;
+						break;
+					}
+				}
+
+				backData = Constant.streamNextCode;
+				feedback = PageInteractiveDataAnalysis.feedbackData(backData,
+						pageInteractiveData);
+			}
+			break;
+
+		case 13:// SPT_AUDI_DATASTREAM_ID 13
+
+			break;
+
+		case 14:// SPT_TROUBLE_CODE 14
+			ArrayList<SptTroubleTest> troubleTestList = PageInteractiveDataAnalysis.spt_trouble_code14(pageInteractiveData);
+			path = Constant.OBD2_EN_GGP_PATH;
+
+			if(Constant.needLog)
+				System.out.println("path = " + path);
+			if (path != null && path.length() > 0) {
+
+//				SearchId searchId = new SearchId();
+//				int back = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+//				if(Constant.needLog)
+//					System.out.println("打开OBD2_EN_GGP的结果为：" + back);
+				for (int i = 0; i < troubleTestList.size(); i++) {
+					SptTroubleTest troubleTest = troubleTestList.get(i);
+					byte[] databuf = ByteHexHelper.hexStringToBytes(troubleTest.getTroubleId());
+					// 获取数据流名称
+					int v_id = (databuf[0] & 0xff) * 0x1000000 + (databuf[1] & 0xff) * 0x10000 + (databuf[2] & 0xff) * 0x100 + (databuf[3] & 0xff);
+					byte[] troubleIdContentbytes = searchId.getTextFromLibReturnByte(v_id, 6);
+					byte[] troubleHelpbytes = searchId.getTextFromLibReturnByte(v_id, 8);
+					String troubleHelp = ByteHexHelper.byteToWord(troubleHelpbytes);
+					if(Constant.needLog)
+						System.out.println("故障码帮助内容  = " + troubleHelp);
+					troubleTest.setTroubleHelp(troubleHelp);
+					byte[] troubleStateContent = null;
+					if (troubleIdContentbytes.length > 0) {
+						troubleStateContent = new byte[troubleIdContentbytes.length - 1];
+						for (int j = 0; j < troubleStateContent.length; j++) {
+							troubleStateContent[j] = troubleIdContentbytes[j];
+						}
+					} else {
+						troubleStateContent = new byte[0];
+					}
+					if(Constant.needLog)
+						System.out.println("故障码所有内容十六进制  = " + ByteHexHelper.bytesToHexString(troubleStateContent));
+					if(Constant.needLog)
+						System.out.println("故障码所有内容  = " + ByteHexHelper.byteToWord(troubleStateContent));
+
+					String[] troubleIdContent = PageInteractiveDataAnalysis.separateString(ByteHexHelper.bytesToHexString(troubleStateContent));
+					if (troubleIdContent != null && troubleIdContent.length > 0) {
+						if (troubleIdContent.length >= 1 && troubleIdContent[0].equalsIgnoreCase("---")) {
+							troubleTest.setTroubleCodeContent("");
+						} else if (troubleIdContent.length >= 1 && !troubleIdContent[0].equalsIgnoreCase("---")) {
+							troubleTest.setTroubleCodeContent(ByteHexHelper.byteToWord(ByteHexHelper.hexStringToBytes(troubleIdContent[0])));
+						}
+						if (troubleIdContent.length > 1 && troubleIdContent[1].equalsIgnoreCase("---")) {
+							troubleTest.setTroubleDescribeContent(troubleTest.getTroubleId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						} else if (troubleIdContent.length > 1 && !troubleIdContent[1].equalsIgnoreCase("---")) {
+							troubleTest.setTroubleDescribeContent(ByteHexHelper.byteToWord(ByteHexHelper.hexStringToBytes(troubleIdContent[1])));
+						} else if (troubleIdContent.length == 0) {
+							troubleTest.setTroubleDescribeContent(troubleTest.getTroubleId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						}
+
+						if(Constant.needLog)
+							System.out.println("故障码内容 = " + troubleTest.getTroubleCodeContent());
+						if(Constant.needLog)
+							System.out.println("故障描述内容 = " + troubleTest.getTroubleDescribeContent());
+					} else {
+						if(Constant.needLog)
+							Log.e("weizewei", "故障码id=" + troubleTest.getTroubleId());
+						String lString = troubleTest.getTroubleCodeContent();
+						troubleTest.setTroubleCodeContent(lString);
+						troubleTest.setTroubleDescribeContent(ByteHexHelper.replaceBlank1(troubleTest.getTroubleId()) + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						if(Constant.needLog)
+							System.out.println("备用故障码内容 = " + troubleTest.getTroubleCodeContent());
+					}
+					if (!troubleTest.getTroubleStateId().equalsIgnoreCase("ffffffff")) {
+						byte[] databufs = ByteHexHelper.hexStringToBytes(troubleTest.getTroubleStateId());
+						// 获取数据流名称
+						int v_ids = (databufs[0] & 0xff) * 0x1000000 + (databufs[1] & 0xff) * 0x10000 + (databufs[2] & 0xff) * 0x100 + (databufs[3] & 0xff);
+						byte[] troubleStateContentbytes = searchId.getTextFromLibReturnByte(v_ids, 7);
+						troubleStateContent = null;
+						if (troubleStateContentbytes.length > 0) {
+							troubleStateContent = new byte[troubleStateContentbytes.length - 1];
+							for (int j = 0; j < troubleStateContent.length; j++) {
+								troubleStateContent[j] = troubleStateContentbytes[j];
+							}
+						} else {
+							troubleStateContent = new byte[0];
+						}
+						String lString = ByteHexHelper.byteToWord(troubleStateContent);
+						troubleTest.setTroubleStateContent(lString);
+						if(Constant.needLog)
+							System.out.println("故障状态内容 = " + troubleTest.getTroubleStateContent());
+					}
+				}
+				//searchId.ggpClose();
+				Intent intent = new Intent("SPT_TROUBLE_CODE");
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("SPT_TROUBLE_CODE", (Serializable) troubleTestList);
+				bundle.putInt("type", 14);
+				intent.putExtras(bundle);
+				MainActivity.contexts.sendBroadcast(intent);
+
+				CarDiagnoseBridge bridge = new CarDiagnoseBridge();
+				Runnable dynamic = new CarDiagnose(bridge);
+				Thread t = new Thread(dynamic);
+				t.start();
+				try {
+					t.join();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+
+			}
+			feedback = PageInteractiveDataAnalysis.feedbackData(Constant.feedback, pageInteractiveData);
+			Constant.feedback = null;
+			break;
+
+		case 15:// SPT_INPUT_NUMERIC 15
+			SptInputNumric inputNumric = PageInteractiveDataAnalysis
+					.spt_input_numric15(pageInteractiveData);
+			Intent intentInputString = new Intent("SPT_INPUT_NUMERIC");
+			Bundle bundleInputString = new Bundle();
+			bundleInputString.putSerializable("SPT_INPUT_NUMERIC",
+					(Serializable) inputNumric);
+			bundleInputString.putInt("type", 15);
+			intentInputString.putExtras(bundleInputString);
+			MainActivity.contexts.sendBroadcast(intentInputString);
+			for (int i = 0;; i++) {
+				if (haveData == true) {
+					haveData = false;
+					break;
+				}
+			}
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					Constant.feedback, pageInteractiveData);
+			Constant.feedback = null;
+			break;
+
+		case 16:// SPT_INPUTSTRING_EX 16
+			SptInputStringEx inputString = PageInteractiveDataAnalysis
+					.spt_inputString_ex16(pageInteractiveData);
+			Intent intentInputString16 = new Intent("SPT_INPUTSTRING_EX");
+			Bundle bundleInputString16 = new Bundle();
+			bundleInputString16.putSerializable("SPT_INPUTSTRING_EX",
+					(Serializable) inputString);
+			bundleInputString16.putInt("type", 16);
+			intentInputString16.putExtras(bundleInputString16);
+			MainActivity.contexts.sendBroadcast(intentInputString16);
+			for (int i = 0;; i++) {
+				if (haveData == true) {
+					haveData = false;
+					break;
+				}
+			}
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					Constant.feedback, pageInteractiveData);
+			Constant.feedback = null;
+			break;
+
+		case 17:// SPT_STREAM_SELECT_ID_EX 17
+			ArrayList<SptStreamSelectIdItem> streamSelectIdlist = PageInteractiveDataAnalysis
+			.spt_stream_select_id_ex17(pageInteractiveData);
+			path = Constant.OBD2_EN_GGP_PATH;
+
+			if(Constant.needLog)
+				System.out.println("path = " + path);
+			if (path != null && path.length() > 0) {
+
+//		SearchId searchId = new SearchId();
+//		int back = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+//		if(Constant.needLog)
+//			System.out.println("打开OBD2_EN_GGP的结果为：" + back);
+		for (int i = 1; i < streamSelectIdlist.size(); i++) {
+			SptStreamSelectIdItem streamSelectIdItem = streamSelectIdlist
+					.get(i);
+			String lString = "";
+			byte[] databuf = ByteHexHelper
+					.hexStringToBytes(streamSelectIdItem
+							.getStreamSelectId());
+			// 获取数据流名称
+			int v_id = (databuf[0] & 0xff) * 0x1000000
+					+ (databuf[1] & 0xff) * 0x10000
+					+ (databuf[2] & 0xff) * 0x100 + (databuf[3] & 0xff);
+			byte[] activeContentbytes = searchId
+					.getTextFromLibReturnByte(v_id, 3);
+			byte[] activeContent = null;
+			if (activeContentbytes.length > 0) {
+				activeContent = new byte[activeContentbytes.length - 1];
+				for (int j = 0; j < activeContent.length; j++) {
+					activeContent[j] = activeContentbytes[j];
+				}
+			} else {
+				activeContent = new byte[0];
+			}
+			String dataStr = "";
+			if (activeContent.length > 0) {
+				String[] datas = PageInteractiveDataAnalysis
+						.separateString(ByteHexHelper
+								.bytesToHexString(activeContent));
+				if (datas.length >= 1) {
+					if (datas[0].equalsIgnoreCase("---")) {
+						dataStr = "";
+					} else {
+						dataStr = datas[0];
+					}
+				}
+			}
+			lString = ByteHexHelper.byteToWord(ByteHexHelper
+					.hexStringToBytes(dataStr));
+			if(lString.length() > 0){
+				streamSelectIdItem.setStreamSelectStr(lString);
+			}else{
+				streamSelectIdItem.setStreamSelectStr(streamSelectIdItem.getStreamSelectId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+			}
+			if(Constant.needLog)
+				System.out.println(lString);
+		}
+//		searchId.ggpClose();
+		Intent intent = new Intent("SPT_STREAM_SELECT_ID_EX");
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("SPT_STREAM_SELECT_ID_EX",
+				(Serializable) streamSelectIdlist);
+		bundle.putInt("type", 17);
+		intent.putExtras(bundle);
+		MainActivity.contexts.sendBroadcast(intent);
+		
+		CarDiagnoseBridge bridge = new CarDiagnoseBridge();
+		Runnable dynamic = new CarDiagnose(bridge);
+		Thread t = new Thread(dynamic);
+		t.start();
+		try {
+			t.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+//		for (int i = 0;; i++) {
+//			if (haveData == true) {
+//				haveData = false;
+//				break;
+//			}
+//		}
+		int firstSite = ByteHexHelper.hexString2binaryString(ByteHexHelper.bytesToHexString(Constant.feedback)).indexOf("1");
+		if(firstSite == -1){
+			firstSite = 0;
+		}
+		byte[] serialNum = ByteHexHelper.hexStringToBytes(ByteHexHelper.packLength(firstSite));//屏幕第一行显示项序号
+//		byte[] serialNum = { pageInteractiveData.getData()[0],
+//				pageInteractiveData.getData()[1] };//屏幕第一行显示项序号
+		byte[] number = ByteHexHelper.hexStringToBytes(ByteHexHelper
+				.packLength(Constant.feedback.length));//掩码长度
+		byte[] feedbackByte = new byte[serialNum.length
+				+ Constant.feedback.length + number.length];
+		feedbackByte[0] = serialNum[0];
+		feedbackByte[1] = serialNum[1];
+		feedbackByte[2] = number[0];
+		feedbackByte[3] = number[1];
+		int flag = 0;
+		for (int i = 4; i < serialNum.length + Constant.feedback.length
+				+ number.length; i++) {
+			feedbackByte[i] = Constant.feedback[flag];
+			flag++;
+		}
+		feedback = PageInteractiveDataAnalysis.feedbackData(
+				feedbackByte, pageInteractiveData);
+		Constant.feedback = null;
+	}
+			break;
+
+		case 18:// SPT_EX_DATASTREAM_ID:数据流数值显示 18
+			if(Constant.isDataStreamBack)
+			{
+				feedback = PageInteractiveDataAnalysis.feedbackData(Constant.streamNextCode, pageInteractiveData);
+				Constant.isDataStreamBack=false;
+				return feedback;
+			}
+			if (memoryThread == null) {
+				memoryThread = new MemoryThread();
+				memoryThread.start();
+				memoryThread.addDataInArrary(pageInteractiveData);
+			} else {
+				memoryThread.addDataInArrary(pageInteractiveData);
+			}
+
+		feedback = PageInteractiveDataAnalysis.feedbackData(Constant.streamNextCode, pageInteractiveData);
+			return feedback;
+
+		case 19:if (memoryThreadVW == null) {
+			memoryThreadVW = new MemoryThreadVW();
+			memoryThreadVW.start();
+			memoryThreadVW.addDataInArrary(pageInteractiveData);
+		} else {
+			memoryThreadVW.addDataInArrary(pageInteractiveData);
+		}
+
+		feedback = PageInteractiveDataAnalysis.feedbackData(Constant.streamNextCode, pageInteractiveData);
+		if (Constant.streamNextCode != Constant.noInterruptStreamCode) {
+			Constant.streamNextCode = Constant.noInterruptStreamCode;
+		}
+
+		return feedback;
+
+		case 26:// SPT_GGP_NAME 26
+			if(!"".equals(Constant.OBD2_EN_GGP_PATH_OLD)){
+				//Log.d("searchId","equals(Constant.OBD2_EN_GGP_PATH_OLD)");
+				searchId.ggpClose();
+			}
+			String ggp_path = PageInteractiveDataAnalysis.Spt_GGP_Name26(pageInteractiveData);
+			Constant.OBD2_EN_GGP_PATH = ggp_path;
+			int back = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+			byte[] back26 = new byte[0];
+			feedback = PageInteractiveDataAnalysis.feedbackData(back26, pageInteractiveData);
+			Constant.OBD2_EN_GGP_PATH_OLD =ggp_path;
+			break;
+
+		case 27:// SPT_TROUBLE_CODE_FROZEN 冻结帧显示 27
+			ArrayList<SptTroubleTest> troubleCodeFrozenList = PageInteractiveDataAnalysis
+					.spt_trouble_code14(pageInteractiveData);
+			path = Constant.OBD2_EN_GGP_PATH;
+
+			if(Constant.needLog)
+				System.out.println("path = " + path);
+			if (path != null && path.length() > 0) {
+
+//				SearchId searchId = new SearchId();
+//				int back1 = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+//				if(Constant.needLog)
+//					System.out.println("打开OBD2_EN_GGP的结果为：" + back);
+				for (int i = 0; i < troubleCodeFrozenList.size(); i++) {
+					SptTroubleTest troubleTest = troubleCodeFrozenList.get(i);
+					byte[] databuf = ByteHexHelper.hexStringToBytes(troubleTest
+							.getTroubleId());
+					// 获取数据流名称
+					int v_id = (databuf[0] & 0xff) * 0x1000000
+							+ (databuf[1] & 0xff) * 0x10000
+							+ (databuf[2] & 0xff) * 0x100 + (databuf[3] & 0xff);
+					byte[] troubleIdContentbytes = searchId
+							.getTextFromLibReturnByte(v_id, 6);
+					byte[] troubleId = null;
+					if (troubleIdContentbytes.length > 0) {
+						troubleId = new byte[troubleIdContentbytes.length - 1];
+						for (int j = 0; j < troubleId.length; j++) {
+							troubleId[j] = troubleIdContentbytes[j];
+						}
+					} else {
+						troubleId = new byte[0];
+					}
+					String[] troubleIdContent = PageInteractiveDataAnalysis
+							.separateString(ByteHexHelper
+									.bytesToHexString(troubleId));
+					if (troubleIdContent != null && troubleIdContent.length > 0) {
+						if (troubleIdContent.length >= 1
+								&& troubleIdContent[0].equalsIgnoreCase("---")) {
+							troubleTest.setTroubleCodeContent("");
+						} else if (troubleIdContent.length >= 1
+								&& !troubleIdContent[0].equalsIgnoreCase("---")) {
+							troubleTest
+									.setTroubleCodeContent(ByteHexHelper.byteToWord(ByteHexHelper
+											.hexStringToBytes(troubleIdContent[0])));
+						}
+						if (troubleIdContent.length > 1
+								&& troubleIdContent[1].equalsIgnoreCase("---")) {
+							troubleTest.setTroubleDescribeContent(troubleTest.getTroubleId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						} else if (troubleIdContent.length > 1
+								&& !troubleIdContent[1].equalsIgnoreCase("---")) {
+							troubleTest
+									.setTroubleDescribeContent(ByteHexHelper.byteToWord(ByteHexHelper
+											.hexStringToBytes(troubleIdContent[1])));
+						}
+
+						if(Constant.needLog)
+							System.out.println("故障码内容 = "
+									+ troubleTest.getTroubleCodeContent());
+						if(Constant.needLog)
+							System.out.println("故障描述内容 = "
+									+ troubleTest.getTroubleDescribeContent());
+					} else {
+						String lString = troubleTest.getTroubleSpareDescribeContent();
+						if(lString.length() > 0){
+							troubleTest.setTroubleCodeContent(lString);
+						}else{
+							troubleTest.setTroubleCodeContent(troubleTest.getTroubleId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						}
+						if(Constant.needLog)
+							System.out.println("备用故障码内容 = "
+									+ troubleTest.getTroubleCodeContent());
+					}
+					if (!troubleTest.getTroubleStateId().equalsIgnoreCase(
+							"ffffffff")) {
+						byte[] databufs = ByteHexHelper
+								.hexStringToBytes(troubleTest
+										.getTroubleStateId());
+						// 获取数据流名称
+						int v_ids = (databufs[0] & 0xff) * 0x1000000
+								+ (databufs[1] & 0xff) * 0x10000
+								+ (databufs[2] & 0xff) * 0x100
+								+ (databufs[3] & 0xff);
+						byte[] troubleStateContentbytes = searchId
+								.getTextFromLibReturnByte(v_ids, 7);
+						byte[] troubleState = null;
+						if (troubleStateContentbytes.length > 0) {
+							troubleState = new byte[troubleStateContentbytes.length - 1];
+							for (int j = 0; j < troubleState.length; j++) {
+								troubleState[j] = troubleStateContentbytes[j];
+							}
+						} else {
+							troubleState = new byte[0];
+						}
+						troubleTest.setTroubleStateContent(ByteHexHelper
+								.byteToWord(troubleState));
+						if(Constant.needLog)
+							System.out.println("故障状态内容 = "
+									+ troubleTest.getTroubleStateContent());
+					}
+				}
+//				searchId.ggpClose();
+				Intent intent = new Intent("SPT_TROUBLE_CODE_FROZEN");
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("SPT_TROUBLE_CODE_FROZEN",
+						(Serializable) troubleCodeFrozenList);
+				bundle.putInt("type", 27);
+				intent.putExtras(bundle);
+				MainActivity.contexts.sendBroadcast(intent);
+				
+				CarDiagnoseBridge bridge = new CarDiagnoseBridge();
+				Runnable dynamic = new CarDiagnose(bridge);
+				Thread t = new Thread(dynamic);
+				t.start();
+				try {
+					t.join();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
+//				haveData = false;
+//				for (int i = 0;; i++) {
+//					if (haveData == true) {
+//						haveData = false;
+//						break;
+//					}
+//				}
+				feedback = PageInteractiveDataAnalysis.feedbackData(
+						Constant.feedback, pageInteractiveData);
+				Constant.feedback = null;
+			}
+			break;
+
+		case 28:// SPT_DS_MENU_ID 28
+			ArrayList<MenuData> dsMenuDataList = PageInteractiveDataAnalysis
+					.spt_menu_id1(pageInteractiveData);
+			path = Constant.OBD2_EN_GGP_PATH;
+
+			if(Constant.needLog)
+				System.out.println("path = " + path);
+			if (path != null && path.length() > 0) {
+
+//				SearchId searchId = new SearchId();
+//				int back = searchId.ggpOpen(Constant.OBD2_EN_GGP_PATH);
+//				if(Constant.needLog)
+//					System.out.println("打开OBD2_EN_GGP的结果为：" + back);
+				for (int i = 1; i < dsMenuDataList.size(); i++) {
+					MenuData menuData = dsMenuDataList.get(i);
+					String lString = "";
+					byte[] databuf = ByteHexHelper.hexStringToBytes(menuData
+							.getMenuId());
+					// 获取数据流名称
+					int v_id = (databuf[0] & 0xff) * 0x1000000
+							+ (databuf[1] & 0xff) * 0x10000
+							+ (databuf[2] & 0xff) * 0x100 + (databuf[3] & 0xff);
+					byte[] MenuContentbytes = searchId
+							.getTextFromLibReturnByte(v_id, 3);
+					byte[] menu = null;
+					if (MenuContentbytes.length > 0) {
+						menu = new byte[MenuContentbytes.length - 1];
+						for (int j = 0; j < menu.length; j++) {
+							menu[j] = MenuContentbytes[j];
+						}
+					} else {
+						menu = new byte[0];
+					}
+					
+					String[] menuIdContent = PageInteractiveDataAnalysis
+							.separateString(ByteHexHelper
+									.bytesToHexString(menu));
+					if (menuIdContent != null && menuIdContent.length > 0) {
+						if (menuIdContent.length >= 1
+								&& menuIdContent[0].equalsIgnoreCase("---")) {
+							menuData.setMenuContent(menuData.getMenuId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						} else if (menuIdContent.length >= 1
+								&& !menuIdContent[0].equalsIgnoreCase("---")) {
+							menuData.setMenuContent(ByteHexHelper.byteToWord(ByteHexHelper
+											.hexStringToBytes(menuIdContent[0])));
+						}
+						if(Constant.needLog)
+							System.out.println("菜单内容 = "
+									+ menuData.getMenuContent());
+					} else {
+						menuData.setMenuContent(menuData.getMenuId() + " " + MainActivity.contexts.getResources().getString(R.string.ReferManual));
+						if(Constant.needLog)
+							System.out.println("菜单内容 = "
+									+ menuData.getMenuContent());
+					}
+				}
+//				searchId.ggpClose();
+				Intent intent = new Intent("SPT_DS_MENU_ID");
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("SPT_DS_MENU_ID",
+						(Serializable) dsMenuDataList);
+				bundle.putInt("type", 28);
+				intent.putExtras(bundle);
+				MainActivity.contexts.sendBroadcast(intent);
+				
+				CarDiagnoseBridge bridge = new CarDiagnoseBridge();
+				Runnable dynamic = new CarDiagnose(bridge);
+				Thread t = new Thread(dynamic);
+				t.start();
+				try {
+					t.join();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+
+				backData = Constant.feedback;
+				Constant.feedback = null;
+				feedback = PageInteractiveDataAnalysis.feedbackData(backData,
+						pageInteractiveData);
+			}
+			break;
+		case 29:
+		ArrayList<MenuData> filemenuDataList = PageInteractiveDataAnalysis
+			.spt_file_menu(pageInteractiveData);
+
+		Intent intent29 = new Intent("SPT_FILE_MENU");
+		Bundle bundle29 = new Bundle();
+		bundle29.putSerializable("SPT_FILE_MENU", (Serializable) filemenuDataList);
+		bundle29.putInt("type", 29);
+		intent29.putExtras(bundle29);
+		MainActivity.contexts.sendBroadcast(intent29);
+		
+		CarDiagnoseBridge bridge = new CarDiagnoseBridge();
+		Runnable dynamic = new CarDiagnose(bridge);
+		Thread t = new Thread(dynamic);
+		t.start();
+		try {
+			t.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		byte[] backData1 = Constant.feedback;
+		Constant.feedback = null;
+		feedback = PageInteractiveDataAnalysis.feedbackData(backData1,
+				pageInteractiveData);
+
+			break;
+		case 30:// SPT_AGING_WINDOW:30 老化显示
+			String agingContent = PageInteractiveDataAnalysis
+					.spt_aging_window30(pageInteractiveData);
+
+			Intent intent = new Intent("SPT_AGING_WINDOW");
+			Bundle bundle = new Bundle();
+			bundle.putString("SPT_AGING_WINDOW", agingContent);
+			bundle.putInt("type", 30);
+			intent.putExtras(bundle);
+			MainActivity.contexts.sendBroadcast(intent);
+			for (int i = 0;; i++) {
+				if (agingFlag == true) {
+					agingFlag = false;
+					break;
+				}
+			}
+			haveData = false;
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					Constant.continueObtain, pageInteractiveData);
+			break;
+		//add by bcf 处理特殊功能
+		case 34: //SPT_DATASTREAM_ID_EX  34  只显示当前屏的数据流
+			Log.i("CTOJAVA", "执行34");
+			ArrayList<SptExDataStreamIdItem34> backList = PageInteractiveDataAnalysis.spt_datastream_item_back_call34(pageInteractiveData);
+			byte[] dataStreamEmptyBack = new byte[] { (byte) 0x00, (byte) 0x00 };
+			byte[] dataStreamCountBack = ByteHexHelper.intToTwoHexBytes(backList.get(0).getDataStreamItemCount());
+			byte[] dataStreamButtonBack = Constant.spt_data_stream_button;
+			byte[] dataStreamMaskLengthBack = ByteHexHelper.intToTwoHexBytes(backList.get(0).getChoseMaskBufferList().length);
+			byte[] dataStreamMaskBack = backList.get(0).getChoseMaskBufferList();
+			byte[] comboDataStreamEmptyBack = null;
+			comboDataStreamEmptyBack = new byte[] { dataStreamEmptyBack[0], dataStreamEmptyBack[1], dataStreamCountBack[0], dataStreamCountBack[1], dataStreamButtonBack[0],
+							dataStreamMaskLengthBack[1] };
+
+			String tempStrBack = ByteHexHelper.bytesToHexString(comboDataStreamEmptyBack) + ByteHexHelper.bytesToHexString(backList.get(0).getChoseMaskBufferList());
+			byte[] tempBack = ByteHexHelper.hexStringToBytes(tempStrBack);
+			Constant.spt_data_stream = tempBack;// comboDataStreamEmptyBack;			
+			if(Constant.isDataStreamChange)
+			{
+				feedback = PageInteractiveDataAnalysis.feedbackData(Constant.spt_data_stream, pageInteractiveData);
+				Constant.spt_data_stream_button = new byte[] { 0x00 };
+				return feedback;
+			}
+			if (memoryThreadPage == null) {
+				memoryThreadPage = new MemoryThreadPage();
+				memoryThreadPage.start();
+				memoryThreadPage.addDataInArrary(pageInteractiveData);
+			} else {
+				memoryThreadPage.addDataInArrary(pageInteractiveData);
+			}
+			feedback = PageInteractiveDataAnalysis.feedbackData(Constant.spt_data_stream, pageInteractiveData);
+			return feedback;
+		case 35://SPT_DATASTREAMITEM_ID 35   获取首次显示时需要处理的掩码
+			Constant.isDataStreamChange=false;
+			Log.e("CTOJAVA", "执行35");
+			feedback = dataStreamItem35(pageInteractiveData,feedback);
+			break;	
+		case 36://SPT_SPECIAL_FUNCTION_ID    处理特殊功能
+			feedback = specialFunchtion(pageInteractiveData,feedback);
+			break;		
+		case 37://SPT_TROUBLE_CODE_ID_EX 37 显示故障码，到指定库中查询故障码
+			feedback = spt_trouble_bode_id_ex(pageInteractiveData,feedback,"SPT_TROUBLE_CODE_ID_EX",37);
+			break;
+		case 38:// SPT_TROUBLE_CODE_FROZEN_EX 38 显示冻结帧，到指定库中查询故障码
+			feedback = spt_trouble_bode_id_ex(pageInteractiveData,feedback,"SPT_TROUBLE_CODE_FROZEN_EX",38);
+			break;
+		case 39:// SPT_TROUBLE_CODE_ID_BY_COMBINE 39  显示故障码，故障码状态以字符串的形式传入，方便诊断自由组合故障码状态
+			feedback = spt_trouble_bode_id_ex(pageInteractiveData,feedback,"SPT_TROUBLE_CODE_ID_BY_COMBINE",39);
+			break;
+		case 40:// SPT_TROUBLE_CODE_FROZEN_BY_COMBINE 40  显示冻结帧，故障码状态以字符串的形式传入，方便诊断自由组合故障码状态
+			feedback = spt_trouble_bode_id_ex(pageInteractiveData,feedback,"SPT_TROUBLE_CODE_FROZEN_BY_COMBINE",40);
+			break;
+		case 41:// SPT_TROUBLE_CODE_ID_EX_BY_COMBINE 41  显示故障码，到指定库中查询故障码,并且故障码状态以字符串的形式传入，方便诊断自由组合故障码状态
+			feedback = spt_trouble_bode_id_ex(pageInteractiveData,feedback,"SPT_TROUBLE_CODE_ID_EX_BY_COMBINE",41);
+			break;
+		case 42:// SPT_TROUBLE_CODE_FROZEN_EX_BY_COMBINE  42 显示冻结帧，到指定库中查询故障码,并且故障码状态以字符串的形式传入，方便诊断自由组合故障码状态
+			feedback = spt_trouble_bode_id_ex(pageInteractiveData,feedback,"SPT_TROUBLE_CODE_FROZEN_EX_BY_COMBINE",42);
+			break;
+		case 43://SPT_TROUBLE_CODE_ID_BY_LOOPMODE  43 循环显示故障码，到指定库中查询故障码,并且故障码状态以字符串的形式传入，方便诊断自由组合故障码状态 
+			feedback = spt_trouble_bode_id_ex(pageInteractiveData,feedback,"SPT_TROUBLE_CODE_ID_BY_LOOPMODE",43);
+			break;	
+		case 44: //SPT_NOWAITMESSAGEBOX_TEXT 44
+			String[] nowaitmessagebox = PageInteractiveDataAnalysis
+					.Spt_NoWaitMessageBox_Text44(pageInteractiveData);
+			
+			Intent intentNowaitmessagebox = new Intent("SPT_NOWAITMESSAGEBOX_TEXT");
+			Bundle bundleNowaitmessagebox = new Bundle();
+			bundleNowaitmessagebox.putStringArray("SPT_NOWAITMESSAGEBOX_TEXT",nowaitmessagebox);
+			bundleNowaitmessagebox.putInt("type", 44);
+			intentNowaitmessagebox.putExtras(bundleNowaitmessagebox);
+			
+			MainActivity.contexts.sendBroadcast(intentNowaitmessagebox);
+			
+			for (int i = 0;; i++) {
+				if (nowaitmessageboxtext == true) {
+					nowaitmessageboxtext = false;
+					break;
+				}
+			}
+			haveData=false;
+			feedback = PageInteractiveDataAnalysis.feedbackData(Constant.noWaitMessageButton,
+					pageInteractiveData);
+			
+			break;
+		case 45:// SPT_PROGRESSBAR_BOX 显示可以返回的进度条界面
+			Spt_Progressbar_Box spb = PageInteractiveDataAnalysis
+						.Spt_Progressbar_Box45(pageInteractiveData);	
+			Intent intentProgressbar = new Intent("SPT_PROGRESSBAR_BOX");
+			Bundle bundleProgerssbar = new Bundle();
+			bundleProgerssbar.putSerializable("SPT_PROGRESSBAR_BOX",
+					(Serializable) spb);
+			bundleProgerssbar.putInt("type", 45);
+			intentProgressbar.putExtras(bundleProgerssbar);
+			MainActivity.contexts.sendBroadcast(intentProgressbar);		
+			for (int i = 0;; i++) {
+				if (progressbarFlag == true) {
+					progressbarFlag = false;
+					break;
+				}
+			}
+			haveData = false;
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					Constant.progressbarBox, pageInteractiveData);
+			break;
+       case 46:// SPT_COMBINATION_MENU
+			Spt_Combination_Menu spt_Combination_menu = PageInteractiveDataAnalysis
+					.spt_combination_menu46(pageInteractiveData);
+
+			Intent intent46 = new Intent("SPT_COMBINATION_MENU");
+			Bundle bundle46 = new Bundle();
+			bundle46.putSerializable("SPT_COMBINATION_MENU",
+					spt_Combination_menu);
+			bundle46.putInt("type", 46);
+			intent46.putExtras(bundle46);
+			MainActivity.contexts.sendBroadcast(intent46);
+			for (int i = 0;; i++) {
+				if (combinationFlag == true) {
+					combinationFlag = false;
+					break;
+				}
+			}
+			haveData = false;
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					Constant.CombinationMenu, pageInteractiveData);
+			break;
+       case 47://SPT_SET_VIN 
+    	   Log.e("bcf","SPT_SET_VIN");  
+			String mVin = PageInteractiveDataAnalysis.SPT_SET_VIN_47(pageInteractiveData);
+			Intent intent47 = new Intent("SPT_SET_VIN");
+			intent47.putExtra("SPT_SET_VIN", mVin);
+	    	   Log.e("bcf","47  SPT_SET_VIN  mVin:"+mVin);
+	    	 MainActivity.contexts.getApplicationContext().sendBroadcast(intent47);
+			feedback = PageInteractiveDataAnalysis.feedbackData(Constant.noButton, pageInteractiveData);
+    	   break;
+       case 48: //SPT_GET_VIN 
+   	      byte[] mVinBack1 ;
+    	   String vincode=MySharedPreferences.getStringValue(MainActivity.contexts,"VIN_CODE");
+    	   if(vincode!=null&&!vincode.equalsIgnoreCase(""))
+    	   {
+    	   String vinAscii=ByteHexHelper.parseAscii(vincode);
+    	   byte[] mVinBack=ByteHexHelper.hexStringToBytes(vinAscii);
+    	   int hexStrLen = vinAscii.length()/2;
+    	    mVinBack1 = new byte[hexStrLen + 1];
+    	   mVinBack1[0]=ByteHexHelper.intToHexByte(hexStrLen);
+    	   for(int i=1;i<hexStrLen+1;i++)
+    	   {
+    		   mVinBack1[i]=mVinBack[i-1];
+    	   }
+			feedback = PageInteractiveDataAnalysis.feedbackData(
+					mVinBack1, pageInteractiveData);
+		}
+
+    	   break;
+       case 49: //SPT_MENU_WITH_HELP_ID 
+			ArrayList<MenuData> menuDataList2 = PageInteractiveDataAnalysis.spt_menu_help_id49(pageInteractiveData);
+			String path2 = Constant.OBD2_EN_GGP_PATH;
+		     if (path2 != null && path2.length() > 0) {
+			Intent intent49 = new Intent("feedbackMeauWithHelpData");
+			Bundle bundle49 = new Bundle();
+			bundle49.putSerializable("menuData", (Serializable) menuDataList2);
+			bundle49.putInt("type", 1);
+			intent49.putExtras(bundle49);
+			MainActivity.contexts.sendBroadcast(intent49);
+			
+			CarDiagnoseBridge bridge49 = new CarDiagnoseBridge();
+			Runnable dynamic49 = new CarDiagnose(bridge49);
+			Thread t49 = new Thread(dynamic49);
+			t49.start();
+			try {
+				t49.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+			byte[] backData49 = Constant.feedback;
+			Constant.feedback = null;
+			feedback = PageInteractiveDataAnalysis.feedbackData(backData49,
+					pageInteractiveData);
+		}
+				 
+	    	   break;
+       case 50:
+    	   ArrayList<MenuData> menuDataList3 = PageInteractiveDataAnalysis.spt_file_menu_help50(pageInteractiveData);
+			//Intent intent50 = new Intent("feedbackMeauHelpData");
+			Intent intent50 = new Intent("feedbackMeauWithHelpData");
+			
+			Bundle bundle50 = new Bundle();
+			bundle50.putSerializable("menuData", (Serializable) menuDataList3);
+			bundle50.putInt("type", 1);
+			intent50.putExtras(bundle50);
+			MainActivity.contexts.sendBroadcast(intent50);
+			
+			CarDiagnoseBridge bridge50 = new CarDiagnoseBridge();
+			Runnable dynamic50 = new CarDiagnose(bridge50);
+			Thread t50 = new Thread(dynamic50);
+			t50.start();
+			try {
+				t50.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+			byte[] backData50 = Constant.feedback;
+			Constant.feedback = null;
+			feedback = PageInteractiveDataAnalysis.feedbackData(backData50,
+					pageInteractiveData);
+			break;
+       case 51:// SPT_SUPPORT_CONNECT  让显示程序根据实际情况进行选择接头提示
+    	   ArrayList<SupportConnectorId> supportconnect = PageInteractiveDataAnalysis.spt_supportConnector(pageInteractiveData);	    	   
+	    	  backData = Constant.streamNextCode;//界面还没画，先默认回复  0为成功， 其它值为失败 
+				 feedback = PageInteractiveDataAnalysis.feedbackData(backData,
+							pageInteractiveData);
+	    	 break;
+       case 52: //SPT_GGP_PATHNAME  设置ggp的全路径给显示程序 52
+    	   String [] ggppath= PageInteractiveDataAnalysis.SPT_GGP_PATHNAME(pageInteractiveData);
+    	  if( ggppath.length>1)
+    	  {
+   		  Log.e("weizewei","ggp全路径为="+ByteHexHelper.hexStringToWord(ggppath[0]));
+		  Log.e("weizewei","ggp标识为="+ByteHexHelper.hexStringToWord(ggppath[1]));
+    	  }
+    	  backData = Constant.streamNextCode;//界面还没画，先默认回复 0为执行了确认按钮， 其它值为取消 
+		 feedback = PageInteractiveDataAnalysis.feedbackData(backData,
+					pageInteractiveData);
+    	   break;
+       case 53: //SPT_DIAG_PICTURE  显示诊断图片 53
+    	   String diag_pic_path = PageInteractiveDataAnalysis.Spt_GGP_Name26(pageInteractiveData);
+   		Log.e("weizewei","诊断图片路径="+diag_pic_path);
+   		
+   		Intent intent53 = new Intent("showdiagpicture");
+			Bundle bundle53 = new Bundle();
+			bundle53.putString("showdiagpicture", diag_pic_path);
+			intent53.putExtras(bundle53);
+			MainActivity.contexts.sendBroadcast(intent53);
+			
+			CarDiagnoseBridge bridge53 = new CarDiagnoseBridge();
+			Runnable dynamic53 = new CarDiagnose(bridge53);
+			Thread t53 = new Thread(dynamic53);
+			t53.start();
+			try {
+				t53.join();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+			byte[] backData53 = Constant.feedback;
+			Constant.feedback = null;
+			 feedback = PageInteractiveDataAnalysis.feedbackData(backData53,
+						pageInteractiveData);
+			 break;
+       case 54: // SPT_DISPLAY_VERSION  获取显示程序版本号
+    	   String strVersion = MySharedPreferences.getStringValue(MainActivity.contexts, MySharedPreferences.versionName);
+    	   feedback = PageInteractiveDataAnalysis.feedbackData(
+    			   strVersion.getBytes(), pageInteractiveData);
+    	   break;
+		default:
+			break;
+		}
+		if(Constant.needLog)
+			System.out.println("接收动态库交互流处理后的反馈：     "
+					+ ByteHexHelper.bytesToHexString(feedback));
+		if(Constant.needLog)
+			Log.v("databuffer",
+					"databuffer to c   "
+							+ ByteHexHelper.bytesToHexString(feedback));
+		return feedback;
+	}
+	
+	
+	//add by bcf
+	
+	/**
+	 * SPT_DATASTREAM_ID_EX  34  只显示当前屏的数据流
+	 * @param uiData
+	 * @param feedback
+	 * @return
+	 */
+	private static byte[] dataStreamItem34(PageInteractiveData uiData,byte[] feedback){
+		ArrayList<SptExDataStreamIdItem34> backList = PageInteractiveDataAnalysis.spt_datastream_item_back_call34(uiData);
+		ArrayList<SptExDataStreamIdItem> list = PageInteractiveDataAnalysis.spt_datastream_item34(uiData);
+		Intent intent = new Intent("SPT_DATASTREAM_ID_EX");
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("SPT_DATASTREAM_ID_EX",list);
+		bundle.putInt("type", 34);
+		intent.putExtras(bundle);
+		MainActivity.contexts.sendBroadcast(intent);
+
+		byte[] dataStreamEmptyBack = new byte[]{(byte) 0x00,(byte) 0x00};
+		byte[] dataStreamCountBack = ByteHexHelper.intToTwoHexBytes(backList.get(0).getDataStreamItemCount());
+		byte[] dataStreamButtonBack = Constant.spt_data_stream_button;
+		byte[] dataStreamMaskLengthBack = ByteHexHelper.intToTwoHexBytes(backList.get(0).getChoseMaskBufferList().length);
+		byte[] dataStreamMaskBack = backList.get(0).getChoseMaskBufferList();
+		
+		byte[] comboDataStreamEmptyBack=null;
+		for (int i = 0;; i++) {
+			if (dataStreamFlag == true) {
+				comboDataStreamEmptyBack=new byte[]{dataStreamEmptyBack[0],dataStreamEmptyBack[1],dataStreamCountBack[0],dataStreamCountBack[1]
+						,dataStreamButtonBack[0],dataStreamMaskLengthBack[1],
+						dataStreamMaskBack[0],dataStreamMaskBack[1],dataStreamMaskBack[2]};
+				dataStreamFlag = false;
+				break;
+			}
+		}
+		Constant.spt_data_stream =comboDataStreamEmptyBack;
+		feedback = PageInteractiveDataAnalysis.feedbackData(
+				Constant.spt_data_stream, uiData);
+		Constant.spt_data_stream_button=new byte[]{0x00};
+		return feedback;
+	}
+	
+	
+	/**
+	 * 35获取首次显示时需要处理的掩码
+	 * @param uiData
+	 * @param feedback
+	 * @return
+	 */
+	private static byte[] dataStreamItem35(PageInteractiveData uiData,byte[] feedback){
+		Constant.spt_data_stream =PageInteractiveDataAnalysis.spt_datastreamitem_id35(uiData);
+		feedback = PageInteractiveDataAnalysis.feedbackData(
+				Constant.spt_data_stream, uiData);
+		return feedback;
+	}
+	
+	/**
+	 * SPT_SPECIAL_FUNCTION_ID  36  处理特殊功能
+	 * @param uiData
+	 * @param feedback
+	 * @return
+	 */
+	private static byte[] specialFunchtion(PageInteractiveData uiData,byte[] feedback){
+		ArrayList<SpecialFunction> list = PageInteractiveDataAnalysis.spt_special_function_id36(uiData);
+		Intent intent = new Intent("SPT_SPECIAL_FUNCTION_ID");
+		Bundle bundle = new Bundle();
+		bundle.putSerializable("SPT_SPECIAL_FUNCTION_ID",list);
+		bundle.putInt("type", 36);
+		intent.putExtras(bundle);
+		MainActivity.contexts.sendBroadcast(intent);
+		feedback = PageInteractiveDataAnalysis.feedbackData(
+				Constant.continueSpecia, uiData);
+		Constant.continueSpecia=new byte[]{ (byte) 0xFFFF };
+		return feedback;
+	}
+	
+	/**
+	 * 37 ~ 42 公共查询方法  SPT_TROUBLE_CODE_ID_EX 显示故障码，到指定库中查询故障码
+	 * @param uiData
+	 * @param feedback
+	 * @return
+	 */
+	private static byte[] spt_trouble_bode_id_ex(PageInteractiveData uiData,byte[] feedback,String action,int type){
+		ArrayList<SptTroubleTest> troubleCodeByLoopModeList = PageInteractiveDataAnalysis.spe_trouble_bode_loopmode(uiData,type);
+		Intent intent = new Intent(action);
+		Bundle bundle = new Bundle();
+		bundle.putSerializable(action,(Serializable) troubleCodeByLoopModeList);
+		bundle.putInt("type", type);
+		intent.putExtras(bundle);
+		MainActivity.contexts.sendBroadcast(intent);
+		
+		CarDiagnoseBridge bridge= new CarDiagnoseBridge();
+		Runnable dynamic = new CarDiagnose(bridge);
+		Thread t = new Thread(dynamic);
+		t.start();
+		try {
+			t.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		haveData = false;
+		feedback = PageInteractiveDataAnalysis.feedbackData(
+				Constant.streamNextCode, uiData);
+		return feedback;
+	}
+	
+	/**
+	 * 43 SPT_TROUBLE_CODE_ID_BY_LOOPMODE  循环显示故障码，到指定库中查询故障码,并且故障码状态以字符串的形式传入，方便诊断自由组合故障码状态
+	 * @param uiData
+	 * @param feedback
+	 * @return
+	 
+	private static byte[] troubleFunchtion(PageInteractiveData uiData,byte[] feedback,String action,int type){
+		ArrayList<SptTroubleTest> troubleCodeByLoopModeList = PageInteractiveDataAnalysis.spe_trouble_bode_loopmode(uiData,type);
+		Intent intent43 = new Intent(action);
+		Bundle bundle43 = new Bundle();
+		bundle43.putSerializable(action,(Serializable) troubleCodeByLoopModeList);
+		bundle43.putInt("type", 43);
+		intent43.putExtras(bundle43);
+		MainActivity.contexts.sendBroadcast(intent43);
+		
+		CarDiagnoseBridge bridge43= new CarDiagnoseBridge();
+		Runnable dynamic43 = new CarDiagnose(bridge43);
+		Thread t43 = new Thread(dynamic43);
+		t43.start();
+		try {
+			t43.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		haveData = false;
+		feedback = PageInteractiveDataAnalysis.feedbackData(
+				Constant.streamNextCode, uiData);
+		return feedback;
+	}*/
+	
+	/**
+	 * 
+	 * @param name
+	 */
+	public static void getGGPname(String name) {
+
+	}
+
+	/**
+	 * 错误代码
+	 * 
+	 * @param error
+	 */
+	public static void notifyError(int error) {
+
+	}
+
+	public static int GetLocalLanguage() {
+		if(MainActivity.country == null || MainActivity.country.length() <= 0){
+			Locale locale = Locale.getDefault();
+			MainActivity.country = locale.getCountry();
+		}
+		return AndroidToLan.languages(MainActivity.country);
+	}
+
+}

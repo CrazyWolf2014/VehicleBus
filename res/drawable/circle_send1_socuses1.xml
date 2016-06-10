@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector>
+    <item android:state_pressed="true" android:drawable="@drawable/circle_send_gm2" />
+    <item android:state_focused="true" android:state_window_focused="true" android:drawable="@drawable/circle_send1_gm2" />
+    <item android:state_focused="true" android:state_window_focused="false" android:drawable="@drawable/circle_send1_gm3" />
+    <item android:drawable="@drawable/circle_send1_gm1" />
+</selector>

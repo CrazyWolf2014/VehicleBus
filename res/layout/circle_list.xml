@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:clickable="true" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/circle_left" android:layout_width="-1" android:layout_height="-1">
+        <LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1" android:layout_marginLeft="10dp" android:layout_marginRight="10dp">
+            <RelativeLayout android:gravity="11" android:orientation="0" android:padding="2dp" android:layout_width="-1" android:layout_height="50dp">
+                <EditText android:id="@id/circle_search_text" android:background="@drawable/search_edit_bg" android:paddingLeft="2dp" android:paddingRight="2dp" android:layout_width="120dp" android:layout_height="29dp" android:hint="@string/circle_search_text" android:singleLine="true" android:layout_centerVertical="true" android:imeOptions="6" />
+                <Button android:id="@id/circle_search" android:background="@drawable/searh_bg" android:layout_width="30dp" android:layout_height="30dp" android:layout_toRightOf="@id/circle_search_text" android:layout_centerVertical="true" />
+                <Button android:id="@id/add_circle" android:background="@drawable/circle_sign" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_toRightOf="@id/circle_search" android:layout_centerVertical="true" />
+                <Button android:id="@id/message_btn" android:background="@drawable/circle_record" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_toRightOf="@id/add_circle" android:layout_centerVertical="true" />
+                <RelativeLayout android:visibility="2" android:layout_width="-1" android:layout_height="35dp" android:layout_marginRight="5dp" android:layout_toRightOf="@id/add_circle" android:layout_centerVertical="true">
+                    <Button android:id="@id/circle_book" android:background="@drawable/circle_book" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_alignParentRight="true" />
+                    <LinearLayout android:id="@id/line1" android:background="@drawable/left_line" android:layout_width="2dp" android:layout_height="-1" android:layout_toLeftOf="@id/circle_book" android:layout_alignParentRight="true" />
+                    <RelativeLayout android:id="@id/circle_record" android:layout_width="-2" android:layout_height="35dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_toLeftOf="@id/line1">
+                        <Button android:id="@id/record_btn" android:background="@drawable/circle_record" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" />
+                        <Button android:textColor="#ff0000" android:background="@drawable/bubble" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:text="5" android:layout_alignRight="@id/record_btn" />
+                    </RelativeLayout>
+                    <LinearLayout android:id="@id/line2" android:background="@drawable/left_line" android:layout_width="2dp" android:layout_height="-1" android:layout_toLeftOf="@id/circle_record" />
+                    <Button android:id="@id/circle_user" android:background="@drawable/circle_user" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="5dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_toLeftOf="@id/line2" />
+                    <LinearLayout android:id="@id/line3" android:background="@drawable/left_line" android:layout_width="2dp" android:layout_height="-1" android:layout_toLeftOf="@id/circle_user" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <TextView android:gravity="11" android:layout_gravity="11" android:id="@id/searchToastText" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:text="@string/search_result" />
+            <LinearLayout android:gravity="10" android:layout_gravity="10" android:orientation="0" android:id="@id/roomTop" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="30dp">
+                <Button android:textColor="@color/lightgray" android:id="@id/common_circle" android:background="@drawable/diagnose_tab_bg" android:layout_width="-1" android:layout_height="-1" android:text="@string/common_circle" android:layout_weight="1.0" />
+                <ImageView android:background="@drawable/linea" android:layout_width="2dp" android:layout_height="-2" android:contentDescription="@keyrecord/OWNER_USER" />
+                <Button android:textColor="@color/lightgray" android:id="@id/personal_circle" android:background="@color/lightblack" android:layout_width="-1" android:layout_height="-1" android:text="@string/personal_circle" android:layout_weight="1.0" />
+            </LinearLayout>
+            <LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-1">
+                <ListView android:id="@id/circle_listview" android:layout_width="-2" android:layout_height="-1" android:listSelector="#00000000" android:cacheColorHint="@keyrecord/OWNER_USER" android:divider="#00000000" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

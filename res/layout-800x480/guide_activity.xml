@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/black" android:layout_width="-1" android:layout_height="-1">
+    <ViewFlipper android:id="@id/guide_view" android:background="#ff000000" android:visibility="0" android:persistentDrawingCache="1" android:layout_width="-1" android:layout_height="-1" android:inAnimation="@anim/left_in" android:outAnimation="@anim/left_out" android:flipInterval="1000">
+        <LinearLayout android:orientation="1" android:id="@id/guidepage1" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage1" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_1" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage2" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage2" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage3" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage3" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_3" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage4" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage4" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_4" />
+        </LinearLayout>
+        <LinearLayout android:orientation="1" android:id="@id/guidepage5" android:layout_width="-1" android:layout_height="-1">
+            <ImageView android:id="@id/guideimage5" android:layout_width="-1" android:layout_height="-1" android:src="@drawable/guidepage_5" />
+        </LinearLayout>
+    </ViewFlipper>
+    <ProgressBar android:id="@id/progressBar" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_centerInParent="true" />
+</RelativeLayout>
